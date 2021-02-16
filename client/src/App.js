@@ -12,25 +12,25 @@ function App({ children }) {
   return (
 
     <div className='App'>
-      <Banner />
-      <Tooltip />
       <Router>
-          <Switch>
-            <Route exact path={['/', '/Home']}>
-              <Home />
-            </Route>
-            <Route exact path='/Search'>
-              <Search />
-            </Route>
-            <Route exact path='/Saved'>
-              <Saved />
-            </Route>
-            <Route exact path='/Edit'>
-              <Edit />
-            </Route>
+        <Banner />
+        <Tooltip />
+        <Switch>
+          <Route exact path={['/', '/Home']}>
+            <Home />
+          </Route>
+          <Route exact path='/Search'>
+            <Search />
+          </Route>
+          <Route exact path='/Saved'>
+            <Saved />
+          </Route>
+          <Route exact path='/Edit'>
+            <Edit />
+          </Route>
 
-          </Switch>
-       
+        </Switch>
+
       </Router>
       <Footer />
     </div>

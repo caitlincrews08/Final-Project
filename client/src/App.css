@@ -1,4 +1,6 @@
 .App {
+  height: 100vh;
+  width: 100vw;
   text-align: center;
 }
 body {
@@ -8,7 +10,7 @@ body {
 }
 .home {
   background-color: #00000000;
-  max-height: 60vh;
+  /* max-height: 60vh; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,12 +18,12 @@ body {
   color: rgb(58, 57, 57);
   margin: 0;
   z-index: 1;
-  position: relative;
+  /* position: relative; */
 }
 
 .banner {
   background-color: #cdcfd1;
-  min-height: 10vh;
+  /* min-height: 10vh; */
   display: flex;
   flex-direction: row;
   align-items: center;
