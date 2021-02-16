@@ -1,38 +1,82 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  height: 100vh;
+  width: 100vw;
+  z-index: 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home {
+  background-color: #00000000;
+  max-height: 60vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(50px + 2vmin);
+  color: rgb(58, 57, 57);
+  margin: 0;
+  z-index: 1;
+  position: relative;
+}
+
+.banner {
+  background-color: #cdcfd1;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(40px + 2vmin);
+  color: rgb(26, 25, 25);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+main {
+  width: 100vw;
+}
+
+.sideScroller {
+    width: 100vw;
+    height: 100px;
+    white-space: nowrap;
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.sideScroller div {
+    width: 24.5%;
+    background-color: rgb(51, 49, 49);
+    float: none;
+    height: 90%;
+    margin: 0 0.25%;
+    display: inline-block;
+    zoom: 1;
+    
+}
+
+.tooltip {
+ 
+position: relative;
+z-index: 3;
+  
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(59, 59, 59);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  text-align: center;
+  z-index: 5;
 }
