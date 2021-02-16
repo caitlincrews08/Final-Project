@@ -50,6 +50,7 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
+app.use(express.static(__dirname + '/public'));
 
 app.listen(PORT, () => {
   console.log(`Server is listening at http://localhost:${PORT}`);

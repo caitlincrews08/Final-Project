@@ -6,38 +6,38 @@ function Footer() {
 
     return (
         <Container fluid className='footer'>
-            <Row className="sideScroller">
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-                <Col>MEME</Col>
-            </Row>
+            <div className="sideScroller">
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+                    <Col>MEME</Col>
+            </div>
         </Container>
     );
 };

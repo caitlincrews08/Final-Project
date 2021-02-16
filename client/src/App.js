@@ -1,6 +1,5 @@
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Tooltip from './components/Tooltip';
 import Home from './components/pages/Home';
 import Edit from './components/pages/Edit';
 import Saved from './components/pages/Saved';
@@ -14,7 +13,7 @@ function App({ children }) {
     <div className='App'>
       <Router>
         <Banner />
-        <Tooltip />
+        
         <Switch>
           <Route exact path={['/', '/Home']}>
             <Home />

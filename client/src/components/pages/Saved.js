@@ -1,10 +1,15 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
+import Tooltip from '../Tooltip';
+import { Container, Row } from 'react-bootstrap';
 
 function Saved() {
 
     return (
-<Container></Container>
+        <Container>
+            <Row>
+                <Tooltip />
+            </Row>
+        </Container>
     );
 };
 

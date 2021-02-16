@@ -12,13 +12,14 @@ body {
   background-color: #00000000;
   /* max-height: 60vh; */
   display: flex;
+ flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(50px + 2vmin);
   color: rgb(58, 57, 57);
   margin: 0;
   z-index: 1;
-  /* position: relative; */
+  position: relative;
 }
 
 .banner {
@@ -37,6 +38,17 @@ body {
   z-index: 5;
 }
 
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  background-color: rgb(59, 59, 59);
+  color: white;
+  text-align: center;
+  z-index: 5;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -45,7 +57,7 @@ main {
 }
 
 .sideScroller {
-    width: 100vw;
+    width: auto;
     height: 100px;
     white-space: nowrap;
     position: relative;
@@ -65,20 +77,15 @@ main {
     
 }
 
+.sticky {
+  margin-top: 10vh;
+  position: sticky;
+  z-index: 3;
+}
+
 .tooltip {
  
-position: relative;
-z-index: 3;
+
   
 }
 
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: rgb(59, 59, 59);
-  color: white;
-  text-align: center;
-  z-index: 5;
-}

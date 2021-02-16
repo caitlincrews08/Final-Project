@@ -1,17 +1,21 @@
 import React from 'react';
-import { Col, Row, } from 'react-bootstrap/';
+import Tooltip from '../Tooltip';
+import { Col, Container, Row, } from 'react-bootstrap';
 
 
 function Home() {
 
     return (
-
-        <Row className="home">
-            <Col sm href="#Edit">the Forge</Col >
-            <Col sm href="#Saved">the Vault</Col >
-            <Col sm href="#Search">the Archives</Col >
-        </Row>
-
+        <Container >
+            <Row>
+                <Tooltip />
+            </Row>
+            <Row className="home">
+                <Col sm href="#Edit"> The Forge</Col >
+                <Col sm href="#Saved">The Vault</Col >
+                <Col sm href="#Search">The Archives</Col >
+            </Row>
+        </Container>
     );
 };
 
