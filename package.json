@@ -1,10 +1,11 @@
 {
-  "name": "memeheim",
+  "name": "memeheim_server",
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
   "description": "Interactive Meme Generator and newly discovered realm of the Meme-Lords ",
   "main": "server.js",
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
@@ -12,6 +13,7 @@
     "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "bootstrap": "^4.6.0",
     "concurrently": "~5.3.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
@@ -19,12 +21,11 @@
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "~4.17.20",
+    "mongodb": "^3.6.4",
     "mongoose": "~5.11.15",
     "passport": "~0.4.1",
     "passport-jwt": "^4.0.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.2",
+    "typescript": "next",
     "validator": "^11.1.0",
     "web-vitals": "^1.1.0"
   },
@@ -58,6 +59,6 @@
     ]
   },
   "devDependencies": {
-    "nodemon": "~1.19.4"
+    "nodemon": "~2.0.7"
   }
 }
