@@ -6,11 +6,11 @@ function Tooltip() {
 
     return (
         // <Col>
-            <Row className='tooltip sticky'>
-        <div >
-                <p>Hints and descriptions will populate(fade animation) here onhover of all clickable elements (and possibly an easter egg that displays inspirational and/or funny quotes and sayings) </p>
-                {/*{</p><div onMouseOver={ () => this.props.onMouseOver }>}*/}
-        </div>        
+            <Row className='tooltip'>
+       
+              <em>Hints and descriptions will populate(fade animation) here onhover of all clickable elements (and possibly an easter egg that displays inspirational and/or funny quotes and sayings) </em>
+              
+            
            </Row>
         // </Col>
     );

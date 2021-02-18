@@ -48,8 +48,8 @@ const App = () => {
       <Router>
 
         <Switch>
-          <PrivateRoute exact path={['/dashboard']} component={MyNavbar} />
-          <Route path={['/', '/register', '/login']} component={Banner}></Route>
+          <PrivateRoute exact path={["/dashboard","/Home"]} component={MyNavbar} />
+          <Route exact path={['/', '/register', '/login']} component={Banner}></Route>
         </Switch>
 
         <Switch>
@@ -57,8 +57,8 @@ const App = () => {
         </Switch>
 
         <Switch>
-          <PrivateRoute exact path="/dashboard" component={MyFooter} />
-          <Route path={['/', '/register', '/login']} component={Footer}></Route>
+          <PrivateRoute exact path={["/dashboard","/Home"]} component={MyFooter} />
+          <Route exact path={['/', '/register', '/login']} component={Footer}></Route>
         </Switch>
 
       </Router>

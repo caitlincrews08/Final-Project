@@ -2,8 +2,9 @@
 import API from '../../utils/apiHelper';
 import React, { useEffect, useContext } from 'react';
 import { Store } from '../../store';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import PrivateRoute from '../auth/PrivateRoute'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+// import PrivateRoute from '../auth/PrivateRoute'
+
 
 
 import Edit from '../pages/Edit';
@@ -13,32 +14,29 @@ import Search from '../pages/Search';
 
 
 
+
 const Dashboard = props => {
-  const { state, dispatch } = useContext(Store);
-  const user = state.auth.user;
+  const { state } = useContext(Store);
+
 
   useEffect(() => {
     if (!state.auth.isAuthenticated)
       props.history.push('/login');
 
     API.getUser()
-    .then(res => console.log({ res }))
-    .catch(err => console.log({ err }));
-  }, [ state, props ]);
+      .then(res => console.log({ res }))
+      .catch(err => console.log({ err }));
+  }, [state, props]);
 
-  // const onLogoutClick = e => {
-  //   e.preventDefault();
-
-  //   logoutUser(props.history)(dispatch);
-  // };
 
   return (
     <Router>
       <Switch>
-        <PrivateRoute exact path="/Home" component={Home} />
-        <PrivateRoute exact path="/Edit" component={Edit} />
-        <PrivateRoute exact path="/Saved" component={Saved} />
-        <PrivateRoute exact path="/Search" component={Search} />
+        <Route exact path="/home" component={Home} />
+        <Redirect from="/dashboard" to="/home" />
+        <Route exact path="/edit" component={Edit} />
+        <Route exact path="/saved" component={Saved} />
+        <Route exact path="/search" component={Search} />
       </Switch>
     </Router>
   );

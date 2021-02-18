@@ -61,6 +61,7 @@ body, html {
 
 main {
   width: 100vw;
+  margin-top: auto;
 }
 
 .myfooter {
@@ -111,15 +112,11 @@ main {
     
 }
 
-.sticky {
-  margin-top: 10vh;
-  position: sticky;
-  z-index: 3;
-}
 
 .tooltip {
  
-
+  position: relative;
+  z-index: 4;
   
 }
 
