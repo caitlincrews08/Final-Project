@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { Nav, Navbar, Button } from 'react-bootstrap';
 import { Store } from '../../store';
 import { logoutUser } from '../../store/actions/authActions';
@@ -7,11 +7,11 @@ import API from '../../utils/apiHelper';
 
 const MyNavbar = props => {
   const { state, dispatch } = useContext(Store);
-  const user = state.auth.user;
+  // const user = state.auth.user;
 
   useEffect(() => {
     if (!state.auth.isAuthenticated)
-      props.history.push('/login');
+      props.history.push('/dashboard');
 
     API.getUser()
     .then(res => console.log({ res }))
@@ -25,13 +25,13 @@ const MyNavbar = props => {
   };
 
   return (
-    <div className="navbar-fixed">
-      <Navbar collapseOnSelect expand="lg" className='banner'>
-        <Navbar.Brand href="#home"><h1>MEMEHEIM</h1></Navbar.Brand>
+ 
+      <Navbar fixed="top" collapseOnSelect expand="false" className="mynavbar">
+        <Navbar.Brand href="/dashboard"><h1>MEMEHEIM</h1></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-          <p>{user.name.split(' ')[0]} is Logged in.</p>
+          <p>You are logged in. Tap below to...</p>
           </Nav>
           <Nav>
             <Button onClick={onLogoutClick}>
@@ -41,7 +41,7 @@ const MyNavbar = props => {
         </Navbar.Collapse>
       </Navbar>
 
-    </div>
+
   );
 };
 

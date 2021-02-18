@@ -4,21 +4,22 @@ import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser, logoutUser } from './store/actions/authActions';
 import { Store } from './store';
-import Home from './components/pages/Home';
-import Edit from './components/pages/Edit';
-import Saved from './components/pages/Saved';
-import Search from './components/pages/Search';
-import MyFooter from './components/partials/MyFooter'
+// import Home from './components/pages/Home';
+// import Edit from './components/pages/Edit';
+// import Saved from './components/pages/Saved';
+// import Search from './components/pages/Search';
+
 import Footer from './components/partials/Footer'
 
 
 import './App.css';
 
 import Banner from './components/partials/Banner'
-
+import MyFooter from './components/partials/MyFooter'
+import MyNavbar from './components/partials/MyNavbar'
 import PrivateRoute from './components/auth/PrivateRoute';
 import Dashboard from './components/pages/Dashboard';
-import MyNavbar from './components/partials/MyNavbar';
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -43,21 +44,25 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <Router>
-      <div className="App">
+    <div className="App">
+      <Router>
+
         <Switch>
-          <Route exact path={['/', '/register', '/login']} component={Banner}></Route>
-          <Route exact path="/dashboard" component={MyNavbar}></Route>
+          <PrivateRoute exact path={['/dashboard']} component={MyNavbar} />
+          <Route path={['/', '/register', '/login']} component={Banner}></Route>
         </Switch>
+
         <Switch>
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
         </Switch>
+
         <Switch>
-          <Route exact path={['/', '/register', '/login']} component={Footer}></Route>
-          <Route exact path="/dashboard" component={MyFooter}></Route>
+          <PrivateRoute exact path="/dashboard" component={MyFooter} />
+          <Route path={['/', '/register', '/login']} component={Footer}></Route>
         </Switch>
-      </div>
-    </Router>
+
+      </Router>
+    </div>
   );
 };
 

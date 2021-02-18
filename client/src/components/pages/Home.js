@@ -1,5 +1,5 @@
 import React from 'react';
-import Tooltip from '../Tooltip';
+import Tooltip from '../partials/Tooltip';
 import { Col, Container, Row, } from 'react-bootstrap';
 
 
