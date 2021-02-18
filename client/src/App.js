@@ -4,15 +4,23 @@ import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser, logoutUser } from './store/actions/authActions';
 import { Store } from './store';
+import Home from './components/pages/Home';
+import Edit from './components/pages/Edit';
+import Saved from './components/pages/Saved';
+import Search from './components/pages/Search';
+import MyFooter from './components/partials/MyFooter'
+import Footer from './components/partials/Footer'
+
 
 import './App.css';
 
-import Navbar from './components/partials/Navbar';
-import Landing from './components/pages/Landing';
-import Register from './components/pages/Register';
-import Login from './components/pages/Login';
+import Banner from './components/partials/Banner'
+
 import PrivateRoute from './components/auth/PrivateRoute';
 import Dashboard from './components/pages/Dashboard';
+import MyNavbar from './components/partials/MyNavbar';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   const { dispatch } = useContext(Store);
@@ -32,17 +40,21 @@ const App = () => {
         window.location.href = './login';
       }
     }
-  }, [ dispatch ]);
+  }, [dispatch]);
 
   return (
     <Router>
       <div className="App">
-        <Navbar />
-        <Route exact path="/" component={Landing} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/login" component={Login} />
+        <Switch>
+          <Route exact path={['/', '/register', '/login']} component={Banner}></Route>
+          <Route exact path="/dashboard" component={MyNavbar}></Route>
+        </Switch>
         <Switch>
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
+        </Switch>
+        <Switch>
+          <Route exact path={['/', '/register', '/login']} component={Footer}></Route>
+          <Route exact path="/dashboard" component={MyFooter}></Route>
         </Switch>
       </div>
     </Router>
