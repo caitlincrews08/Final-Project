@@ -50,31 +50,52 @@ const App = () => {
       <Router>
 
         <Switch>
-          <Route exact path={['/home', 'edit', 'saved', 'search']} component={MyNavbar} />
+          <PrivateRoute exact path={['/home', '/edit', '/saved', '/search']} component={MyNavbar} />
           <Route exact path={['/', '/register', '/login']} component={Banner}></Route>
         </Switch>
 
 
-        <Route exact path="/" component={Landing} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/login" component={Login} />
+
+
 
 
         <Switch>
-        <PrivateRoute exact path="/home" component={Home} />
-        <PrivateRoute exact path="/edit" component={Edit} />
-        <PrivateRoute exact path="/saved" component={Saved} />
-        <PrivateRoute exact path="/search" component={Search} />
+          <PrivateRoute exact path='/home' component={Home} />
+          <PrivateRoute exact path='/edit' component={Edit} />
+          <PrivateRoute exact path='/saved' component={Saved} />
+          <PrivateRoute exact path='/search' component={Search} />
         </Switch>
 
         <Switch>
-          <Route exact path={['/home', 'edit', 'saved', 'search']} component={MyFooter} />
-          <Route exact path={['/', '/register', '/login']} component={Footer}></Route>
+          <PrivateRoute exact path={['/home', '/edit', '/saved', '/search']} component={MyFooter} />
+          <Route exact path={['/', '/register', '/login']} component={Footer}>
+            {/* <Switch> */}
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/" component={Landing} />
+            {/* </Switch> */}
+          </Route>
         </Switch>
 
       </Router>
     </div>
   );
 };
+
+// $(".module, h1").addClass("old-school");
+
+// $("#add-sidebar-module").on("click", function() {
+//   $("<div />", {
+//     class: "module",
+//     text: "I'm new here."
+//   }).prependTo("#sidebar");
+// });
+
+// $("#add-article").on("click", function() {
+//   $("<div />", {
+//     class: "module",
+//     html: "<h1>Title</h1><p>text text text.</p>"
+//   }).prependTo("#main");
+// });
 
 export default App;

@@ -1,14 +1,14 @@
 import React from 'react';
-import Tooltip from '../partials/Tooltip';
-import { Container, Row } from 'react-bootstrap';
+import Tooltip from '../partials/Tips';
+import { Container} from 'react-bootstrap';
 
 function Search() {
 
     return (
-        <Container>
-            <Row>
+        <Container className='main'>
+           
                 <Tooltip />
-            </Row>
+          
         </Container>
     );
 };

@@ -1,14 +1,25 @@
 import React, { useState } from 'react';
+import Tooltip from '../partials/Tips';
+import { Col, Container, Row } from 'react-bootstrap';
 
 import { PixoImage } from '../../image';
 
-const Edit = () => {
+const Edit = (props) => {
   const [src, onChange] = useState('https://via.placeholder.com/350x150');
   return (
-    <>
-      <h1>Click image to edit</h1>
-      <PixoImage src={src} onChange={onChange} />
-    </>
+
+    <Container className='main'>
+
+      <Tooltip />
+      <Col className="editStart">
+        <Row><p>Click image below to start</p></Row>
+        <Row>
+          <PixoImage src={src} onChange={onChange} />
+        </Row>
+      </Col>
+
+
+    </Container>
   );
 };
 

@@ -13,7 +13,6 @@
   justify-content: center;
   /* font-size: calc(40px + 2vmin); */
   color: rgb(26, 25, 25);
- 
   width: 100%;
   z-index: 5;
 }
@@ -23,27 +22,32 @@ body, html {
   /* height:100%; */
   /* height: 100vh; */
   /* width: 100vw; */
-
 }
 
+.editStart {
+  background-color: #00000096;
+  position: Absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+}
 
 .home {
   background-color: #00000000;
-  /* max-height: 60vh; */
-  display: flex;
- flex-direction: row;
+
+  bottom: 30%;
   align-items: center;
   justify-content: center;
   font-size: calc(50px + 2vmin);
   color: rgb(58, 57, 57);
   margin: 0;
   z-index: 1;
-  position: relative;
+  position: absolute;
 }
 
-
 .flex-fill {
-  flex:1;
+  flex: 1;
 }
 
 .footer {
@@ -59,12 +63,13 @@ body, html {
   z-index: 5;
 }
 
-main {
-  height: max-content;
-  width: auto;
-  margin-top: auto;
+.main {
+  height: 100vh;
+  width: 100vw;
   position: relative;
-  z-index: 3;
+  
+  margin: 0px;
+ z-index: 1;
 }
 
 .myfooter {
@@ -80,6 +85,17 @@ main {
   z-index: 5;
 }
 
+/* div.myfooter {
+  transition: margin-top 1s;
+
+}
+
+div.myfooter a:hover {
+  margin-top: -50px;
+  background-color: white;
+  height: 100px;
+} */
+
 .mynavbar {
   background-color: #cdcfd1;
   min-height: 10vh;
@@ -89,38 +105,63 @@ main {
   justify-content: center;
   /* font-size: calc(40px + 2vmin); */
   color: rgb(26, 25, 25);
-  
   width: 100%;
   z-index: 5;
 }
 
+/* .module:not(.old-school) {
+  animation: flyin 1.2s ease forwards;
+  opacity: 0;
+  transform: scale(2);
+  
+
+  -webkit-filter: blur(4px);
+} */
+
+/* 
+@keyframes flyin {
+   to { 
+     filter: blur(0);
+     transform: scale(1);
+     opacity: 1;
+   }
+} */
+
 .sideScroller {
-    width: auto;
-    height: 100px;
-    white-space: nowrap;
-    position: relative;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
+  width: auto;
+  height: 100px;
+  white-space: nowrap;
+  position: relative;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 .sideScroller div {
-    width: 24.5%;
-    background-color: rgb(51, 49, 49);
-    float: none;
-    height: 90%;
-    margin: 0 0.25%;
-    display: inline-block;
-    zoom: 1;
-    
+  width: 24.5%;
+  background-color: rgb(51, 49, 49);
+  float: none;
+  height: 90%;
+  margin: 0 0.25%;
+  display: inline-block;
+  zoom: 1;
 }
 
-
-.tooltip {
- 
-  position: relative;
+.tips {
+  top: 13%;
+  margin-left: 5px;
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  width: auto;
+  height: 10vh;
+  display: block;
+  position: absolute;
   z-index: 4;
-  
+  overflow: scroll;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+
 }
-
-

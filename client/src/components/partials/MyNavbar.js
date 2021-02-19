@@ -11,7 +11,7 @@ const MyNavbar = props => {
 
   useEffect(() => {
     if (!state.auth.isAuthenticated)
-      props.history.push('/dashboard');
+      props.history.push('/home');
 
     API.getUser()
     .then(res => console.log({ res }))

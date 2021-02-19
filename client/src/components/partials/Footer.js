@@ -20,21 +20,21 @@ const Footer = props => {
   // };
 
   return (
+  
+      <Container fluid className='footer vh-100 d-flex flex-column'>
 
-    <Container fluid className='footer vh-100 d-flex flex-column'>
-      <Router>
-        <Switch>
-          <Route exact path="/register" component={Register} />
+          {/* <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/" component={Landing} />
-        </Switch>
+          <Route exact path="/" component={Landing} /> */}
+        
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <p>&copy; {year} Memeheim</p>
+      </Container>
 
-      </Router>
-      <br />
-      <br />
-      <br />
-      <p>&copy; {year} Memeheim</p>
-    </Container>
   );
 };
 

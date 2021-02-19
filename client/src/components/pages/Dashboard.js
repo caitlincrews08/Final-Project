@@ -13,7 +13,7 @@ const Dashboard = props => {
 
   useEffect(() => {
     if (!state.auth.isAuthenticated)
-      props.history.push('/login');
+      props.history.push('/home');
 
     API.getUser()
       .then(res => console.log({ res }))

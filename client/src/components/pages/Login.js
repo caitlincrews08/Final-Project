@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Store } from '../../store';
 import { loginUser, setErrors } from '../../store/actions/authActions';
 import classnames from 'classnames';
+import { Button } from 'react-bootstrap';
 
 const Login = props => {
   const { state, dispatch } = useContext(Store);
@@ -12,7 +13,7 @@ const Login = props => {
 
   useEffect(() => {
     if (state.auth.isAuthenticated)
-      props.history.push('/dashboard');
+      props.history.push('/home');
   }, [ state, props ]);
 
   const onSubmit = e => {
@@ -64,11 +65,10 @@ const Login = props => {
             </div>
 
             <div className="col s12" style={{ paddingLeft: '11.250px' }}>
-              <button
-                className="btn"
+              <Button
                 type="submit">
                 Login
-              </button>
+              </Button>
             </div>
           </form>
         </div>

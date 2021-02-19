@@ -11,6 +11,7 @@
     "axios": "~0.21.1",
     "bootstrap": "^4.6.0",
     "classnames": "^2.2.6",
+    "compass-mixins-fixed": "^1.0.1",
     "jquery": "^3.5.1",
     "jwt-decode": "^2.2.0",
     "prop-types": "^15.7.2",
@@ -19,6 +20,7 @@
     "react-dom": "^17.0.1",
     "react-router-dom": "~5.2.0",
     "react-scripts": "4.0.0",
+    "react-scroll": "^1.8.1",
     "typescript": "next",
     "web-vitals": "^0.2.4"
   },
