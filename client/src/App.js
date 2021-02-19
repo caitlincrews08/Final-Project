@@ -4,10 +4,12 @@ import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser, logoutUser } from './store/actions/authActions';
 import { Store } from './store';
-// import Home from './components/pages/Home';
-// import Edit from './components/pages/Edit';
-// import Saved from './components/pages/Saved';
-// import Search from './components/pages/Search';
+import Home from './components/pages/Home';
+import Edit from './components/pages/Edit';
+import Saved from './components/pages/Saved';
+import Search from './components/pages/Search';
+import Register from './components/pages/Register';
+import Login from './components/pages/Login';
 
 import Footer from './components/partials/Footer'
 
@@ -18,7 +20,7 @@ import Banner from './components/partials/Banner'
 import MyFooter from './components/partials/MyFooter'
 import MyNavbar from './components/partials/MyNavbar'
 import PrivateRoute from './components/auth/PrivateRoute';
-import Dashboard from './components/pages/Dashboard';
+import Landing from './components/pages/Landing';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -48,16 +50,25 @@ const App = () => {
       <Router>
 
         <Switch>
-          <PrivateRoute exact path={["/dashboard","/Home"]} component={MyNavbar} />
+          <Route exact path={['/home', 'edit', 'saved', 'search']} component={MyNavbar} />
           <Route exact path={['/', '/register', '/login']} component={Banner}></Route>
         </Switch>
 
+
+        <Route exact path="/" component={Landing} />
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/login" component={Login} />
+
+
         <Switch>
-          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+        <PrivateRoute exact path="/home" component={Home} />
+        <PrivateRoute exact path="/edit" component={Edit} />
+        <PrivateRoute exact path="/saved" component={Saved} />
+        <PrivateRoute exact path="/search" component={Search} />
         </Switch>
 
         <Switch>
-          <PrivateRoute exact path={["/dashboard","/Home"]} component={MyFooter} />
+          <Route exact path={['/home', 'edit', 'saved', 'search']} component={MyFooter} />
           <Route exact path={['/', '/register', '/login']} component={Footer}></Route>
         </Switch>
 

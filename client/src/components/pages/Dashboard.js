@@ -2,16 +2,8 @@
 import API from '../../utils/apiHelper';
 import React, { useEffect, useContext } from 'react';
 import { Store } from '../../store';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+// import { BrowserRouter as Router, Route, Switch, Redirect, useRouteMatch, Link } from 'react-router-dom';
 // import PrivateRoute from '../auth/PrivateRoute'
-
-
-
-import Edit from '../pages/Edit';
-import Home from '../pages/Home'
-import Saved from '../pages/Saved';
-import Search from '../pages/Search';
-
 
 
 
@@ -29,16 +21,14 @@ const Dashboard = props => {
   }, [state, props]);
 
 
+
+ 
+
+
+
+
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/home" component={Home} />
-        <Redirect from="/dashboard" to="/home" />
-        <Route exact path="/edit" component={Edit} />
-        <Route exact path="/saved" component={Saved} />
-        <Route exact path="/search" component={Search} />
-      </Switch>
-    </Router>
+  <div />
   );
 };
 

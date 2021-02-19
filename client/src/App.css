@@ -60,8 +60,11 @@ body, html {
 }
 
 main {
-  width: 100vw;
+  height: max-content;
+  width: auto;
   margin-top: auto;
+  position: relative;
+  z-index: 3;
 }
 
 .myfooter {

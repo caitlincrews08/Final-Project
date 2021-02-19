@@ -11,7 +11,7 @@ const Landing = props => {
   return (
     <Container>
       <Row>
-        <Col className="center-align">
+        {/* <Col className="center-align">
           <br />
           <Col>
             <Link to="/register" className="btn">
@@ -23,7 +23,7 @@ const Landing = props => {
             <Button variant="light">Login</Button>
             </Link>
           </Col>
-        </Col>
+        </Col> */}
       </Row>
     </Container>
   );
