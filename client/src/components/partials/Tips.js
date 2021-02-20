@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Row } from 'react-bootstrap';
 // import { Col, Container, Row } from 'react-bootstrap/';
 
@@ -20,7 +20,11 @@ function Tips() {
       smooth: "easeInOutQuart",
     });
   };
+
+  useEffect(() => {
   scrollToSection();
+
+  });
 
     return (
 
@@ -28,6 +32,8 @@ function Tips() {
               <br />
               <p>Hints and descriptions will populate(fade animation) here onhover of all clickable elements (and possibly an easter egg that displays inspirational and/or funny quotes and sayings) </p>
               <p className='scrollAnchor'></p>
+              <br />
+              <br />
            </Row>
     );
     

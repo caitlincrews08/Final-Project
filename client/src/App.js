@@ -23,10 +23,20 @@ import PrivateRoute from './components/auth/PrivateRoute';
 import Landing from './components/pages/Landing';
 
 
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const App = () => {
+const App = (props) => {
+ 
+
   const { dispatch } = useContext(Store);
+  document.addEventListener('keydown', function(event){
+    if(event.key === "Escape"){
+      dispatch(logoutUser());
+      window.location.href = './login';
+      console.log("esc");
+    }
+  });
 
   useEffect(() => {
     if (localStorage.jwtToken) {
@@ -50,22 +60,16 @@ const App = () => {
       <Router>
 
         <Switch>
-          <PrivateRoute exact path={['/home', '/edit', '/saved', '/search']} component={MyNavbar} />
+          <PrivateRoute exact path={['/home', '/edit', '/saved', '/search']}component={MyNavbar} />
           <Route exact path={['/', '/register', '/login']} component={Banner}></Route>
         </Switch>
-
-
-
-
-
-
         <Switch>
           <PrivateRoute exact path='/home' component={Home} />
           <PrivateRoute exact path='/edit' component={Edit} />
           <PrivateRoute exact path='/saved' component={Saved} />
           <PrivateRoute exact path='/search' component={Search} />
+          
         </Switch>
-
         <Switch>
           <PrivateRoute exact path={['/home', '/edit', '/saved', '/search']} component={MyFooter} />
           <Route exact path={['/', '/register', '/login']} component={Footer}>

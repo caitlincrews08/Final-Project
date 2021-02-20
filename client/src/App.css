@@ -4,6 +4,11 @@
   text-align: center;
 }
 
+
+.autoScroll {
+ /* /  */
+}
+
 .banner {
   background-color: #cdcfd1;
   min-height: 10vh;
@@ -25,7 +30,7 @@ body, html {
 }
 
 .editStart {
-  background-color: #00000096;
+  background-color: #63636321;
   position: Absolute;
   top: 50%;
   left: 50%;
@@ -158,7 +163,8 @@ div.myfooter a:hover {
   display: block;
   position: absolute;
   z-index: 4;
-  overflow: scroll;
+  overflow-y: scroll;
+  
   scroll-behavior: smooth;
   overflow-x: hidden;
   text-overflow: ellipsis;
