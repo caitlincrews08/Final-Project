@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const MemeSchema = new Schema({
+const memeSchema = new Schema({
   title: {
     type: String,
     required: true,
@@ -16,4 +16,4 @@ const MemeSchema = new Schema({
   },
 });
 
-module.exports = Meme = mongoose.model('Meme', MemeSchema);
+module.exports = Meme = mongoose.model('Meme', memeSchema);
