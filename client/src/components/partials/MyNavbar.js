@@ -4,6 +4,7 @@ import { Nav, Navbar, Button } from 'react-bootstrap';
 import { Store } from '../../store';
 import { logoutUser } from '../../store/actions/authActions';
 import API from '../../utils/apiHelper';
+import brand from './../../assets/MEMEHEIM-BRAND.png'
 
 const MyNavbar = props => {
   const { state, dispatch } = useContext(Store);
@@ -27,7 +28,7 @@ const MyNavbar = props => {
   return (
  
       <Navbar fixed="top" collapseOnSelect expand="false" className="mynavbar">
-        <Navbar.Brand href="/home"><h1>MEMEHEIM</h1></Navbar.Brand>
+        <Navbar.Brand href="/home"><img src={brand} className='brand'/></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">

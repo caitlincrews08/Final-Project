@@ -14,7 +14,7 @@ function Home(props) {
 
     return (
         
-            <Container className='main'>
+            <div className='main'>
                 
                 {/* <Route exact path={['/home', '/edit', '/saved', '/search']}component={Tooltip} /> */}
                 <Tooltip />
@@ -32,7 +32,7 @@ function Home(props) {
                     </Link>
                 </Row>
 
-            </Container>
+            </div>
 
 
     );

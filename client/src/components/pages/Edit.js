@@ -1,26 +1,48 @@
 import React, { useState } from 'react';
 import Tooltip from '../partials/Tips';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Form, Row } from 'react-bootstrap';
 import testImg from '../../assets/PH.jpg'
 
 
 import { PixoImage } from '../../image';
 import { Link } from 'react-router-dom';
 
-const Edit = (props) => {
+const Edit = () => {
+
+  // document.querySelector("input").onchange = function(e) {
+
+  //   var file = e.target.files[0],                  // reference first file BLOB
+  //       url = URL.createObjectURL(file),           // create an Object URL
+  //       img = new Image(); // create a temp. image object
+  //       console.log(img)  ;                      
+
+  //     img.onload = function() {                    // handle async image loading
+  //       URL.revokeObjectURL(this.src);             // free memory held by Object URL
+  //       // selected.getContext("2d").drawImage(this, 0, 0);  // draw image onto canvas (lazy method™)
+  //     };
+
+  //     img.src = url;                               // start convertion file to image
+  // };
+
   const [src, onChange] = useState('https://via.placeholder.com/300');
 
   return (
 
     <Container className='main'>
-
-      {/* <Tooltip /> */}
       <Col className="editStart">
-        <Row><Col>Click image below to start</Col></Row>
+        <Row>
+          <Form>
+            <Form.Group>
+              <Form.File id="upload" label="Choose and image" />
+            </Form.Group>
+          </Form>
+        </Row>
+        <Row><Col><p>-or-</p></Col></Row>
+        <Row><Col>Click image edit your Meme</Col></Row>
         <Row>
           <Col>
             <Link to='/image'>
-            <PixoImage src={src} onChange={onChange}  id='selected'/>
+              <PixoImage src={src} onChange={onChange} id='selected' />
             </Link>
           </Col>
         </Row>

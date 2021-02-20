@@ -4,22 +4,22 @@
   text-align: center;
 }
 
-
 .autoScroll {
- /* /  */
+  /* /  */
 }
 
-.banner {
-  background-color: #cdcfd1;
+.banner, .mynavbar {
+  background-color: rgb(59, 59, 59);
   min-height: 10vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   /* font-size: calc(40px + 2vmin); */
   color: rgb(26, 25, 25);
   width: 100%;
   z-index: 5;
+  box-shadow: 0px 6px 8px 6px rgb(0 0 0 / 20%)
 }
 
 body, html {
@@ -29,6 +29,25 @@ body, html {
   /* width: 100vw; */
 }
 
+.brand {
+  height: 5vh;
+  object-fit: contain;
+}
+
+.editfooter {
+  height: 12vh;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  background-color: rgb(59, 59, 59);
+  color: white;
+  text-align: center;
+  z-index: 5;
+}
+
 .editStart {
   background-color: #63636321;
   position: Absolute;
@@ -36,11 +55,11 @@ body, html {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9;
+  padding-bottom: 15px;
 }
 
 .home {
   background-color: #00000000;
-
   bottom: 30%;
   align-items: center;
   justify-content: center;
@@ -51,14 +70,69 @@ body, html {
   position: absolute;
 }
 
-.flex-fill {
-  flex: 1;
+.footer {
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+  background-color: rgb(59, 59, 59);
+  color: white;
+  text-align: center;
+  z-index: 5;
 }
 
-.footer {
+.main {
+  position: fixed;
+  margin: 0px;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+}
+
+.memeDisplay {
+  height: 400px;
+  width: 300px;
+  zoom: 1;
+  object-fit: cover;
+  
+}
+
+.memeScroller {
+  width: auto;
+  height: 75vh;
+  white-space: nowrap;
   position: relative;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  top: 13%;
+}
+
+.memeScroller div {
+  width: 100vw;
+  background-color: rgb(51, 49, 49);
+  float: none;
+  height: 100%;
+  margin-top: 5%;
+  display: inline-block;
+  zoom: 1;
+  z-index: 1;
+}
+
+.memeTitle {
+  height: 5vh;
+  z-index: 13;
+}
+
+.myfooter {
+  position: fixed;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   left: 0;
   bottom: 0;
   width: 100vw;
@@ -68,16 +142,14 @@ body, html {
   z-index: 5;
 }
 
-.main {
-  height: 100vh;
-  width: 100vw;
-  position: relative;
-  
-  margin: 0px;
- z-index: 1;
+.searchbox {
+
+  top: 16%;
+  z-index: 11;
 }
 
-.myfooter {
+.searchfooter {
+  height: 12vh;
   position: fixed;
   display: flex;
   flex-direction: row;
@@ -101,19 +173,6 @@ div.myfooter a:hover {
   height: 100px;
 } */
 
-.mynavbar {
-  background-color: #cdcfd1;
-  min-height: 10vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  /* font-size: calc(40px + 2vmin); */
-  color: rgb(26, 25, 25);
-  width: 100%;
-  z-index: 5;
-}
-
 /* .module:not(.old-school) {
   animation: flyin 1.2s ease forwards;
   opacity: 0;
@@ -132,7 +191,14 @@ div.myfooter a:hover {
    }
 } */
 
-.sideScroller {
+.thumbnailDisplay {
+  height: 90px;
+  width: 90px;
+  zoom: 1;
+  object-fit: scale-down;
+}
+
+.thumbnailScroller {
   width: auto;
   height: 100px;
   white-space: nowrap;
@@ -142,7 +208,7 @@ div.myfooter a:hover {
   -webkit-overflow-scrolling: touch;
 }
 
-.sideScroller div {
+.thumbnailScroller div {
   width: 24.5%;
   background-color: rgb(51, 49, 49);
   float: none;
@@ -150,24 +216,42 @@ div.myfooter a:hover {
   margin: 0 0.25%;
   display: inline-block;
   zoom: 1;
+  /* top: 20px; */
 }
 
 .tips {
-  top: 13%;
+  top: 5vh;
   margin-left: 5px;
   margin-top: 5px;
   margin-right: 5px;
   margin-bottom: 5px;
   width: auto;
-  height: 10vh;
+  height: 12vh;
   display: block;
   position: absolute;
-  z-index: 4;
+  z-index: 3;
   overflow-y: scroll;
-  
   scroll-behavior: smooth;
   overflow-x: hidden;
   text-overflow: ellipsis;
   word-wrap: break-word;
+}
 
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  max-width: max-content;
+}
+
+.xy-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  max-width: max-content;
 }

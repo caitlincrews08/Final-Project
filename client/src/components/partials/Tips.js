@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 // import { Col, Container, Row } from 'react-bootstrap/';
 
 import { scroller } from "react-scroll";
@@ -12,7 +12,7 @@ import { scroller } from "react-scroll";
 
 
 function Tips() {
-  
+
   const scrollToSection = () => {
     scroller.scrollTo("scrollAnchor", {
       duration: 800,
@@ -22,21 +22,27 @@ function Tips() {
   };
 
   useEffect(() => {
-  scrollToSection();
+    scrollToSection();
 
   });
 
-    return (
+  return (
 
-            <Row id='autoScroll' className='tips'>
-              <br />
-              <p>Hints and descriptions will populate(fade animation) here onhover of all clickable elements (and possibly an easter egg that displays inspirational and/or funny quotes and sayings) </p>
-              <p className='scrollAnchor'></p>
-              <br />
-              <br />
-           </Row>
-    );
-    
+    <Row id='autoScroll' className='tips'>
+
+      <Col>
+        <br />
+        <p> Scroll down</p>
+        <br />
+        <br />
+        <p>Hints and descriptions will populate(fade animation/auto-scroll) here onhover of select clickable elements (and possibly an easter egg that displays inspirational and/or funny quotes and sayings) </p>
+        <br />
+        <br />
+        <p className='scrollAnchor'></p>
+      </Col>
+    </Row>
+  );
+
 };
 
 export default Tips;

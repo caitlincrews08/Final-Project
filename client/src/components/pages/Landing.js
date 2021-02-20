@@ -9,23 +9,44 @@ const Landing = props => {
   console.log({ state, props });
 
   return (
-    <Container>
-      <Row>
-        <Col className="center-align">
-          <br />
-          <Col>
-            <Link to="/register" className="btn">
-            <Button variant="light">Register</Button>
-            </Link>
-          </Col>
-          <Col>
-            <Link to="/login" className="btn">
-            <Button variant="light">Login</Button>
-            </Link>
-          </Col>
-        </Col>
+
+    <Col>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <Row className='justify-content-center'>
+        <Link to="/register" className="btn">
+          <Button variant="light">Register</Button>
+        </Link>
       </Row>
-    </Container>
+      <Row className='justify-content-center'>
+        <Link to="/login" className="btn">
+          <Button variant="light">Login</Button>
+        </Link>
+      </Row>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+    </Col>
+
   );
 };
 

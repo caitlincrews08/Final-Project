@@ -6,7 +6,7 @@ export const PixoImage = ({ src, onChange }) => {
   const pixo = new Pixo.Bridge({
     type: 'modal',
     apikey: '36eibah088i0', // put your API key here!
-    onSave: img => onChange(img.toDataURL()),
+    onSave: img => onChange(img.toImage()),
     onClose: () => window.location.href = './home',
     theme: 'light',
     propertypanel: {
