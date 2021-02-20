@@ -60,11 +60,14 @@ body, html {
 
 .home {
   background-color: #00000000;
-  bottom: 30%;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(50px + 2vmin);
   color: rgb(58, 57, 57);
+ margin-top: 20%;
+ height: 13vh;
+  
+  align-items: center;
+
+  font-size: calc(50px + 2vmin);
+  
   margin: 0;
   z-index: 1;
   position: absolute;

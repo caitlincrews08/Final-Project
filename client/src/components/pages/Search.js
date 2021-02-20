@@ -31,20 +31,20 @@ function Search() {
     } else {
 
         return (
-            <Container className='main'>
+            <Container fluid className='main'>
                 <Tooltip />
-                <Row className="memeScroller">
+                <div className="memeScroller">
                     {items.map(item => (
                         <Col key={item.id}>
                             {/* <Row className='memeTitle verticle-center'>
                                 <h3>{item.name}</h3>
                             </Row> */}
-                            <Row>
+                            {/* <Row> */}
                                 <img className='memeDisplay' src={item.url} />
-                            </Row>
+                            {/* </Row> */}
                         </Col>
                     ))}
-                </Row>
+                </div>
                
             </Container>
         );

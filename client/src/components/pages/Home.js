@@ -10,29 +10,35 @@ import { Link } from 'react-router-dom';
 
 
 
-function Home(props) {
+function Home() {
 
     return (
-        
-            <div className='main'>
-                
-                {/* <Route exact path={['/home', '/edit', '/saved', '/search']}component={Tooltip} /> */}
-                <Tooltip />
-                <Row className='home'>
-                    <Link to='/edit'>
-                        <Col>the Forge</Col>
-                    </Link>
-                    <br />
-                    <Link to='/saved'>
-                        <Col>the Vault</Col>
-                    </Link>
-                    <br />
-                    <Link to='/search'>
-                        <Col>the Archives</Col>
-                    </Link>
-                </Row>
 
-            </div>
+        <Row className='main'>
+
+            {/* <Route exact path={['/home', '/edit', '/saved', '/search']}component={Tooltip} /> */}
+            <Tooltip />
+            <Row className='home'>
+                <Col>
+                    <Link to='/edit'>
+                        the Forge
+                    </Link>
+                </Col>
+                <br />
+                <Col>
+                    <Link to='/saved'>
+                        the Vault
+                    </Link>
+                </Col>
+                <br />
+                <Col>
+                    <Link to='/search'>
+                        the Archives
+                    </Link>
+                </Col>
+            </Row>
+
+        </Row>
 
 
     );
