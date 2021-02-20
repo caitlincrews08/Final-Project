@@ -4,18 +4,41 @@ import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser, logoutUser } from './store/actions/authActions';
 import { Store } from './store';
+import Home from './components/pages/Home';
+import Edit from './components/pages/Edit';
+import Saved from './components/pages/Saved';
+import Search from './components/pages/Search';
+
+
+import Footer from './components/partials/Footer'
+
 
 import './App.css';
 
-import Navbar from './components/partials/Navbar';
-import Landing from './components/pages/Landing';
-import Register from './components/pages/Register';
-import Login from './components/pages/Login';
+import Banner from './components/partials/Banner'
+import EditFooter from './components/partials/EditFooter'
+import MyFooter from './components/partials/MyFooter'
+import MyNavbar from './components/partials/MyNavbar'
 import PrivateRoute from './components/auth/PrivateRoute';
-import Dashboard from './components/pages/Dashboard';
+import SearchFooter from './components/partials/SearchFooter'
 
-const App = () => {
+
+
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Row } from 'react-bootstrap';
+
+const App = (props) => {
+
+
   const { dispatch } = useContext(Store);
+  document.addEventListener('keydown', function (event) {
+    if (event.key === "Escape") {
+      dispatch(logoutUser());
+      window.location.href = './login';
+      console.log("esc");
+    }
+  });
 
   useEffect(() => {
     if (localStorage.jwtToken) {
@@ -32,21 +55,53 @@ const App = () => {
         window.location.href = './login';
       }
     }
-  }, [ dispatch ]);
+  }, [dispatch]);
 
   return (
-    <Router>
-      <div className="App">
-        <Navbar />
-        <Route exact path="/" component={Landing} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/login" component={Login} />
+    <Container fluid className="App">
+      <Router>
         <Switch>
-          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute exact path={['/home', '/edit', '/saved', '/search']} component={MyNavbar} />
+          <Route exact path={['/', '/register', '/login']} component={Banner} />
         </Switch>
-      </div>
-    </Router>
+        <Switch>
+          <PrivateRoute exact path='/home' component={Home} />
+          <PrivateRoute exact path='/edit' component={Edit} />
+          <PrivateRoute exact path='/saved' component={Saved} />
+          <PrivateRoute exact path='/search' component={Search} />
+        </Switch>
+        <Switch>
+          <Row>
+            <PrivateRoute exact path='/home' component={MyFooter} />
+            <PrivateRoute exact path={['/edit', '/saved']} component={EditFooter} />
+            <PrivateRoute exact path='/search' component={SearchFooter} />
+            <Route exact path={['/', '/register', '/login']} component={Footer}>
+              {/* <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/" component={Landing} /> */}
+            </Route>
+          </Row>
+        </Switch>
+
+      </Router>
+    </Container>
   );
 };
+
+// $(".module, h1").addClass("old-school");
+
+// $("#add-sidebar-module").on("click", function() {
+//   $("<div />", {
+//     class: "module",
+//     text: "I'm new here."
+//   }).prependTo("#sidebar");
+// });
+
+// $("#add-article").on("click", function() {
+//   $("<div />", {
+//     class: "module",
+//     html: "<h1>Title</h1><p>text text text.</p>"
+//   }).prependTo("#main");
+// });
 
 export default App;

@@ -5,7 +5,7 @@ import Edit from './components/pages/Edit';
 import Saved from './components/pages/Saved';
 import Search from './components/pages/Search';
 import Footer from './components/Footer'
-import Banner from './components/Banner'
+import Banner from './components/partials/Banner'
 
 function App({ children }) {
   return (

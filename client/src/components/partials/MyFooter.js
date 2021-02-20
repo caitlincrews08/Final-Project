@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Tooltip from '../partials/Tips';
-import { Button, Col, Container, FormControl, InputGroup, Row } from 'react-bootstrap';
+import { Col, Container } from 'react-bootstrap';
 
-function Search() {
+
+function MyFooter() {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
@@ -29,26 +29,18 @@ function Search() {
     } else if (!isLoaded) {
         return <div>Loading...</div>;
     } else {
-
         return (
-            <Container className='main'>
-                <Tooltip />
-                <Row className="memeScroller">
+            <Container fluid className='myfooter'>
+                <div className="thumbnailScroller">
                     {items.map(item => (
                         <Col key={item.id}>
-                            {/* <Row className='memeTitle verticle-center'>
-                                <h3>{item.name}</h3>
-                            </Row> */}
-                            <Row>
-                                <img className='memeDisplay' src={item.url} />
-                            </Row>
+                            <img className='thumbnailDisplay' src={item.url} />
                         </Col>
                     ))}
-                </Row>
-               
+                </div>
             </Container>
         );
     };
-}
+};
 
-export default Search;
+export default MyFooter;
