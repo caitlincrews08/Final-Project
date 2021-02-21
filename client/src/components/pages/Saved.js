@@ -1,14 +1,14 @@
 import React from 'react';
-import Tooltip from '../Tooltip';
-import { Container, Row } from 'react-bootstrap';
+import Tooltip from '../partials/Tips';
+import { Container } from 'react-bootstrap';
 
 function Saved() {
 
     return (
-        <Container>
-            <Row>
+        <Container className='main'>
+          
                 <Tooltip />
-            </Row>
+         
         </Container>
     );
 };

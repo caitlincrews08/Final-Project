@@ -1,45 +1,44 @@
 .App {
-  height: 100vh;
-  width: 100vw;
+  /* height: 100vh;
+  width: 100vw; */
   text-align: center;
 }
-body {
-  height: 100vh;
-  width: 100vw;
-  z-index: 0;
-}
-.home {
-  background-color: #00000000;
-  /* max-height: 60vh; */
-  display: flex;
- flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(50px + 2vmin);
-  color: rgb(58, 57, 57);
-  margin: 0;
-  z-index: 1;
-  position: relative;
+
+.autoScroll {
+  /* /  */
 }
 
-.banner {
-  background-color: #cdcfd1;
-  /* min-height: 10vh; */
+.banner, .mynavbar {
+  background-color: rgb(59, 59, 59);
+  min-height: 10vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(40px + 2vmin);
+  /* font-size: calc(40px + 2vmin); */
   color: rgb(26, 25, 25);
-  position: fixed;
-  left: 0;
-  top: 0;
   width: 100%;
   z-index: 5;
+  box-shadow: 0px 6px 8px 6px rgb(0 0 0 / 20%)
 }
 
-.footer {
+body, html {
+  scroll-behavior: smooth;
+  /* height:100%; */
+  /* height: 100vh; */
+  /* width: 100vw; */
+}
+
+.brand {
+  height: 5vh;
+  object-fit: contain;
+}
+
+.editfooter {
+  height: 12vh;
   position: fixed;
+  display: flex;
+  flex-direction: row;
   left: 0;
   bottom: 0;
   width: 100vw;
@@ -49,43 +48,210 @@ body {
   z-index: 5;
 }
 
-html {
-  scroll-behavior: smooth;
+.editStart {
+  background-color: #63636321;
+  position: Absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+  padding-bottom: 15px;
 }
-main {
+
+.home {
+  background-color: #00000000;
+  bottom: 30%;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(50px + 2vmin);
+  color: rgb(58, 57, 57);
+  margin: 0;
+  z-index: 1;
+  position: absolute;
+}
+
+.footer {
+  position: fixed;
   width: 100vw;
+  bottom: 0;
+  background-color: rgb(59, 59, 59);
+  color: white;
+  text-align: center;
+  z-index: 5;
 }
 
-.sideScroller {
-    width: auto;
-    height: 100px;
-    white-space: nowrap;
-    position: relative;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
+.main {
+  position: fixed;
+  margin: 0px;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
 }
 
-.sideScroller div {
-    width: 24.5%;
-    background-color: rgb(51, 49, 49);
-    float: none;
-    height: 90%;
-    margin: 0 0.25%;
-    display: inline-block;
-    zoom: 1;
-    
-}
-
-.sticky {
-  margin-top: 10vh;
-  position: sticky;
-  z-index: 3;
-}
-
-.tooltip {
- 
-
+.memeDisplay {
+  height: 400px;
+  width: 300px;
+  zoom: 1;
+  object-fit: cover;
   
 }
 
+.memeScroller {
+  width: auto;
+  height: 75vh;
+  white-space: nowrap;
+  position: relative;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  top: 13%;
+}
+
+.memeScroller div {
+  width: 100vw;
+  background-color: rgb(51, 49, 49);
+  float: none;
+  height: 100%;
+  margin-top: 5%;
+  display: inline-block;
+  zoom: 1;
+  z-index: 1;
+}
+
+.memeTitle {
+  height: 5vh;
+  z-index: 13;
+}
+
+.myfooter {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  background-color: rgb(59, 59, 59);
+  color: white;
+  text-align: center;
+  z-index: 5;
+}
+
+.searchbox {
+
+  top: 16%;
+  z-index: 11;
+}
+
+.searchfooter {
+  height: 12vh;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  background-color: rgb(59, 59, 59);
+  color: white;
+  text-align: center;
+  z-index: 5;
+}
+
+/* div.myfooter {
+  transition: margin-top 1s;
+
+}
+
+div.myfooter a:hover {
+  margin-top: -50px;
+  background-color: white;
+  height: 100px;
+} */
+
+/* .module:not(.old-school) {
+  animation: flyin 1.2s ease forwards;
+  opacity: 0;
+  transform: scale(2);
+  
+
+  -webkit-filter: blur(4px);
+} */
+
+/* 
+@keyframes flyin {
+   to { 
+     filter: blur(0);
+     transform: scale(1);
+     opacity: 1;
+   }
+} */
+
+.thumbnailDisplay {
+  height: 90px;
+  width: 90px;
+  zoom: 1;
+  object-fit: scale-down;
+}
+
+.thumbnailScroller {
+  width: auto;
+  height: 100px;
+  white-space: nowrap;
+  position: relative;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.thumbnailScroller div {
+  width: 24.5%;
+  background-color: rgb(51, 49, 49);
+  float: none;
+  height: 90%;
+  margin: 0 0.25%;
+  display: inline-block;
+  zoom: 1;
+  /* top: 20px; */
+}
+
+.tips {
+  top: 5vh;
+  margin-left: 5px;
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  width: auto;
+  height: 12vh;
+  display: block;
+  position: absolute;
+  z-index: 3;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  max-width: max-content;
+}
+
+.xy-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  max-width: max-content;
+}
