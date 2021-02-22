@@ -1,22 +1,25 @@
-const express = require('express');
-const router = express.Router();
-// const axios = require('axios');
+const router = require("express").Router();
+var Meme = require("../models/Meme.js");
 
-var meme = require("../models/Meme");
+router.post("/api/meme", ({body}, res) => {
+  Meme.create(body)
+  .then(dbMeme => {
+    res.json(dbMeme);
+  })
+  .catch(err => {
+    res.status(404).json(err);
+  })
+});
 
-module.exports = function(app) {
-  router.get("/", function(req, res) {
-    meme.find({}).then(function(dbMeme) {
-      res.json(dbMeme);
-    });
-  });
-
-  router.put("/create", function(req, res) {
-    meme.updateOne({ _id: req.params.id }, { image: req.body.image }).then(function(dbMeme) {
-      res.json(dbMeme);
-    });
-  });
-};
+router.get("/api/meme", (req, res) => {
+  Meme.find({}).sort({date: -1})
+  .then(dbMeme =>{
+    res.json(dbMeme);
+  })
+  .catch(err => {
+    res.status(404).json(err);
+  })
+});
 
 module.exports = router;
 
