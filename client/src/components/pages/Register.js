@@ -99,8 +99,8 @@ const Register = props => {
         <br />
         <Row>
           <Col>
-            <Button type="submit">
-              Sign Up
+            <Button variant="light" type="submit">
+              <b>Sign Up</b>
             </Button>
           </Col>
         </Row>

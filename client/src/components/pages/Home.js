@@ -1,44 +1,35 @@
 import React from 'react';
 import Tooltip from '../partials/Tips';
-import { Col, Container, Row, } from 'react-bootstrap';
-// import { BrowserRouter as Link, Route, Router, Switch } from 'react-router-dom';
-
-import PrivateRoute from '../auth/PrivateRoute';
+import { Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
-
-
-
 
 function Home() {
 
     return (
 
-        <Row className='main'>
 
-            {/* <Route exact path={['/home', '/edit', '/saved', '/search']}component={Tooltip} /> */}
-            <Tooltip />
-            <Row className='home'>
-                <Col>
-                    <Link to='/edit'>
-                        the Forge
-                    </Link>
-                </Col>
-                <br />
-                <Col>
-                    <Link to='/saved'>
-                        the Vault
-                    </Link>
-                </Col>
-                <br />
-                <Col>
-                    <Link to='/search'>
-                        the Archives
-                    </Link>
-                </Col>
+        <Container className="mid-section">
+            <Row>
+                <Tooltip />
             </Row>
+            <br />
+            <br />
+            <Row className='home'>
+                <Link to='/edit' className='forge col'>
+                    Forge
+                </Link>
+                <br />
+                <Link to='/saved' className='vault col'>
+                    Vault
+                </Link>
+                <br />
+                <Link to='/search' className='archives col'>
+                    Archives
+                </Link>
+            </Row>
+        </Container>
 
-        </Row>
+
 
 
     );

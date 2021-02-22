@@ -27,8 +27,8 @@ const MyNavbar = props => {
 
   return (
  
-      <Navbar fixed="top" collapseOnSelect expand="false" className="mynavbar">
-        <Navbar.Brand href="/home"><img src={brand} className='brand'/></Navbar.Brand>
+      <Navbar fixed="top" collapseOnSelect expand="false" className="mynavbar navbar-dark">
+        <Navbar.Brand href="/home"><img src={brand} alt='logo' className='brand'/></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">

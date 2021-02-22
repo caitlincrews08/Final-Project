@@ -71,9 +71,8 @@ const Login = props => {
         </Col>
         <br />
         <Col>
-          <Button
-            type="submit">
-            Login
+          <Button variant="light" type="submit">
+            <b>Login</b>
           </Button>
         </Col>
       </form>

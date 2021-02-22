@@ -33,9 +33,9 @@ function MyFooter() {
             <Container fluid className='myfooter'>
                 <div className="thumbnailScroller">
                     {items.map(item => (
-                        <Col key={item.id}>
-                            <img className='thumbnailDisplay' src={item.url} />
-                        </Col>
+                        <div key={item.id} >
+                            <img className='thumbnailDisplay' alt='meme-thumbs' src={item.url} />
+                        </div>
                     ))}
                 </div>
             </Container>

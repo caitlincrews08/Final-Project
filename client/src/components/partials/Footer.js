@@ -10,22 +10,21 @@ const Footer = props => {
 
   return (
 
-    <footer fixed='bottom' className='footer'>
-
-      <Row>
-       
+    
+      <Col>
+        <Row>
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/" component={Landing} />
-        
-      </Row>
+        </Row>
+        <Row>
+          <Col>
+            <p className='snow'>&copy; {year} Memeheim</p>
+          </Col>
+        </Row>
 
-      <Row>
-        <Col>
-          <p>&copy; {year} Memeheim</p>
-        </Col>
-      </Row>
-    </footer>
+      </Col>
+  
   );
 };
 

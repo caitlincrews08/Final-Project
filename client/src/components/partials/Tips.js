@@ -28,9 +28,9 @@ function Tips() {
 
   return (
 
-    <Row id='autoScroll' className='tips'>
+   
 
-      <Col>
+      <Col id='autoScroll' className='tips'>
         <br />
         <p> Scroll down</p>
         <br />
@@ -40,7 +40,7 @@ function Tips() {
         <br />
         <p className='scrollAnchor'></p>
       </Col>
-    </Row>
+    
   );
 
 };
