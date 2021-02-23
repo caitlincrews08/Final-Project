@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container } from 'react-bootstrap';
-
+import './MyFooter.css'
 
 function MyFooter() {
     const [error, setError] = useState(null);

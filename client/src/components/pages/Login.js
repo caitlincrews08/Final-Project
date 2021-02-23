@@ -71,7 +71,7 @@ const Login = props => {
         </Col>
         <br />
         <Col>
-          <Button variant="light" type="submit">
+          <Button variant="light" type="submit" className="ripple">
             <b>Login</b>
           </Button>
         </Col>

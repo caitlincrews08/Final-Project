@@ -2,13 +2,18 @@
   /* code that requires mask-image here. */
 }
 
+a {
+  text-shadow: rgb(6, 1, 20);
+}
+
 .App {
   height: 100vh;
   width: 100vw;
-  background-image: url('./assets/PH-Olympus.jpg'), linear-gradient(rgb(0, 17, 255), rgb(255, 116, 2));
+  background-image: url('./assets/PH-Olympus.jpg');
   background-size: cover;
   background-position-x: right;
   background-position-y: top;
+  overflow-y: hidden;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   
@@ -62,12 +67,18 @@ body, html {
 
 .editStart {
   background-color: #63636321;
+  color: whitesmoke;
   position: Absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9;
   padding-bottom: 15px;
+  position: relative;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+  overflow: hidden;
+  align-items: center;
 }
 
 .footer {
@@ -80,6 +91,11 @@ body, html {
   z-index: 5;
 }
 
+.form {
+  display: inline-block;
+  text-align: center;
+}
+
 .home {
   background-color: #00000000;
   color: rgb(58, 57, 57);
@@ -88,6 +104,7 @@ body, html {
   margin-top: 5vh;
   z-index: 1;
   position: 50% 50%;
+  overflow: hidden;
 }
 
 .main {
@@ -103,7 +120,9 @@ body, html {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   z-index: 5;
+  overflow: hidden;
   overflow-x: hidden;
+  overflow-y: hidden;
   /* top: 0px;
   left: 0px;
   bottom: 0px;
@@ -111,15 +130,15 @@ body, html {
 }
 
 .memeDisplay {
-  height: 400px;
-  width: 300px;
+  height: 65vh;
+  width: 90vw;
   zoom: 1;
-  object-fit: cover;
-  background: linear-gradient(rgba(0, 0, 0, 0), white);
+  object-fit: scale-down;
+  background: linear-gradient(rgba(21, 0, 48, 0.651), rgba(230, 138, 0, 0.514));
 }
 
 .memeScroller {
-  width: auto;
+  width: 95vw;
   height: 75vh;
   white-space: nowrap;
   position: relative;
@@ -130,28 +149,31 @@ body, html {
   margin-right: 0px;
   margin-left: 0px;
   margin-bottom: 0px;
-  top: 13%;
-  background: linear-gradient(rgba(0, 0, 0, 0), white);
+  background-color: rgba(255, 255, 255, 0);
 }
 
 .memeScroller div {
-  width: 100vw;
-  background: linear-gradient(rgba(0, 0, 0, 0), white);
+  width:100%;
+  background-color: rgba(255, 255, 255, 0);
   float: none;
-  height: 100%;
-  margin-top: 5%;
+  height: 50vh;
+  margin-top: 10vh;
   display: inline-block;
-  zoom: 1;
-  z-index: 1;
+  zoom: 0;
+  z-index: 2;
 }
 
 .memeTitle {
-  height: 5vh;
-  z-index: 13;
+  color: white;
+  
 }
 
 .mid-section{
   position: relative;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+  overflow: hidden;
+  align-items: center;
 }
 
 .myfooter {
@@ -168,7 +190,7 @@ body, html {
 }
 
 .mynavbar {
-  background: linear-gradient( rgb(6, 1, 20),rgba(0, 0, 0, 0));
+  background: linear-gradient( rgb(6, 1, 20),rgba(16, 4, 48, 0.795));
   min-height: 10vh;
   display: flex;
   flex-direction: row;
@@ -184,10 +206,46 @@ body, html {
 .navbar-toggler-icon {
   color: white;
 }
+
+.ripple:after{
+  
+  height: 10px;
+  top: -45px;
+  position: relative;
+  border-radius: 50%;
+  display: block;
+  background-color: #ffffff00;
+  z-index: -1;
+}
+.ripple:hover::after{
+  -webkit-animation: ripple 1s ease-out;
+  -moz-animation: ripple 1s ease-out;
+  -ms-animation: ripple 1s ease-out;
+  -o-animation: ripple 1s ease-out;
+  animation: ripple 1s ease-out;
+}            
+
+
+@keyframes ripple{
+0%{
+  width: 50px;
+  height: 50px;
+  opacity: 1;
+  transform: translate(0px, 0px);
+}
+100%{
+  width: 100px;
+  height: 100px;
+  opacity: 0;
+  transform: translate(-25px, -25px);
+}
+}
+
+/* 
 .row {
   display: flex;
-  flex-wrap: wrap;
-}
+  
+} */
 
 .searchbox {
   top: 16%;
@@ -202,14 +260,18 @@ body, html {
   left: 0;
   bottom: 0;
   width: 100vw;
-  background-color: rgb(59, 59, 59);
+  background-color: rgba(255, 255, 255, 0);
   color: white;
   text-align: center;
   z-index: 5;
 }
 
 .snow {
-  background-image: url('./assets/snow.gif');
+  /* background-image: url('./assets/snow.gif'); */
+  background-image: url('./assets/scrambled.gif');
+  background-size: cover;
+  background-position-x: right;
+  background-position-y: top;
 }
 
 /* div.myfooter {

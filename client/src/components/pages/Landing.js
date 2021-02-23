@@ -29,12 +29,12 @@ const Landing = props => {
       <br />
       <Row className='justify-content-center'>
         <Link to="/register" className="btn">
-          <Button variant="light">Register</Button>
+          <Button variant="light" className="ripple">Register</Button>
         </Link>
       </Row>
       <Row className='justify-content-center'>
         <Link to="/login" className="btn">
-          <Button variant="light">Login</Button>
+          <Button variant="light" className="ripple">Login</Button>
         </Link>
       </Row>
       <br />

@@ -49,7 +49,7 @@ const Register = props => {
       <br />
       <br />
       <Row className='justify-content-center'>
-        <Link to="/" className="btn-flat">Back</Link>
+        <Link to="/" className="btn-flat loggedout">Back</Link>
       </Row>
       <br />
       <Row className='justify-content-center'>
@@ -59,7 +59,7 @@ const Register = props => {
       </Row>
       <Row className='justify-content-center'>
         <p>
-          Already have an account? <Link to="/login">Login</Link>
+          Already have an account? <Link to="/login" className="loggedout">Login</Link>
         </p>
       </Row>
       <br />
@@ -99,7 +99,7 @@ const Register = props => {
         <br />
         <Row>
           <Col>
-            <Button variant="light" type="submit">
+            <Button variant="light" type="submit" className="ripple">
               <b>Sign Up</b>
             </Button>
           </Col>

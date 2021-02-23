@@ -4,6 +4,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import Register from './../pages/Register';
 import Login from './../pages/Login';
 import Landing from './../pages/Landing';
+import './Footer.css'
 
 const Footer = props => {
   const year = new Date().getFullYear();

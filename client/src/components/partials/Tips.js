@@ -1,15 +1,7 @@
 import React, { useEffect } from 'react';
-import { Col, Row } from 'react-bootstrap';
-// import { Col, Container, Row } from 'react-bootstrap/';
+import { Col } from 'react-bootstrap';
 
 import { scroller } from "react-scroll";
-
-// excluded React component syntax...
-
-
-
-
-
 
 function Tips() {
 
@@ -27,9 +19,6 @@ function Tips() {
   });
 
   return (
-
-   
-
       <Col id='autoScroll' className='tips'>
         <br />
         <p> Scroll down</p>
@@ -40,9 +29,7 @@ function Tips() {
         <br />
         <p className='scrollAnchor'></p>
       </Col>
-    
   );
-
 };
 
 export default Tips;

@@ -64,14 +64,14 @@ const App = (props) => {
           <PrivateRoute exact path={['/home', '/edit', '/saved', '/search']} component={MyNavbar} />
           <Route exact path={['/', '/register', '/login']} component={Banner} />
         </Switch>
-        <Row className='main'>
+        <div className='main'>
           <Switch>
             <PrivateRoute exact path='/home' component={Home} />
             <PrivateRoute exact path='/edit' component={Edit} />
             <PrivateRoute exact path='/saved' component={Saved} />
             <PrivateRoute exact path='/search' component={Search} />
           </Switch>
-        </Row>
+        </div>
         <Row className='footer'>
           <Switch>
             <PrivateRoute exact path='/home' component={MyFooter} />

@@ -8,12 +8,7 @@ function EditFooter() {
     return (
         <Container fluid className='editfooter'>
             <Row>
-                <Col >
-                    <Link to='/home' ><h3 className="vertical-center"> ◄ Back </h3></Link>
-                </Col>
-                <Col>
-
-                </Col>
+                    <Link to='/home' ><h3 className="vertical-center"> ◄ Back </h3></Link>   
             </Row>
         </Container>
     );

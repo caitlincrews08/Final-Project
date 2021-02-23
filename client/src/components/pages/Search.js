@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Tooltip from '../partials/Tips';
 import { Button, Col, Container, FormControl, InputGroup, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function Search() {
     const [error, setError] = useState(null);
@@ -31,22 +32,20 @@ function Search() {
     } else {
 
         return (
-            <Container fluid className='main'>
+            <Col className="mid-section">
                 <Tooltip />
                 <div className="memeScroller">
                     {items.map(item => (
-                        <Col key={item.id}>
-                            {/* <Row className='memeTitle verticle-center'>
-                                <h3>{item.name}</h3>
-                            </Row> */}
-                            {/* <Row> */}
-                                <img className='memeDisplay' src={item.url} />
-                            {/* </Row> */}
-                        </Col>
+                        <div key={item.id}>
+                            <Link>
+                                <img className='memeDisplay' alt={item.name} src={item.url} />
+                            </Link>
+                            <h6 className='memeTitle'>{item.name}</h6>
+                        </div>
                     ))}
                 </div>
-               
-            </Container>
+
+            </Col>
         );
     };
 }

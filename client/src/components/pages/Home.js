@@ -8,26 +8,27 @@ function Home() {
     return (
 
 
-        <Container className="mid-section">
+        <Col className="mid-section">
             <Row>
                 <Tooltip />
             </Row>
             <br />
             <br />
+            <br />
             <Row className='home'>
-                <Link to='/edit' className='forge col'>
+                <Link to='/edit' className='forge col ripple'>
                     Forge
                 </Link>
                 <br />
-                <Link to='/saved' className='vault col'>
+                <Link to='/saved' className='vault col ripple'>
                     Vault
                 </Link>
                 <br />
-                <Link to='/search' className='archives col'>
+                <Link to='/search' className='archives col ripple'>
                     Archives
                 </Link>
             </Row>
-        </Container>
+        </Col>
 
 
 
