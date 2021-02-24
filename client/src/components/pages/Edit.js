@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Tooltip from '../partials/Tips';
-import { Col, Container, Form, Row } from 'react-bootstrap';
+import { Col, Form, Row } from 'react-bootstrap';
 import testImg from '../../assets/PH.jpg'
 
 

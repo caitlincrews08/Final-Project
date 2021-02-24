@@ -1,8 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Tooltip from '../partials/Tips';
-import { Col, ToggleButton } from 'react-bootstrap';
+import { Col, Container, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
+import API from "../../utils/API"
+import { Link } from 'react-router-dom';
 
 function Saved() {
+    const [memes, setMemes] = useState([])
+
+    useEffect(() => {
+        loadMemes()
+    }, [])
+
+    // loads all memes and sets them to memes
+    function loadMemes() {
+        API.getMemes()
+            .then(res =>
+                setMemes(res.data)
+            )
+            .catch(err => console.log(err));
+    }
 
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
@@ -44,13 +60,15 @@ function Saved() {
                         </div>
                     ))}
                     <ToggleButtonGroup type="checkbox" defaultValue={[1, 3]} className="mb-2">
-                        <ToggleButton value={1}>Checkbox 1 (pre-checked)</ToggleButton>
-                        <ToggleButton value={2}>Checkbox 2</ToggleButton>
-                        <ToggleButton value={3}>Checkbox 3 (pre-checked)</ToggleButton>
+                        
+                        <ToggleButton className='favorite' value={2}>♥</ToggleButton>
+                        
                     </ToggleButtonGroup>
                 </div>
             </Col>
         );
     };
+};
 
-    export default Saved;
+
+export default Saved;

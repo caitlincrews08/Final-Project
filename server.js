@@ -9,6 +9,7 @@ const bodyParser = require('body-parser');
 // Routes
 const authRoutes = require('./routes/auth');
 const usersRoutes = require('./routes/users');
+const memeRoutes = require('./routes/meme');
 
 const PORT = process.env.PORT || 3001;
 
@@ -41,6 +42,9 @@ app.use('/api/auth', authRoutes);
 
 // For all authenticated routes, make sure to use this
 app.use('/api/users', requiresAuth, usersRoutes);
+
+// For memes created by users
+app.use('/api/memes', requiresAuth, memeRoutes);
 
 // For production, serve compiled React app in client build directory.
 if (process.env.NODE_ENV === 'production') {
