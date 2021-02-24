@@ -3,9 +3,8 @@ const Schema = mongoose.Schema;
 
 const memeSchema = new Schema(
   {
-    title: {
-      type: String,
-      required: true,
+    tag: {
+      type: String
     },
     image: {
       type: String,
