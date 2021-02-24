@@ -58,33 +58,31 @@ const App = (props) => {
   }, [dispatch]);
 
   return (
-    <Container fluid className="App">
+    <div className="App container-fluid text-center">
       <Router>
         <Switch>
           <PrivateRoute exact path={['/home', '/edit', '/saved', '/search']} component={MyNavbar} />
           <Route exact path={['/', '/register', '/login']} component={Banner} />
         </Switch>
-        <Switch>
-          <PrivateRoute exact path='/home' component={Home} />
-          <PrivateRoute exact path='/edit' component={Edit} />
-          <PrivateRoute exact path='/saved' component={Saved} />
-          <PrivateRoute exact path='/search' component={Search} />
-        </Switch>
-        <Switch>
-          <Row>
+        <div className='main'>
+          <Switch>
+            <PrivateRoute exact path='/home' component={Home} />
+            <PrivateRoute exact path='/edit' component={Edit} />
+            <PrivateRoute exact path='/saved' component={Saved} />
+            <PrivateRoute exact path='/search' component={Search} />
+          </Switch>
+        </div>
+        <Row className='footer'>
+          <Switch>
             <PrivateRoute exact path='/home' component={MyFooter} />
             <PrivateRoute exact path={['/edit', '/saved']} component={EditFooter} />
             <PrivateRoute exact path='/search' component={SearchFooter} />
             <Route exact path={['/', '/register', '/login']} component={Footer}>
-              {/* <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/" component={Landing} /> */}
             </Route>
-          </Row>
-        </Switch>
-
+          </Switch>
+        </Row>
       </Router>
-    </Container>
+    </div>
   );
 };
 
