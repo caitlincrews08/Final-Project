@@ -1,5 +1,23 @@
 const router = require("express").Router();
-var Meme = require("../models/Meme.js");
+const memesController = require("../controllers/memesController")
+
+// Matches with "/api/memes"
+router.route("/")
+  .get(memesController.findAll)
+  .post(memesController.create);
+
+// Matches with "/api/memes/:id"
+router
+  .route("/:id")
+  .get(memesController.findById)
+  .put(memesController.update)
+  .delete(memesController.remove);
+
+module.exports = router;
+
+
+
+
 
 router.post("/api/meme", ({body}, res) => {
   Meme.create(body)
