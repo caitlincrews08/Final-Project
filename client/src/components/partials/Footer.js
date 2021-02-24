@@ -1,6 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Route } from 'react-router-dom';
+import { Col, Row } from 'react-bootstrap';
 import Register from './../pages/Register';
 import Login from './../pages/Login';
 import Landing from './../pages/Landing';

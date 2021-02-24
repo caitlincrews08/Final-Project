@@ -48,6 +48,10 @@ const Register = props => {
       <br />
       <br />
       <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <Row className='justify-content-center'>
         <Link to="/" className="btn-flat loggedout">Back</Link>
       </Row>
