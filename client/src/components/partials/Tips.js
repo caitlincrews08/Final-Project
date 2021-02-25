@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
 import { Col } from 'react-bootstrap';
 
-import { scroller } from "react-scroll";
+import { scroller } from 'react-scroll';
 
 function Tips() {
 
   const scrollToSection = () => {
-    scroller.scrollTo("scrollAnchor", {
+    scroller.scrollTo('scrollAnchor', {
       duration: 800,
       delay: 100,
-      smooth: "easeInOutQuart",
+      smooth: 'easeInOutQuart',
     });
   };
 

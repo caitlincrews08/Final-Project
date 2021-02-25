@@ -8,7 +8,7 @@ function MyFooter() {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetch(" https://api.imgflip.com/get_memes")
+        fetch(' https://api.imgflip.com/get_memes')
             .then(res => res.json())
             .then(
                 (res) => {
@@ -28,19 +28,19 @@ function MyFooter() {
         return <div>Loading...</div>;
     } else {
         return (
-            
-            <div>
-            <div className="footborder"></div>
-            <Container fluid className='homefooter'>
-                
-                <div className="thumbnailScroller">
-                    {items.map(item => (
-                        <div key={item.id} >
-                            <img className='thumbnailDisplay' alt='meme-thumbs' src={item.url} />
-                        </div>
-                    ))}
-                </div>
-            </Container>
+
+            <div className='homefooter'>
+                <div className='footborder'></div>
+                <Container fluid >
+
+                    <div className='thumbnailScroller'>
+                        {items.map(item => (
+                            <div key={item.id} >
+                                <img className='thumbnailDisplay' alt='meme-thumbs' src={item.url} />
+                            </div>
+                        ))}
+                    </div>
+                </Container>
             </div>
         );
     };

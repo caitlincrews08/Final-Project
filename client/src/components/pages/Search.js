@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Tooltip from '../partials/Tips';
-import { Col, Row } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import X from '../../assets/X.png'
-import ToggleSwitch from '../../ToggleSwitch/ToggleSwitch'
+
 
 function Search(props) {
     const [error, setError] = useState(null);
@@ -12,13 +12,13 @@ function Search(props) {
 
     function addSelection(event) {
         var element = document.getElementById(event.target.id);
-        element.classList.toggle("selected");
+        element.classList.toggle('selected');
         event.preventDefault();
-        console.log('The link was clicked.');
+        console.log('Select/De-select Toggled');
     }
 
     useEffect(() => {
-        fetch(" https://api.imgflip.com/get_memes")
+        fetch(' https://api.imgflip.com/get_memes')
             .then(res => res.json())
             .then(
                 (res) => {
@@ -39,28 +39,27 @@ function Search(props) {
     } else {
 
         return (
-            <Col className="mid-section">
-                
-                <Tooltip />
-               
-                <div className="memeScroller">
-                    {items.map(item => (
-                        <Link key={item.id}>
-                            <div className="frame" >
-                                <img className='memeDisplay' alt={item.name} id={item.name} src={item.url} onClick={addSelection}/>
-                                <p className='memeTitle'><b>{item.name}</b></p>
-                            </div>
-                        </Link>
-                    ))}
-                    <div key="last" className="frame">
-                        <img className='memeDisplay' alt='red X' src={X} />
-                        <p className='memeTitle'><b>No more images to load</b></p>
-                    </div>
-                </div>
-               
-               
+            <div className='main'>
+                <Col className='mid-section'>
 
-            </Col>
+                    <Tooltip />
+
+                    <div className='memeScroller'>
+                        {items.map(item => (
+                            <Link key={item.id}>
+                                <div className='frame' >
+                                    <img className='memeDisplay' alt={item.name} id={item.name} src={item.url} onClick={addSelection} />
+                                    <p className='memeTitle'><b>{item.name}</b></p>
+                                </div>
+                            </Link>
+                        ))}
+                        <div key='last' className='frame'>
+                            <img className='memeDisplay' alt='red X' src={X} />
+                            <p className='memeTitle'><b>No more images to load</b></p>
+                        </div>
+                    </div>
+                </Col>
+            </div>
         );
     };
 }

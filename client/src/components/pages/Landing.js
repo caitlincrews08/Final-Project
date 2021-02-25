@@ -19,13 +19,13 @@ const Landing = props => {
       <b>Home of the Meme-Lords</b>
 
       <Row className='justify-content-center'>
-        <Link to="/register" className="btn loggedout">
-          <Button variant="light" className="ripple">Register</Button>
+        <Link to='/register' className='btn loggedout'>
+          <Button variant='light' className='ripple'>Register</Button>
         </Link>
       </Row>
       <Row className='justify-content-center'>
-        <Link to="/login" className="btn loggedout">
-          <Button variant="light" className="ripple">Login</Button>
+        <Link to='/login' className='btn loggedout'>
+          <Button variant='light' className='ripple'>Login</Button>
         </Link>
       </Row>
 
