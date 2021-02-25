@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Store } from '../../store';
 import { registerUser, setErrors } from '../../store/actions/authActions';
 import classnames from 'classnames';
-import { Button, Col, Container, Row } from 'react-bootstrap'
+import { Button, Col, Row } from 'react-bootstrap'
 
 
 const Register = props => {

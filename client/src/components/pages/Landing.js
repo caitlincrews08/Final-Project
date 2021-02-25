@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Store } from '../../store';
 import { Link } from 'react-router-dom';
-import { Col, Container, Row, Button } from 'react-bootstrap';
+import { Col, Row, Button } from 'react-bootstrap';
 
 const Landing = props => {
   const { state } = useContext(Store);
@@ -24,7 +24,7 @@ const Landing = props => {
       <br />
       <br />
       <br />
-      <br />
+      <b>Home of the Meme-Lords</b>
       <br />
       <br />
       <Row className='justify-content-center'>

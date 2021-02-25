@@ -43,7 +43,7 @@ const Login = props => {
       <br />
       <br />
       <Row className='justify-content-center'>
-        <Link to="/" className="btn-flat">Back</Link>
+        <Link to="/" className="btn-flat loggedout">Back</Link>
       </Row>
       <br />
       <Col>
@@ -51,7 +51,7 @@ const Login = props => {
           <b>Login</b> below
         </h4>
         <p className="grey-text text-darken-1">
-          Don't have an account? <Link to="/register">Register</Link>
+          Don't have an account? <Link to="/register" className="loggedout">Register</Link>
         </p>
       </Col>
       <br />

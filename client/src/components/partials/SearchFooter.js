@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Col, Container, FormControl, InputGroup, Row } from 'react-bootstrap';
+import { Button, Col, Container, FormControl, InputGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 
@@ -7,13 +7,14 @@ import { Link } from 'react-router-dom';
 function SearchFooter() {
 
     return (
-        <Container fluid className='searchfooter'>
-            {/* <Row> */}
+        <div>
+            <div className="footborder"></div>
+            <Container fluid className='searchfooter'>
                 <Col xs={2}>
                     <Link to='/home' ><h5 className="vertical-center"> ◄ Back </h5></Link>
                 </Col>
                 <Col xs={10} className='searchbox'>
-                <InputGroup className="mb-3">
+                    <InputGroup className="mb-3">
                         <FormControl
                             placeholder="Search Memes"
                             aria-label="Search Input"
@@ -24,8 +25,8 @@ function SearchFooter() {
                         </InputGroup.Append>
                     </InputGroup>
                 </Col>
-            {/* </Row> */}
-        </Container>
+            </Container>
+        </div>
     );
 };
 

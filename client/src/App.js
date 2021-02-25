@@ -17,8 +17,8 @@ import './App.css';
 
 import Banner from './components/partials/Banner'
 import EditFooter from './components/partials/EditFooter'
-import MyFooter from './components/partials/MyFooter'
-import MyNavbar from './components/partials/MyNavbar'
+import HomeFooter from './components/partials/HomeFooter'
+import HomeNavbar from './components/partials/HomeNavbar'
 import PrivateRoute from './components/auth/PrivateRoute';
 import SearchFooter from './components/partials/SearchFooter'
 
@@ -26,10 +26,10 @@ import SearchFooter from './components/partials/SearchFooter'
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row } from 'react-bootstrap';
+import {  Row } from 'react-bootstrap';
 
 const App = (props) => {
-
+  
 
   const { dispatch } = useContext(Store);
   document.addEventListener('keydown', function (event) {
@@ -61,7 +61,7 @@ const App = (props) => {
     <div className="App container-fluid text-center">
       <Router>
         <Switch>
-          <PrivateRoute exact path={['/home', '/edit', '/saved', '/search']} component={MyNavbar} />
+          <PrivateRoute exact path={['/home', '/edit', '/saved', '/search']} component={HomeNavbar} />
           <Route exact path={['/', '/register', '/login']} component={Banner} />
         </Switch>
         <div className='main'>
@@ -74,7 +74,7 @@ const App = (props) => {
         </div>
         <Row className='footer'>
           <Switch>
-            <PrivateRoute exact path='/home' component={MyFooter} />
+            <PrivateRoute exact path='/home' component={HomeFooter} />
             <PrivateRoute exact path={['/edit', '/saved']} component={EditFooter} />
             <PrivateRoute exact path='/search' component={SearchFooter} />
             <Route exact path={['/', '/register', '/login']} component={Footer}>
