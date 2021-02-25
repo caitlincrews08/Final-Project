@@ -2,10 +2,6 @@
 import API from '../../utils/apiHelper';
 import React, { useEffect, useContext } from 'react';
 import { Store } from '../../store';
-// import { BrowserRouter as Router, Route, Switch, Redirect, useRouteMatch, Link } from 'react-router-dom';
-// import PrivateRoute from '../auth/PrivateRoute'
-
-
 
 const Dashboard = props => {
   const { state } = useContext(Store);

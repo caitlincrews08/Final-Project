@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Store } from '../../store';
 import { Link } from 'react-router-dom';
-import { Col, Container, Row, Button } from 'react-bootstrap';
+import { Col, Row, Button } from 'react-bootstrap';
 
 const Landing = props => {
   const { state } = useContext(Store);
@@ -10,7 +10,7 @@ const Landing = props => {
 
   return (
 
-    <Col>
+    <Col lg={true}>
       <br />
       <br />
       <br />
@@ -23,17 +23,16 @@ const Landing = props => {
       <br />
       <br />
       <br />
-      <br />
-      <br />
+      <b>Home of the Meme-Lords</b>
       <br />
       <br />
       <Row className='justify-content-center'>
-        <Link to="/register" className="btn">
+        <Link to="/register" className="btn loggedout">
           <Button variant="light" className="ripple">Register</Button>
         </Link>
       </Row>
       <Row className='justify-content-center'>
-        <Link to="/login" className="btn">
+        <Link to="/login" className="btn loggedout">
           <Button variant="light" className="ripple">Login</Button>
         </Link>
       </Row>
@@ -45,6 +44,12 @@ const Landing = props => {
       <br />
       <br />
       <br />
+      <br />
+      <br />
+      <br />
+      <br />
+     
+
     </Col>
 
   );

@@ -1,6 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Col, Container, Row } from 'react-bootstrap';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Col, Row } from 'react-bootstrap';
 import Register from './../pages/Register';
 import Login from './../pages/Login';
 import Landing from './../pages/Landing';
@@ -20,7 +20,7 @@ const Footer = props => {
         </Row>
         <Row>
           <Col>
-            <p className='snow'>&copy; {year} Memeheim</p>
+            <p className=''>&copy; {year} Memeheim</p>
           </Col>
         </Row>
 

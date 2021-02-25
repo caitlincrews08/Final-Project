@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Tooltip from '../partials/Tips';
-import { Col, Container, Form, Row } from 'react-bootstrap';
-import testImg from '../../assets/PH.jpg'
+
+import { Col, Form, Row } from 'react-bootstrap';
+
 
 
 import { PixoImage } from '../../image';
@@ -31,15 +31,15 @@ const Edit = () => {
       <Col className="editStart mid-section">
         <Form.Row>
           <Form className="form">
-            <Form.Group>
+            <Form.Group className="form">
               <Form.File id="upload" label="Choose an Image" className="ripple" />
             </Form.Group>
           </Form>
         </Form.Row>
-        <Row><Col><p>-or-</p></Col></Row>
-        <Row><Col>Click image edit your Meme</Col></Row>
+        <Row><Col className="form"><p className="form">-or-</p></Col></Row>
+        <Row><Col className="form">Click image to edit your Meme</Col></Row>
         <Row>
-          <Col>
+          <Col className="form">
             <Link to='/image' className="ripple">
               <PixoImage src={src} onChange={onChange} id='selected' />
             </Link>
