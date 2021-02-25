@@ -31,7 +31,7 @@ function MyFooter() {
             
             <div>
             <div className="footborder"></div>
-            <Container fluid className='myfooter'>
+            <Container fluid className='homefooter'>
                 
                 <div className="thumbnailScroller">
                     {items.map(item => (

@@ -52,18 +52,13 @@ function Saved() {
                 <Tooltip />
                 <div className="memeScroller">
                     {items.map(item => (
-                        <div key={item.id}>
-                            <Link>
-                                <img className='memeDisplay' alt={item.name} src={item.url} />
-                            </Link>
-                            <h6 className='memeTitle'>{item.name}</h6>
+                        <Link key={item.id}>
+                        <div className="frame" >
+                            <img className='memeDisplay' alt={item.name} id={item.name} src={item.url} />
+                            <p className='memeTitle'><b>{item.name}</b></p>
                         </div>
+                    </Link>
                     ))}
-                    <ToggleButtonGroup type="checkbox" defaultValue={[1, 3]} className="mb-2">
-                        
-                        <ToggleButton className='favorite' value={2}>♥</ToggleButton>
-                        
-                    </ToggleButtonGroup>
                 </div>
             </Col>
         );

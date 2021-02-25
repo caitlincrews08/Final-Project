@@ -72,13 +72,12 @@ const App = (props) => {
             <PrivateRoute exact path='/search' component={Search} />
           </Switch>
         </div>
-        <Row className='footer'>
+        <Row >
           <Switch>
             <PrivateRoute exact path='/home' component={HomeFooter} />
             <PrivateRoute exact path={['/edit', '/saved']} component={EditFooter} />
             <PrivateRoute exact path='/search' component={SearchFooter} />
-            <Route exact path={['/', '/register', '/login']} component={Footer}>
-            </Route>
+            <Route exact path={['/', '/register', '/login']} component={Footer} />
           </Switch>
         </Row>
       </Router>

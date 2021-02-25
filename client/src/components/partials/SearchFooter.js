@@ -13,9 +13,9 @@ function SearchFooter() {
                 <Col xs={2}>
                     <Link to='/home' ><h5 className="vertical-center"> ◄ Back </h5></Link>
                 </Col>
-                <Col xs={10} className='searchbox'>
-                    <InputGroup className="mb-3">
-                        <FormControl
+                <Col xs={7}>
+                    <InputGroup className="mb-3 vertical-center">
+                        <FormControl className='searchbox'
                             placeholder="Search Memes"
                             aria-label="Search Input"
                             aria-describedby="basic-addon2"
@@ -24,6 +24,9 @@ function SearchFooter() {
                             <Button variant="light" type="submit">GO</Button>
                         </InputGroup.Append>
                     </InputGroup>
+                </Col>
+                <Col xs={2}>
+                    <Button variant='success' className="save vertical-center">Save</Button>
                 </Col>
             </Container>
         </div>

@@ -16,6 +16,8 @@ a {
   overflow-y: hidden;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+  position: fixed;
+  z-index: 0;
 }
 
 .autoScroll {
@@ -47,6 +49,20 @@ body, html {
 .brand {
   height: 5vh;
   object-fit: contain;
+}
+
+.btn-success {
+  background-color: rgb(53, 194, 86) !important;
+}
+
+.distortion {
+  color: rgba(51, 51, 51, 0.295);
+  background-image: url('./assets/trippy.gif');
+  background-size: cover;
+  background-position-x: right;
+  background-position-y: top;
+  width: 100%;
+  filter: grayscale()
 }
 
 .editfooter {
@@ -84,22 +100,27 @@ body, html {
   height: 62.5%;
 }
 
+.favorites {}
 
-.favorites {
- 
-
+.footborder {
+  background: linear-gradient(rgba(255, 136, 0, 0.377), rgb(30, 2, 30, 1));
+  position: relative;
+  height: 1.5vh;
+  width: 100vw;
+  z-index: 15;
+  bottom: 106.5px;
+  border: 0px !important;
 }
 
 .footer {
   position: fixed;
   width: 100vw;
- 
+  height: 90vh;
   bottom: 0;
-  background-color: rgb(31, 31, 31);
-  /* background-image: url('./assets/trippy.gif'); */
+  background-color: rgb(15, 15, 15);
   color: white;
   text-align: center;
-  z-index: 5;
+  z-index: 1;
 }
 
 .form, .form-group {
@@ -118,10 +139,25 @@ body, html {
   background-color: #00000000;
   color: rgb(58, 57, 57);
   font-size: calc(50px + 2vmin);
-  margin-top: 5vh;
-  z-index: 1;
-  position: 50% 50%;
+  margin-top: 25vh;
+  z-index: 5;
   overflow: hidden;
+}
+
+.homenavbar {
+  background: linear-gradient( rgb(6, 1, 20), rgba(16, 4, 48, 0.795));
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  font-size: calc(10px + 2vmin);
+  color: rgb(255, 255, 255);
+  width: 100%;
+  z-index: 21;
+  box-shadow: 0px 6px 8px 6px rgb(0 0 0 / 20%)
+}
+
+.loggedin {
+  color: rgb(255, 217, 0) !important;
 }
 
 .main {
@@ -136,7 +172,7 @@ body, html {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  z-index: 5;
+  z-index: 1;
   overflow: hidden;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -166,7 +202,6 @@ body, html {
   position: relative;
   overflow-x: scroll;
   overflow-y: hidden;
-  
   margin-top: 0px;
   margin-right: 0px;
   margin-left: 0px;
@@ -179,7 +214,7 @@ body, html {
   background-color: rgba(255, 255, 255, 0);
   float: none;
   height: 50vh;
-  margin-top: 10vh;
+  margin-top: 24vh;
   display: inline-block;
   zoom: 0;
   z-index: 5;
@@ -191,11 +226,9 @@ body, html {
   text-shadow: 0px 0px 20px rgba(30, 2, 30, 0.651);
   background-image: radial-gradient( rgba(102, 0, 68, 0.329), rgba(255, 255, 255, 0));
   white-space: normal;
-  
-max-width: 300px;
+  max-width: 300px;
   width: 300px;
   height: auto;
-
   text-align: center;
   z-index: 20;
 }
@@ -208,7 +241,7 @@ max-width: 300px;
   align-items: center;
 }
 
-.myfooter {
+.homefooter {
   position: fixed;
   display: flex;
   flex-direction: row;
@@ -219,20 +252,6 @@ max-width: 300px;
   color: white;
   text-align: center;
   z-index: 5;
-}
-
-.mynavbar {
-  background: linear-gradient( rgb(6, 1, 20), rgba(16, 4, 48, 0.795));
-  min-height: 10vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  /* font-size: calc(40px + 2vmin); */
-  color: rgb(255, 255, 255);
-  width: 100%;
-  z-index: 5;
-  box-shadow: 0px 6px 8px 6px rgb(0 0 0 / 20%)
 }
 
 .navbar-toggler-icon {
@@ -278,10 +297,9 @@ max-width: 300px;
   
 } */
 
-.searchbox {
-  top: 16%;
-  z-index: 11;
-}
+/* .searchbox {
+  
+} */
 
 .searchfooter {
   height: 100px;
@@ -298,20 +316,11 @@ max-width: 300px;
 }
 
 .selected {
-  border-radius: 4px;
+  border-radius: 8px;
   border-style: groove;
-  border-color: rgb(87, 255, 191);
+  border-color: rgb(63, 246, 105);
 }
 
-.snow {
-  /* background-image: url('./assets/snow.gif'); */
-  background-image: url('./assets/scrambled.gif');
-  background-size: cover;
-  background-position-x: right;
-  background-position-y: top;
-  width: 100%;
-  filter: grayscale()
-}
 /* 
 /* div.myfooter {
   transition: margin-top 1s;
@@ -374,14 +383,14 @@ div.myfooter a:hover {
   background-color: rgba(255, 255, 255, 0);
   float: none;
   height: 100%;
-  margin-right: 5px;
+  /* margin-right: 5px; */
   display: inline-block;
   zoom: 0;
   z-index: 5;
 }
 
 .tips {
-  top: 9vh;
+  top: 11vh;
   margin-left: 5px;
   margin-top: 5px;
   margin-right: 5px;
@@ -394,7 +403,6 @@ div.myfooter a:hover {
   overflow-y: scroll;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  text-overflow: ellipsis;
   word-wrap: break-word;
   color: azure;
   text-shadow: black;
@@ -443,7 +451,7 @@ div.myfooter a:hover {
 /* Designing for scroll-bar */
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 0px;
   height: 5px;
 }
 

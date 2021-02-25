@@ -7,8 +7,8 @@ const Banner = () => {
    
 
     return (
-        <Navbar fixed="top" className='banner snow text-center'>
-            <Col href="/home"><h1 className='distortion'>MEMEHEIM</h1></Col>
+        <Navbar fixed="top" className='banner distortion text-center'>
+            <Col href="/home"><h1 className=''>MEMEHEIM</h1></Col>
         </Navbar>
     );
 };
