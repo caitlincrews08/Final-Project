@@ -115,22 +115,20 @@ body, html {
 .favorites {}
 
 .footborder {
-  background: linear-gradient(rgba(255, 136, 0, 0.377), rgb(30, 2, 30, 1));
+  background: linear-gradient(rgb(165, 92, 9), rgb(30, 2, 30, 1));
   position: fixed;
   height: 1.5vh;
   width: 100vw;
-  z-index: 15;
-  bottom: 103.5px;
+  z-index: 21;
+  bottom: 100.5px;
   border: 0px !important;
 }
 
 .footer {
   position: fixed;
-
   bottom: 0;
   width: 100vw;
   height: 100vh;
-
   background-color: rgb(15, 15, 15);
   color: white;
   text-align: center;
@@ -159,6 +157,19 @@ body, html {
   position: relative;
 }
 
+.homefooter {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  background-color: rgba(53, 0, 53, 0.808);
+  color: white;
+  text-align: center;
+  z-index: 5;
+}
+
 .homenavbar {
   background: linear-gradient( rgb(6, 1, 20), rgba(16, 4, 48, 0.795));
   height: 10vh;
@@ -173,7 +184,6 @@ body, html {
 
 .loggedin {
   color: rgb(255, 217, 0) !important;
-  
 }
 
 .loggedout {
@@ -217,12 +227,12 @@ body, html {
 
 .memeScroller {
   width: 100vw;
-  height: 50vh;
+  height: 55vh;
   white-space: nowrap;
   position: relative;
   overflow-x: scroll;
   overflow-y: hidden;
-  margin-top: 16vh;
+  margin-top: 13vh;
   margin-right: 0px;
   margin-left: 0px;
   margin-bottom: 0px;
@@ -261,17 +271,8 @@ body, html {
   align-items: center;
 }
 
-.homefooter {
-  position: fixed;
-  display: flex;
-  flex-direction: row;
-  left: 0;
-  bottom: 0;
-  width: 100vw;
-  background-color: rgba(53, 0, 53, 0.808);
-  color: white;
-  text-align: center;
-  z-index: 5;
+.navbar-collapse {
+  background-color: #0a0321;
 }
 
 .navbar-toggler-icon {
@@ -325,9 +326,8 @@ body, html {
 .searchfooter {
   height: 100px;
   position: fixed;
-  display: flex;
-  flex-direction: row;
-  left: 0;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
   bottom: 0;
   width: 100vw;
   background-color: rgba(53, 0, 53, 0.808);
@@ -340,7 +340,7 @@ body, html {
   border-radius: 13px;
   border-style: double solid;
   border-color: rgb(63, 246, 105);
-  background-color: rgb(63, 246, 105, .5); 
+  background-color: rgb(63, 246, 105, .5);
   filter: grayscale(20%) drop-shadow(5px 5px 10px black);
 }
 
@@ -393,11 +393,10 @@ div.myfooter a:hover {
   position: relative;
   overflow-x: scroll;
   overflow-y: hidden;
-  
   margin-top: 0px;
   margin-right: 0px;
   margin-left: 0px;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
   background-color: rgba(255, 255, 255, 0);
 }
 
@@ -419,7 +418,7 @@ div.myfooter a:hover {
   margin-right: 5px;
   margin-bottom: 0px;
   width: 100vw;
-  height: 13vh;
+  height: 7vh;
   display: block;
   position: relative;
   z-index: 3;
@@ -430,8 +429,6 @@ div.myfooter a:hover {
   color: azure;
   text-shadow: black;
 }
-
-
 
 .vertical-center {
   margin: 0;
