@@ -11,16 +11,7 @@ const Landing = props => {
   return (
 
     <Col lg={true}>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+  
       <br />
       <br />
       <b>Home of the Meme-Lords</b>

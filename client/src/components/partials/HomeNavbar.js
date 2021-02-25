@@ -34,7 +34,7 @@ const MyNavbar = props => {
           <p>You are logged in. Tap below to...</p>
           </Nav>
           <Nav>
-            <Button onClick={onLogoutClick}>
+            <Button variant="danger" onClick={onLogoutClick}>
               Logout
             </Button>
           </Nav>

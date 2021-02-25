@@ -93,7 +93,7 @@ body, html {
 .footer {
   position: fixed;
   width: 100vw;
- 
+ height: 90vh;
   bottom: 0;
   background-color: rgb(31, 31, 31);
   /* background-image: url('./assets/trippy.gif'); */
@@ -227,10 +227,10 @@ max-width: 300px;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  /* font-size: calc(40px + 2vmin); */
+  font-size: calc(10px + 2vmin);
   color: rgb(255, 255, 255);
   width: 100%;
-  z-index: 5;
+  z-index: 7;
   box-shadow: 0px 6px 8px 6px rgb(0 0 0 / 20%)
 }
 
@@ -380,7 +380,7 @@ div.myfooter a:hover {
 }
 
 .tips {
-  top: 9vh;
+  top:11vh;
   margin-left: 5px;
   margin-top: 5px;
   margin-right: 5px;
