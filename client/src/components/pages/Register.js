@@ -42,7 +42,7 @@ const Register = props => {
       <br />
       <br />
       <Row className='justify-content-center'>
-        <Link to="/" className="btn-flat loggedout">Back</Link>
+        <Link to='/' className='btn-flat loggedout'>Back</Link>
       </Row>
       <br />
       <Row className='justify-content-center'>
@@ -52,47 +52,47 @@ const Register = props => {
       </Row>
       <Row className='justify-content-center'>
         <p>
-          Already have an account? <Link to="/login" className="loggedout">Login</Link>
+          Already have an account? <Link to='/login' className='loggedout'>Login</Link>
         </p>
       </Row>
       <br />
       <form noValidate onSubmit={onSubmit}>
         <Row>
-          <Col className="input-field">
-            <input ref={nameRef} error={errors.name} name="name" type="text"
+          <Col className='input-field'>
+            <input ref={nameRef} error={errors.name} name='name' type='text'
               className={classnames('', { invalid: errors.name })} />
-            <label htmlFor="name">Name</label>
-            <span className="red-text">{errors.name}</span>
+            <label htmlFor='name'>Name</label>
+            <span className='red-text'>{errors.name}</span>
           </Col>
         </Row>
         <Row>
-          <Col className="input-field">
-            <input ref={emailRef} error={errors.email} name="email" type="email"
+          <Col className='input-field'>
+            <input ref={emailRef} error={errors.email} name='email' type='email'
               className={classnames('', { invalid: errors.email })} />
-            <label htmlFor="email">Email</label>
-            <span className="red-text">{errors.email}</span>
+            <label htmlFor='email'>Email</label>
+            <span className='red-text'>{errors.email}</span>
           </Col>
         </Row>
         <Row>
-          <Col className="input-field">
-            <input ref={passwordRef} error={errors.password} name="password" type="password"
+          <Col className='input-field'>
+            <input ref={passwordRef} error={errors.password} name='password' type='password'
               className={classnames('', { invalid: errors.password })} />
-            <label htmlFor="password">Password</label>
-            <span className="red-text">{errors.password}</span>
+            <label htmlFor='password'>Password</label>
+            <span className='red-text'>{errors.password}</span>
           </Col>
         </Row>
         <Row>
-          <Col className="input-field ">
-            <input ref={password2Ref} error={errors.password2} name="password2" type="password"
+          <Col className='input-field '>
+            <input ref={password2Ref} error={errors.password2} name='password2' type='password'
               className={classnames('', { invalid: errors.password2 })} />
-            <label htmlFor="password2">Confirm Password</label>
-            <span className="red-text">{errors.password2}</span>
+            <label htmlFor='password2'>Confirm Password</label>
+            <span className='red-text'>{errors.password2}</span>
           </Col>
         </Row>
         <br />
         <Row>
           <Col>
-            <Button variant="light" type="submit" className="ripple">
+            <Button variant='light' type='submit' className='ripple'>
               <b>Sign Up</b>
             </Button>
           </Col>

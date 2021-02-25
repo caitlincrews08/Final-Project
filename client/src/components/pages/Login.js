@@ -36,35 +36,35 @@ const Login = props => {
       <br />
       <br />
       <Row className='justify-content-center'>
-        <Link to="/" className="btn-flat loggedout">Back</Link>
+        <Link to='/' className='btn-flat loggedout'>Back</Link>
       </Row>
       <br />
       <Col>
         <h4>
           <b>Login</b> below
         </h4>
-        <p className="grey-text text-darken-1">
-          Don't have an account? <Link to="/register" className="loggedout">Register</Link>
+        <p className='grey-text text-darken-1'>
+          Don't have an account? <Link to='/register' className='loggedout'>Register</Link>
         </p>
       </Col>
       <br />
       <br />
       <form noValidate onSubmit={onSubmit}>
-        <Col className="input-field">
-          <input ref={emailRef} error={errors.incorrect} name="email" type="email" className={classnames('', { invalid: errors.incorrect })} />
-          <label htmlFor="email">Email</label>
-          <span className="red-text">{errors.incorrect}</span>
+        <Col className='input-field'>
+          <input ref={emailRef} error={errors.incorrect} name='email' type='email' className={classnames('', { invalid: errors.incorrect })} />
+          <label htmlFor='email'>Email</label>
+          <span className='red-text'>{errors.incorrect}</span>
         </Col>
-        <Col className="input-field">
-          <input ref={passwordRef} error={errors.incorrect} name="password" type="password" className={classnames('', { invalid: errors.incorrect })} />
-          <label htmlFor="password">Password</label>
+        <Col className='input-field'>
+          <input ref={passwordRef} error={errors.incorrect} name='password' type='password' className={classnames('', { invalid: errors.incorrect })} />
+          <label htmlFor='password'>Password</label>
         </Col>
         <Col>
-          <span className="red-text">{errors.message}</span>
+          <span className='red-text'>{errors.message}</span>
         </Col>
         <br />
         <Col>
-          <Button variant="light" type="submit" className="ripple">
+          <Button variant='light' type='submit' className='ripple'>
             <b>Login</b>
           </Button>
         </Col>

@@ -26,15 +26,15 @@ const MyNavbar = props => {
 
   return (
  
-      <Navbar fixed="top" collapseOnSelect expand="false" className="homenavbar navbar-dark">
-        <Navbar.Brand href="/home"><img src={brand} alt='logo' className='brand'/></Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto">
+      <Navbar fixed='top' collapseOnSelect expand='false' className='homenavbar navbar-dark'>
+        <Navbar.Brand href='/home'><img src={brand} alt='logo' className='brand'/></Navbar.Brand>
+        <Navbar.Toggle aria-controls='responsive-navbar-nav' />
+        <Navbar.Collapse id='responsive-navbar-nav'>
+          <Nav className='mr-auto'>
           <p>You are logged in. Tap below to...</p>
           </Nav>
           <Nav>
-            <Button variant="danger" onClick={onLogoutClick}>
+            <Button variant='danger' onClick={onLogoutClick}>
               Logout
             </Button>
           </Nav>

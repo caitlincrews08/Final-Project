@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Tooltip from '../partials/Tips';
-import { Col, Container, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
-import API from "../../utils/API"
+import { Col } from 'react-bootstrap';
+import API from '../../utils/API'
 import { Link } from 'react-router-dom';
 
 function Saved() {
@@ -25,14 +25,12 @@ function Saved() {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetch(" https://api.imgflip.com/get_memes")
+        fetch(' https://api.imgflip.com/get_memes')
             .then(res => res.json())
             .then(
                 (res) => {
                     setIsLoaded(true);
                     setItems(res.data.memes);
-                    console.log(res.data.memes);
-                    console.log(items);
                 },
                 (error) => {
                     setIsLoaded(true);
@@ -48,19 +46,21 @@ function Saved() {
     } else {
 
         return (
-            <Col className="mid-section">
-                <Tooltip />
-                <div className="memeScroller">
-                    {items.map(item => (
-                        <Link key={item.id}>
-                        <div className="frame" >
-                            <img className='memeDisplay' alt={item.name} id={item.name} src={item.url} />
-                            <p className='memeTitle'><b>{item.name}</b></p>
-                        </div>
-                    </Link>
-                    ))}
-                </div>
-            </Col>
+            <div className='main'>
+                <Col className='mid-section'>
+                    <Tooltip />
+                    <div className='memeScroller'>
+                        {items.map(item => (
+                            <Link key={item.id}>
+                                <div className='frame' >
+                                    <img className='memeDisplay' alt={item.name} id={item.name} src={item.url} />
+                                    <p className='memeTitle'><b>{item.name}</b></p>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                </Col>
+            </div>
         );
     };
 };
