@@ -12,10 +12,9 @@ a {
   background-image: url('./assets/PH-Olympus.jpg');
   background-size: cover;
   background-position-x: right;
-  background-position-y: top;
-  overflow-y: hidden;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  background-position-y: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
   position: fixed;
   z-index: 0;
 }
@@ -53,6 +52,11 @@ body, html {
 
 .btn-success {
   background-color: rgb(53, 194, 86) !important;
+}
+
+.condense {
+  padding: 0px;
+  margin: 0px;
 }
 
 .crown {
@@ -112,19 +116,21 @@ body, html {
 
 .footborder {
   background: linear-gradient(rgba(255, 136, 0, 0.377), rgb(30, 2, 30, 1));
-  position: relative;
+  position: fixed;
   height: 1.5vh;
   width: 100vw;
   z-index: 15;
-  bottom: 106.5px;
+  bottom: 103.5px;
   border: 0px !important;
 }
 
 .footer {
   position: fixed;
-  width: 100vw;
-  height: 90vh;
+
   bottom: 0;
+  width: 100vw;
+  height: 100vh;
+
   background-color: rgb(15, 15, 15);
   color: white;
   text-align: center;
@@ -167,6 +173,11 @@ body, html {
 
 .loggedin {
   color: rgb(255, 217, 0) !important;
+  
+}
+
+.loggedout {
+  color: darkgray !important;
 }
 
 .main {
@@ -386,7 +397,7 @@ div.myfooter a:hover {
   margin-top: 0px;
   margin-right: 0px;
   margin-left: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 5px;
   background-color: rgba(255, 255, 255, 0);
 }
 
@@ -466,7 +477,7 @@ div.myfooter a:hover {
 
 ::-webkit-scrollbar {
   width: 0px;
-  height: 5px;
+  height: 8px;
 }
 
 /* Track */
@@ -480,7 +491,7 @@ div.myfooter a:hover {
 
 ::-webkit-scrollbar-thumb {
   background: rgba(29, 0, 46, 0.863);
-  border-radius: 5px;
+  border-radius: 15px;
 }
 
 /* Handle on hover */

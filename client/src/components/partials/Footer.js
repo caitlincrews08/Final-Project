@@ -17,12 +17,11 @@ const Footer = props => {
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/" component={Landing} />
-        </Row>
-        <Row>
           <Col>
             <p className=''>&copy; {year} Memeheim</p>
           </Col>
         </Row>
+       
 
       </Col>
   
