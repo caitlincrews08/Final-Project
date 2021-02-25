@@ -13,7 +13,7 @@ const Footer = props => {
 
     
       <Col>
-        <Row>
+        <Row className='footer'>
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/" component={Landing} />
