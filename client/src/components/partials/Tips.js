@@ -21,7 +21,7 @@ function Tips() {
   return (
       <Col id='autoScroll' className='tips'>
         <br />
-        <p> Scroll down</p>
+        <p> Scroll up</p>
         <br />
         <br />
         <p>Hints and descriptions will populate(fade animation/auto-scroll) here onhover of select clickable elements (and possibly an easter egg that displays inspirational and/or funny quotes and sayings) </p>

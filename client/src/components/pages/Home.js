@@ -13,15 +13,15 @@ function Home() {
                 <Tooltip />
             </Row>
             <Row className='home'>
-                <Link to='/edit' className='forge col ripple'>
+                <Link to='/edit' className='forge col-sm-12 ripple'>
                     Forge
                 </Link>
                 <br />
-                <Link to='/saved' className='vault col ripple'>
+                <Link to='/saved' className='vault col-sm-12 ripple'>
                     Vault
                 </Link>
                 <br />
-                <Link to='/search' className='archives col ripple'>
+                <Link to='/search' className='archives col-sm-12 ripple'>
                     Archives
                 </Link>
             </Row>

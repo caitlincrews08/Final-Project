@@ -4,7 +4,7 @@ import { Col, Row } from 'react-bootstrap';
 import Register from './../pages/Register';
 import Login from './../pages/Login';
 import Landing from './../pages/Landing';
-import './Footer.css'
+
 
 const Footer = props => {
   const year = new Date().getFullYear();
@@ -17,12 +17,11 @@ const Footer = props => {
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/" component={Landing} />
-        </Row>
-        <Row>
-          <Col>
+          <Col xl={12}>
             <p className=''>&copy; {year} Memeheim</p>
           </Col>
         </Row>
+       
 
       </Col>
   

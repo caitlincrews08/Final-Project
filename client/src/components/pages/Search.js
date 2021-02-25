@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Tooltip from '../partials/Tips';
-import { Col } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import X from '../../assets/X.png'
 import ToggleSwitch from '../../ToggleSwitch/ToggleSwitch'
@@ -40,7 +40,9 @@ function Search(props) {
 
         return (
             <Col className="mid-section">
+                
                 <Tooltip />
+               
                 <div className="memeScroller">
                     {items.map(item => (
                         <Link key={item.id}>
