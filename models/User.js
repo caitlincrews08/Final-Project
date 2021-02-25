@@ -18,6 +18,11 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  memes: [
+    {
+      type: String
+    }
+  ]
 });
 
 module.exports = User = mongoose.model('User', UserSchema);
