@@ -47,12 +47,20 @@ body, html {
 }
 
 .brand {
-  height: 5vh;
+  height: 6vh;
   object-fit: contain;
 }
 
 .btn-success {
   background-color: rgb(53, 194, 86) !important;
+}
+
+.crown {
+  width: 7px;
+  height: 7px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  object-fit: scale-down;
 }
 
 .distortion {
@@ -139,9 +147,10 @@ body, html {
   background-color: #00000000;
   color: rgb(58, 57, 57);
   font-size: calc(50px + 2vmin);
-  margin-top: 25vh;
+  margin-top: 18vh;
   z-index: 5;
   overflow: hidden;
+  position: relative;
 }
 
 .homenavbar {
@@ -165,7 +174,7 @@ body, html {
   flex-direction: row;
   flex-wrap: nowrap;
   height: 100vh;
-  width: auto;
+  width: 100vw;
   margin-left: 0px;
   margin-right: 0px;
   top: 50%;
@@ -184,7 +193,7 @@ body, html {
 
 .memeDisplay {
   position: relative;
-  height: 80%;
+  height: 75%;
   width: 300px;
   zoom: 1;
   object-fit: scale-down;
@@ -192,17 +201,17 @@ body, html {
   border-radius: 1px;
   border-style: groove;
   border-color: rgb(255, 255, 255);
-  z-index: auto;
+  z-index: 5;
 }
 
 .memeScroller {
-  width: 90vw;
-  height: 62.5%;
+  width: 100vw;
+  height: 50vh;
   white-space: nowrap;
   position: relative;
   overflow-x: scroll;
   overflow-y: hidden;
-  margin-top: 0px;
+  margin-top: 16vh;
   margin-right: 0px;
   margin-left: 0px;
   margin-bottom: 0px;
@@ -213,11 +222,11 @@ body, html {
   width: 100%;
   background-color: rgba(255, 255, 255, 0);
   float: none;
-  height: 50vh;
-  margin-top: 24vh;
+  height: 60vh;
   display: inline-block;
-  zoom: 0;
-  z-index: 5;
+  zoom: 1;
+  z-index: 3;
+  position: relative;
 }
 
 .memeTitle {
@@ -258,6 +267,7 @@ body, html {
   color: white;
 }
 
+/* 
 .ripple:after {
   height: 10px;
   top: -45px;
@@ -289,7 +299,7 @@ body, html {
     opacity: 0;
     transform: translate(-25px, -25px);
   }
-}
+} */
 
 /* 
 .row {
@@ -316,9 +326,11 @@ body, html {
 }
 
 .selected {
-  border-radius: 8px;
-  border-style: groove;
+  border-radius: 13px;
+  border-style: double solid;
   border-color: rgb(63, 246, 105);
+  background-color: rgb(63, 246, 105, .5); 
+  filter: grayscale(20%) drop-shadow(5px 5px 10px black);
 }
 
 /* 
@@ -354,7 +366,7 @@ div.myfooter a:hover {
 .thumbnailDisplay {
   height: 100px;
   width: 100px;
-  zoom: 1;
+  zoom: 0;
   object-fit: cover;
   /* object-position: 50% 50%; */
   background: linear-gradient(rgba(30, 2, 30, 0.651), rgba(255, 176, 31, 0.445));
@@ -370,7 +382,7 @@ div.myfooter a:hover {
   position: relative;
   overflow-x: scroll;
   overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
+  
   margin-top: 0px;
   margin-right: 0px;
   margin-left: 0px;
@@ -390,15 +402,15 @@ div.myfooter a:hover {
 }
 
 .tips {
-  top: 11vh;
+  top: 10vh;
   margin-left: 5px;
-  margin-top: 5px;
+  margin-top: 0px;
   margin-right: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
   width: 100vw;
   height: 13vh;
   display: block;
-  position: absolute;
+  position: relative;
   z-index: 3;
   overflow-y: scroll;
   scroll-behavior: smooth;
@@ -407,6 +419,8 @@ div.myfooter a:hover {
   color: azure;
   text-shadow: black;
 }
+
+
 
 .vertical-center {
   margin: 0;
