@@ -8,3 +8,5 @@ router.get('/me', (req, res) => {
 });
 
 module.exports = router;
+
+// this is where I will be adding user favorites info/memes
