@@ -51,6 +51,20 @@ body, html {
   object-fit: contain;
 }
 
+.btn-success {
+  background-color: rgb(53, 194, 86) !important;
+}
+
+.distortion {
+  color: rgba(51, 51, 51, 0.295);
+  background-image: url('./assets/trippy.gif');
+  background-size: cover;
+  background-position-x: right;
+  background-position-y: top;
+  width: 100%;
+  filter: grayscale()
+}
+
 .editfooter {
   height: 100px;
   position: fixed;
@@ -86,14 +100,10 @@ body, html {
   height: 62.5%;
 }
 
-
-.favorites {
- 
-
-}
+.favorites {}
 
 .footborder {
-  background:linear-gradient(rgba(255, 136, 0, 0.377), rgb(30, 2, 30, 1));
+  background: linear-gradient(rgba(255, 136, 0, 0.377), rgb(30, 2, 30, 1));
   position: relative;
   height: 1.5vh;
   width: 100vw;
@@ -105,10 +115,9 @@ body, html {
 .footer {
   position: fixed;
   width: 100vw;
- height: 90vh;
+  height: 90vh;
   bottom: 0;
   background-color: rgb(15, 15, 15);
- 
   color: white;
   text-align: center;
   z-index: 1;
@@ -193,7 +202,6 @@ body, html {
   position: relative;
   overflow-x: scroll;
   overflow-y: hidden;
-  
   margin-top: 0px;
   margin-right: 0px;
   margin-left: 0px;
@@ -206,7 +214,7 @@ body, html {
   background-color: rgba(255, 255, 255, 0);
   float: none;
   height: 50vh;
-  margin-top: 10vh;
+  margin-top: 24vh;
   display: inline-block;
   zoom: 0;
   z-index: 5;
@@ -218,11 +226,9 @@ body, html {
   text-shadow: 0px 0px 20px rgba(30, 2, 30, 0.651);
   background-image: radial-gradient( rgba(102, 0, 68, 0.329), rgba(255, 255, 255, 0));
   white-space: normal;
-  
-max-width: 300px;
+  max-width: 300px;
   width: 300px;
   height: auto;
-
   text-align: center;
   z-index: 20;
 }
@@ -247,7 +253,6 @@ max-width: 300px;
   text-align: center;
   z-index: 5;
 }
-
 
 .navbar-toggler-icon {
   color: white;
@@ -292,10 +297,9 @@ max-width: 300px;
   
 } */
 
-.searchbox {
-  top: 16%;
-  z-index: 11;
-}
+/* .searchbox {
+  
+} */
 
 .searchfooter {
   height: 100px;
@@ -312,20 +316,11 @@ max-width: 300px;
 }
 
 .selected {
-  border-radius: 4px;
+  border-radius: 8px;
   border-style: groove;
-  border-color: rgb(87, 255, 191);
+  border-color: rgb(63, 246, 105);
 }
 
-.snow {
-  /* background-image: url('./assets/snow.gif'); */
-  background-image: url('./assets/trippy.gif');
-  background-size: cover;
-  background-position-x: right;
-  background-position-y: top;
-  width: 100%;
-  filter: grayscale()
-}
 /* 
 /* div.myfooter {
   transition: margin-top 1s;
@@ -395,7 +390,7 @@ div.myfooter a:hover {
 }
 
 .tips {
-  top:11vh;
+  top: 11vh;
   margin-left: 5px;
   margin-top: 5px;
   margin-right: 5px;

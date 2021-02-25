@@ -55,8 +55,8 @@ function Search(props) {
                         <p className='memeTitle'><b>No more images to load</b></p>
                     </div>
                 </div>
-                <br />
-                <br />
+               
+               
 
             </Col>
         );
