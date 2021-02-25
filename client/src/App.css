@@ -118,9 +118,8 @@ body, html {
   background-color: #00000000;
   color: rgb(58, 57, 57);
   font-size: calc(50px + 2vmin);
-  margin-top: 5vh;
-  z-index: 1;
-  position: 50% 50%;
+  margin-top: 25vh;
+  z-index: 5;
   overflow: hidden;
 }
 
@@ -221,7 +220,7 @@ max-width: 300px;
   z-index: 5;
 }
 
-.mynavbar {
+.homenavbar {
   background: linear-gradient( rgb(6, 1, 20), rgba(16, 4, 48, 0.795));
   min-height: 10vh;
   display: flex;
@@ -305,7 +304,7 @@ max-width: 300px;
 
 .snow {
   /* background-image: url('./assets/snow.gif'); */
-  background-image: url('./assets/scrambled.gif');
+  background-image: url('./assets/trippy.gif');
   background-size: cover;
   background-position-x: right;
   background-position-y: top;

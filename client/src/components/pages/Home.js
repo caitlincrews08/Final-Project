@@ -12,9 +12,6 @@ function Home() {
             <Row>
                 <Tooltip />
             </Row>
-            <br />
-            <br />
-            <br />
             <Row className='home'>
                 <Link to='/edit' className='forge col ripple'>
                     Forge
