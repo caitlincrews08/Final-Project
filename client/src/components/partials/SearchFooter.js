@@ -1,14 +1,17 @@
 import React from 'react';
 import { Button, Col, Container, FormControl, InputGroup, Row, } from 'react-bootstrap';
 import { Link, Redirect } from 'react-router-dom';
-import API from '../../utils/API'
+import API from '../../utils/apiHelper';
 
 
 
 function SearchFooter(props) {
 
-   const  saveMemes= () => {
-        API.saveMemes(props.selected)
+   const  saveMeme= (e) => {
+       e.preventDefault()
+       console.log(props.selected)
+       console.log(props.test)
+        API.saveMeme(props.selected)
             .then(res =>
                 Redirect('/Saved')
             )
@@ -36,7 +39,7 @@ function SearchFooter(props) {
                         <Link to='/home' ><h5 className=''> ◄ Back </h5></Link>
                     </Col>
                     <Col >
-                        <Button variant='success' className='save' onClick={saveMemes}>Save</Button>
+                        <Button variant='success' className='save' onClick={saveMeme}>Save</Button>
                     </Col>
                 </Row>
             </Container>

@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const User = require("../models/User")
+
+const Meme = require("../models/Meme");
+const User = require("../models/User");
 
 router.get('/me', (req, res) => {
   const { _id, name, email, date } = req.user;
@@ -9,25 +11,27 @@ router.get('/me', (req, res) => {
 });
 
 router.get("/", (req, res) => {
-
   User.find().then(result => res.json(result))
 
 })
 
-router.put("/savememe", (req, res) => {
+router.put("/memes", async (req, res) => {
+  const memes = req.body;
+  await memes.forEach (async meme => {
+    await Meme.create(meme)
+      .then(({_id}) => User.findByIdAndUpdate(req.user._id, { $push: { memes: _id } }, { new: true }))
+      .catch(err => {
+        res.json(err);
+      });
+  });
+  res.json({success: true});
+  });
 
-  User.findByIdAndUpdate(
-    req.user.id,
-    {$push: {memes: meme}}
-  ).exec((err, result) => {
-    if(err){
-      return res.status(400).json({ error: err})
-    } else{
-      res.json(result);
-    }
-  })
 
-})
+// router.get("/memes", (req, res) => {
+//   // User.find().then
+// }) 
+
 
 module.exports = router;
 
