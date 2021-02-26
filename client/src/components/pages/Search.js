@@ -3,20 +3,24 @@ import Tooltip from '../partials/Tips';
 import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import X from '../../assets/X.png'
+import SearchFooter from '../partials/SearchFooter'
 
 
 function Search(props) {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
+    const [selected, setSelected] = useState([]);
 
     function addSelection(event) {
-        var element = document.getElementById(event.target.id);
-        element.classList.toggle('selected');
+        // var element = document.getElementById(event.target.id);
+        // element.classList.toggle('selected');
         event.preventDefault();
-        console.log('Select/De-select Toggled');
+        // console.log('Select/De-select Toggled');
+        setSelected([...selected, event.target.id])
     }
 
+    
     useEffect(() => {
         fetch(' https://api.imgflip.com/get_memes')
             .then(res => res.json())
@@ -39,27 +43,30 @@ function Search(props) {
     } else {
 
         return (
-            <div className='main'>
-                <Col className='mid-section'>
+            <>
+                <div className='main'>
+                    <Col className='mid-section'>
 
-                    <Tooltip />
+                        <Tooltip />
 
-                    <div className='memeScroller'>
-                        {items.map(item => (
-                            <Link key={item.id}>
-                                <div className='frame' >
-                                    <img className='memeDisplay' alt={item.name} id={item.name} src={item.url} onClick={addSelection} />
-                                    <p className='memeTitle'><b>{item.name}</b></p>
-                                </div>
-                            </Link>
-                        ))}
-                        <div key='last' className='frame'>
-                            <img className='memeDisplay' alt='red X' src={X} />
-                            <p className='memeTitle'><b>No more images to load</b></p>
+                        <div className='memeScroller'>
+                            {items.map(item => (
+                                <Link key={item.id}>
+                                    <div className='frame' >
+                                        <img className='memeDisplay' alt={item.name} id={item.name} src={item.url} onClick={addSelection} value={item.id} />
+                                        <p className='memeTitle'><b>{item.name}</b></p>
+                                    </div>
+                                </Link>
+                            ))}
+                            <div key='last' className='frame'>
+                                <img className='memeDisplay' alt='red X' src={X} />
+                                <p className='memeTitle'><b>No more images to load</b></p>
+                            </div>
                         </div>
-                    </div>
-                </Col>
-            </div>
+                    </Col>
+                </div>
+                <SearchFooter selected={selected} />
+            </>
         );
     };
 }

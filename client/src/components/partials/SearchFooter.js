@@ -1,10 +1,19 @@
 import React from 'react';
-import { Button, Col, Container, FormControl, InputGroup, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Button, Col, Container, FormControl, InputGroup, Row, } from 'react-bootstrap';
+import { Link, Redirect } from 'react-router-dom';
+import API from '../../utils/API'
 
 
 
-function SearchFooter() {
+function SearchFooter(props) {
+
+   const  saveMemes= () => {
+        API.saveMemes(props.selected)
+            .then(res =>
+                Redirect('/Saved')
+            )
+            .catch(err => console.log(err));
+    }
 
     return (
         <div className='searchfooter'>
@@ -27,7 +36,7 @@ function SearchFooter() {
                         <Link to='/home' ><h5 className=''> ◄ Back </h5></Link>
                     </Col>
                     <Col >
-                        <Button variant='success' className='save'>Save</Button>
+                        <Button variant='success' className='save' onClick={saveMemes}>Save</Button>
                     </Col>
                 </Row>
             </Container>
