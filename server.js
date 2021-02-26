@@ -43,10 +43,10 @@ const requiresAuth = passport.authenticate('jwt', { session: false });
 app.use('/api/auth', authRoutes);
 
 // For all authenticated routes, make sure to use this
-app.use('/api/users', usersRoutes);
+app.use('/api/users', requiresAuth, usersRoutes);
 
 // For memes created by users
-app.use('/api/memes', memeRoutes);
+app.use('/api/memes', requiresAuth, memeRoutes);
 
 // For production, serve compiled React app in client build directory.
 if (process.env.NODE_ENV === 'production') {
