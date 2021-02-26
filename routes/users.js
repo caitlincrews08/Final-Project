@@ -14,6 +14,21 @@ router.get("/", (req, res) => {
 
 })
 
+router.put("/savememe", (req, res) => {
+
+  User.findByIdAndUpdate(
+    req.user.id,
+    {$push: {memes: meme}}
+  ).exec((err, result) => {
+    if(err){
+      return res.status(400).json({ error: err})
+    } else{
+      res.json(result);
+    }
+  })
+
+})
+
 module.exports = router;
 
 // this is where I will be adding user favorites info/memes
