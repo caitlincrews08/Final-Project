@@ -16,6 +16,12 @@ const Landing = props => {
       <br />
       <br />
       <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <b>Home of the Meme-Lords</b>
 
       <Row className='justify-content-center'>

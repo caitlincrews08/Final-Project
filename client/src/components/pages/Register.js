@@ -37,7 +37,9 @@ const Register = props => {
   return (
 
     <Col>
-   
+      <br />
+      <br />
+      <br />
       <br />
       <br />
       <br />
