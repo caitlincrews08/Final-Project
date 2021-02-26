@@ -11,17 +11,7 @@ const Landing = props => {
   return (
 
     <Col lg={true}>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+      <Row className='hidden'>ALLYOURBASEAREBELONGTOUS</Row>
       <b>Home of the Meme-Lords</b>
 
       <Row className='justify-content-center'>
