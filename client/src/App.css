@@ -148,6 +148,11 @@ body, html {
   max-width: min-content;
 }
 
+.hidden {
+  opacity: 0%;
+  visibility: hidden;
+}
+
 .home {
   background-color: #00000000;
   color: rgb(58, 57, 57);

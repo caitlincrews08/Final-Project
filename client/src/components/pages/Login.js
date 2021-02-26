@@ -31,10 +31,8 @@ const Login = props => {
 
   return (
     <Col lg={true}>
-      
-      <br />
-      <br />
-      <br />
+    
+    <Row className='hidden'>ALLYOURBASEAREBELONGTOUS</Row>
       <Row className='justify-content-center'>
         <Link to='/' className='btn-flat loggedout'>Back</Link>
       </Row>
