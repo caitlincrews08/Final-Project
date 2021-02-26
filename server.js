@@ -10,6 +10,7 @@ const bodyParser = require('body-parser');
 const authRoutes = require('./routes/auth');
 const usersRoutes = require('./routes/users');
 const memeRoutes = require('./routes/meme');
+const cors = require("cors");
 
 const PORT = process.env.PORT || 3001;
 
@@ -18,6 +19,7 @@ const app = express();
 // Middleware packages
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cors());
 
 // Mongoose connection to MongoDB. (https://mongoosejs.com/docs/guide.html)
 mongoose.connect(
@@ -41,10 +43,10 @@ const requiresAuth = passport.authenticate('jwt', { session: false });
 app.use('/api/auth', authRoutes);
 
 // For all authenticated routes, make sure to use this
-app.use('/api/users', requiresAuth, usersRoutes);
+app.use('/api/users', usersRoutes);
 
 // For memes created by users
-app.use('/api/memes', requiresAuth, memeRoutes);
+app.use('/api/memes', memeRoutes);
 
 // For production, serve compiled React app in client build directory.
 if (process.env.NODE_ENV === 'production') {
