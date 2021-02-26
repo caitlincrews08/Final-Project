@@ -1,10 +1,11 @@
 const User = require("../models/User")
 
 const saveMeme = (req, res) => {
+  
   let meme = req.body.memeId;
 
   User.findByIdAndUpdate(
-    req.body.id,
+    req.user.id,
     {$push: {memes: meme}}
   ).exec((err, result) => {
     if(err){
