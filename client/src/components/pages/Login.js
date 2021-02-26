@@ -31,8 +31,16 @@ const Login = props => {
 
   return (
     <Col lg={true}>
-    
-    <Row className='hidden'>ALLYOURBASEAREBELONGTOUS</Row>
+
+      <br />
+      <br />
+      <br />
+      <br />
+      <Row className='hidden'>ALLYOURBASEAREBELONGTOUS</Row>
+      <br />
+      <br />
+      <br />
+      <br />
       <Row className='justify-content-center'>
         <Link to='/' className='btn-flat loggedout'>Back</Link>
       </Row>
@@ -72,7 +80,7 @@ const Login = props => {
       <br />
       <br />
       <br />
-    
+
     </Col>
   );
 };
