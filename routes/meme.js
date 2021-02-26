@@ -2,12 +2,13 @@ const router = require("express").Router();
 const memesController = require("../controllers/memesController");
 const saveMeme = require("../controllers/saveMeme");
 
-//same meme
-router.put("/savememe", saveMeme);
 // Matches with "/api/memes"
 router.route("/")
-  .get(memesController.findAll)
-  .post(memesController.create);
+.get(memesController.findAll)
+.post(memesController.create);
+
+// Matches with "/api/memes/saveMeme"
+router.put("/savememe", saveMeme);
 
 // Matches with "/api/memes/:id"
 router
