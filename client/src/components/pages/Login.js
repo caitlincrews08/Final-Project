@@ -36,7 +36,7 @@ const Login = props => {
       <br />
       <br />
       <br />
-      <Row className='hidden'>ALLYOURBASEAREBELONGTOUS</Row>
+      <Row className='hidden justify-content-center'>ALLYOURBASEAREBELONGTOUS</Row>
       <br />
       <br />
       <br />
