@@ -36,7 +36,7 @@ const Register = props => {
 
   return (
 
-    <Col>
+    <Col className='vertical-center'>
     <br />
       <br />
       <br />

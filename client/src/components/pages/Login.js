@@ -30,8 +30,7 @@ const Login = props => {
   };
 
   return (
-    <Col lg={true}>
-
+    <Col className='vertical-center'>
       <br />
       <br />
       <br />
