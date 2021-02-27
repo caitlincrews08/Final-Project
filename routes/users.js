@@ -11,6 +11,7 @@ router.get('/me', (req, res) => {
   return res.json({ _id, name, email, date });
 });
 
+// get memes
 router.get("/memes", (req, res) => {
   User.find({ memes })
     .then(dbMemes => {
@@ -21,6 +22,7 @@ router.get("/memes", (req, res) => {
     });
 })
 
+// save memes
 router.put("/memes", async (req, res) => {
   const memes = req.body;
   await memes.forEach (async meme => {
