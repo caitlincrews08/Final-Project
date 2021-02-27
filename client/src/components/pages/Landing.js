@@ -7,7 +7,7 @@ const Landing = props => {
   const { state } = useContext(Store);
 
   console.log({ state, props });
-
+  const year = new Date().getFullYear();
   return (
 
     <Col className='vertical-center'>
@@ -33,8 +33,12 @@ const Landing = props => {
           <Button variant='light' className='ripple'>Login</Button>
         </Link>
       </Row>
-
-
+      <br />
+      <br />
+      <br />
+      <Col>
+        <p className=''>&copy; {year} Memeheim</p>
+      </Col>
 
     </Col>
 

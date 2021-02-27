@@ -8,7 +8,7 @@ import Landing from './../pages/Landing';
 
 
 const Footer = props => {
-  const year = new Date().getFullYear();
+  
 
   return (
 
@@ -18,9 +18,9 @@ const Footer = props => {
           <Route exact path='/register' component={Register} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/' component={Landing} />
-          <Col xl={12}>
-            <p className=''>&copy; {year} Memeheim</p>
-          </Col>
+          
+            
+         
         </Row>
       </Col>
   </div>
