@@ -12,9 +12,9 @@ router.get('/me', (req, res) => {
 });
 
 router.get("/memes", (req, res) => {
-  User.find({})
-    .then(dbBook => {
-      res.json(dbBook);
+  User.find({ memes })
+    .then(dbMemes => {
+      res.json(dbMemes);
     })
     .catch(err => {
       res.json(err);
