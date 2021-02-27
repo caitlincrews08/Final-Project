@@ -1,19 +1,19 @@
 import React from 'react';
 import { Button, Col, Container, FormControl, InputGroup, Row, } from 'react-bootstrap';
-import { Link, Redirect, withRouter } from 'react-router-dom';
+import { Link, Redirect, withRouter, useHistory } from 'react-router-dom';
 import API from '../../utils/apiHelper';
 
 
 
 function SearchFooter(props) {
-
+    const history = useHistory()
    const  saveMeme= (e) => {
        e.preventDefault()
-       console.log(props.selected)
-       console.log(props.test)
+       console.log(props.selected);
+       console.log(props.test);
         API.saveMeme(props.selected)
             .then(res =>
-               props.history.push('/Saved')
+               history.push('/Saved')
             )
             .catch(err => console.log(err));
     }
@@ -47,4 +47,4 @@ function SearchFooter(props) {
     );
 };
 
-export default withRouter(SearchFooter);
+export default SearchFooter;

@@ -6,6 +6,10 @@ import { Link } from 'react-router-dom';
 
 function Saved() {
     const [memes, setMemes] = useState([])
+    const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [items, setItems] = useState([]);
+
 
     useEffect(() => {
         loadMemes()
@@ -15,29 +19,14 @@ function Saved() {
     function loadMemes() {
         API.getMemes()
             .then(res =>
-                setMemes(res.data)
+                setMemes(res)
             )
             .catch(err => console.log(err));
+            console.log()
     }
 
-    const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [items, setItems] = useState([]);
-
-    useEffect(() => {
-        fetch('/api/user/memes')
-            .then(res => res.json())
-            .then(
-                (res) => {
-                    setIsLoaded(true);
-                    setItems(res.data.memes);
-                },
-                (error) => {
-                    setIsLoaded(true);
-                    setError(error);
-                }
-            )
-    }, [])
+    
+ 
 
     if (error) {
         return <div>Error: {error.message}</div>;
@@ -50,11 +39,11 @@ function Saved() {
                 <Col className='mid-section'>
                     <Tooltip />
                     <div className='memeScroller'>
-                        {items.map(item => (
-                            <Link key={item.id}>
+                        {memes.map(meme => (
+                            <Link key={meme.id}>
                                 <div className='frame' >
-                                    <img className='memeDisplay' alt={item.name} id={item.name} src={item.url} />
-                                    <p className='memeTitle'><b>{item.name}</b></p>
+                                    <img className='memeDisplay' alt={meme.name} id={meme.name} src={meme.url} />
+                                    <p className='memeTitle'><b>{meme.name}</b></p>
                                 </div>
                             </Link>
                         ))}
