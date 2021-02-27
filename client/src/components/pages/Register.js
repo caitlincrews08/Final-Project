@@ -36,8 +36,16 @@ const Register = props => {
 
   return (
 
-    <Col>
-   <Row className='hidden'>ALLYOURBASEAREBELONGTOUS</Row>
+    <Col className='vertical-center'>
+    <br />
+      <br />
+      <br />
+      <br />
+      <Row className='hidden justify-content-center'>ALLYOURBASEAREBELONGTOUS</Row>
+      <br />
+      <br />
+      <br />
+      <br />
       <Row className='justify-content-center'>
         <Link to='/' className='btn-flat loggedout'>Back</Link>
       </Row>
