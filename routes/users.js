@@ -11,9 +11,14 @@ router.get('/me', (req, res) => {
   return res.json({ _id, name, email, date });
 });
 
-router.get("/", (req, res) => {
-  User.find().then(result => res.json(result))
-
+router.get("/memes", (req, res) => {
+  User.find({})
+    .then(dbBook => {
+      res.json(dbBook);
+    })
+    .catch(err => {
+      res.json(err);
+    });
 })
 
 router.put("/memes", async (req, res) => {
@@ -27,12 +32,6 @@ router.put("/memes", async (req, res) => {
   });
   res.json({success: true});
   });
-
-
-// router.get("/memes", (req, res) => {
-//   // User.find().then
-// }) 
-
 
 module.exports = router;
 
