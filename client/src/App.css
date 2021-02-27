@@ -329,6 +329,19 @@ body, html {
 /* .searchbox {
   
 } */
+.savedfooter {
+  height: 100px;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  background-color: rgba(53, 0, 53, 0.808);
+  color: white;
+  text-align: center;
+  z-index: 5;
+}
 
 .searchfooter {
   height: 100px;
