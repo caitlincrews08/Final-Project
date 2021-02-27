@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Col, Container, FormControl, InputGroup, Row, } from 'react-bootstrap';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, Redirect, withRouter } from 'react-router-dom';
 import API from '../../utils/apiHelper';
 
 
@@ -13,7 +13,7 @@ function SearchFooter(props) {
        console.log(props.test)
         API.saveMeme(props.selected)
             .then(res =>
-                Redirect('/Saved')
+               props.history.push('/Saved')
             )
             .catch(err => console.log(err));
     }
@@ -47,4 +47,4 @@ function SearchFooter(props) {
     );
 };
 
-export default SearchFooter;
+export default withRouter(SearchFooter);

@@ -4,6 +4,7 @@ import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import X from '../../assets/X.png'
 import SearchFooter from '../partials/SearchFooter'
+import { element } from 'prop-types';
 
 
 function Search(props) {
@@ -12,15 +13,39 @@ function Search(props) {
     const [items, setItems] = useState([]);
     const [selected, setSelected] = useState([]);
 
-    function addSelection(event, meme) {
-        // var element = document.getElementById(event.target.id);
-        // element.classList.toggle('selected');
-        event.preventDefault();
-        // console.log('Select/De-select Toggled');
-        setSelected([...selected, { tag: meme.name, image: meme.url }]);
+    function removeSelection() {
+        
+        console.log('deselected');
+        let filteredMemes = selected.filter(meme => !meme.id);
+        setSelected(filteredMemes);
         console.log(selected);
-    }
+    };
 
+    function addSelection(meme) {
+       
+        if (!selected.some(e => e.id === meme.id)) {
+            setSelected([...selected, { id: meme.id, tag: meme.name, image: meme.url }]);
+
+        };
+    };
+
+    function selectionToggle(e, meme) {
+        var element = document.getElementById(e.target.id);
+        e.preventDefault();
+        if (element.classList.contains('deselected')) {
+            addSelection(meme);
+            element.classList.toggle('selected');
+            element.classList.toggle('deselected');
+            console.log(meme.name + ' ' + 'selected')
+        } else {
+            removeSelection(meme);
+            console.log(meme.name + ' ' + 'deselected')
+            element.classList.toggle('deselected');
+            element.classList.toggle('selected');
+        }
+        
+        
+    }
 
     useEffect(() => {
         fetch(' https://api.imgflip.com/get_memes')
@@ -54,7 +79,7 @@ function Search(props) {
                             {items.map(item => (
                                 <Link key={item.id}>
                                     <div className='frame' >
-                                        <img className='memeDisplay' alt={item.name} id={item.name} src={item.url} onClick={(e) => addSelection(e, item)} value={item.id} />
+                                        <img className='memeDisplay deselected' alt={item.name} id={item.name} src={item.url} onClick={(e) => selectionToggle(e, item)} value={item.id} />
                                         <p className='memeTitle'><b>{item.name}</b></p>
                                     </div>
                                 </Link>
@@ -66,7 +91,7 @@ function Search(props) {
                         </div>
                     </Col>
                 </div>
-                <SearchFooter selected={selected} test = "test" />
+                <SearchFooter selected={selected} test="test" />
             </>
         );
     };
