@@ -4,7 +4,7 @@ import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import X from '../../assets/X.png'
 import SearchFooter from '../partials/SearchFooter'
-import { element } from 'prop-types';
+
 
 
 function Search(props) {
@@ -13,19 +13,23 @@ function Search(props) {
     const [items, setItems] = useState([]);
     const [selected, setSelected] = useState([]);
 
-    function removeSelection() {
-        
+    function removeSelection(meme) {
+       function notMe () {
+        return !selected.includes(meme.id);
+       }
+      
+        console.log(meme.id);
         console.log('deselected');
-        let filteredMemes = selected.filter(meme => !meme.id);
+        let filteredMemes = selected.filter(notMe);
         setSelected(filteredMemes);
-        console.log(selected);
+        console.log(filteredMemes);
     };
 
     function addSelection(meme) {
        
         if (!selected.some(e => e.id === meme.id)) {
             setSelected([...selected, { id: meme.id, tag: meme.name, image: meme.url }]);
-
+            console.log(selected);
         };
     };
 
