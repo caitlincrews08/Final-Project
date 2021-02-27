@@ -10,6 +10,7 @@ const Login = props => {
   const errors = state.error;
   const emailRef = useRef();
   const passwordRef = useRef();
+  const year = new Date().getFullYear();
 
   useEffect(() => {
     if (state.auth.isAuthenticated)
@@ -77,9 +78,9 @@ const Login = props => {
       <br />
       <br />
       <br />
-      <br />
-      <br />
-
+      <Col>
+        <p className=''>&copy; {year} Memeheim</p>
+      </Col>
     </Col>
   );
 };

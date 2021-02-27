@@ -33,7 +33,7 @@ const Register = props => {
 
     registerUser(userData, props.history)(dispatch);
   };
-
+  const year = new Date().getFullYear();
   return (
 
     <Col className='vertical-center'>
@@ -106,6 +106,9 @@ const Register = props => {
       <br />
       <br />
       <br />
+      <Col>
+        <p className=''>&copy; {year} Memeheim</p>
+      </Col>
     </Col>
 
   );
