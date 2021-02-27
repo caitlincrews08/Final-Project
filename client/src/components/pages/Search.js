@@ -12,15 +12,16 @@ function Search(props) {
     const [items, setItems] = useState([]);
     const [selected, setSelected] = useState([]);
 
-    function addSelection(event) {
+    function addSelection(event, meme) {
         // var element = document.getElementById(event.target.id);
         // element.classList.toggle('selected');
         event.preventDefault();
         // console.log('Select/De-select Toggled');
-        setSelected([...selected, event.target.id])
+        setSelected([...selected, { tag: meme.name, image: meme.url }]);
+        console.log(selected);
     }
 
-    
+
     useEffect(() => {
         fetch(' https://api.imgflip.com/get_memes')
             .then(res => res.json())
@@ -53,7 +54,7 @@ function Search(props) {
                             {items.map(item => (
                                 <Link key={item.id}>
                                     <div className='frame' >
-                                        <img className='memeDisplay' alt={item.name} id={item.name} src={item.url} onClick={addSelection} value={item.id} />
+                                        <img className='memeDisplay' alt={item.name} id={item.name} src={item.url} onClick={(e) => addSelection(e, item)} value={item.id} />
                                         <p className='memeTitle'><b>{item.name}</b></p>
                                     </div>
                                 </Link>
@@ -65,7 +66,7 @@ function Search(props) {
                         </div>
                     </Col>
                 </div>
-                <SearchFooter selected={selected} />
+                <SearchFooter selected={selected} test = "test" />
             </>
         );
     };

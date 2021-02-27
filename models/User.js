@@ -20,7 +20,8 @@ const UserSchema = new Schema({
   },
   memes: [
     {
-      type: String
+      type: Schema.Types.ObjectId,
+      ref: "Meme"
     }
   ]
 });

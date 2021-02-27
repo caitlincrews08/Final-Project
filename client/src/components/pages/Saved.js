@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Tooltip from '../partials/Tips';
 import { Col } from 'react-bootstrap';
-import API from '../../utils/API'
+import API from '../../utils/apiHelper'
 import { Link } from 'react-router-dom';
 
 function Saved() {
