@@ -14,19 +14,19 @@ function Search(props) {
     const [selected, setSelected] = useState([]);
 
     function removeSelection(meme) {
-       function notMe () {
-        return !selected.includes(meme.id);
-       }
-      
+        function notMe() {
+            return !selected.some(e => e.id === meme.id);
+        }
+
         console.log(meme.id);
         console.log('deselected');
-        let filteredMemes = selected.filter(notMe);
+        let filteredMemes = [...selected.filter(notMe)];
         setSelected(filteredMemes);
         console.log(filteredMemes);
     };
 
     function addSelection(meme) {
-       
+
         if (!selected.some(e => e.id === meme.id)) {
             setSelected([...selected, { id: meme.id, tag: meme.name, image: meme.url }]);
             console.log(selected);
@@ -47,17 +47,28 @@ function Search(props) {
             element.classList.toggle('deselected');
             element.classList.toggle('selected');
         }
-        
-        
+
+
     }
 
+
+
     useEffect(() => {
-        fetch(' https://api.imgflip.com/get_memes')
+        fetch(' http://memebuild.com/api/1.0/getRecentMemes?limit=100', { 
+            method: 'GET',
+            credentials: "include",
+            headers: {
+                'API-KEY': '1ab967b253352c7063b5669a0d4b1f',
+                'Content-Type': 'application/json'
+                
+    }
+})
             .then(res => res.json())
             .then(
                 (res) => {
                     setIsLoaded(true);
-                    setItems(res.data.memes);
+                    setItems(res.data);
+                    console.log(res.data)
                 },
                 (error) => {
                     setIsLoaded(true);

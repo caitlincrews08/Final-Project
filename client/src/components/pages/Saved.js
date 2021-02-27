@@ -25,7 +25,7 @@ function Saved() {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetch(' https://api.imgflip.com/get_memes')
+        fetch('/api/user/memes')
             .then(res => res.json())
             .then(
                 (res) => {
