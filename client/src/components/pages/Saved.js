@@ -24,20 +24,20 @@ function Saved() {
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
 
-    useEffect(() => {
-        fetch(' https://api.imgflip.com/get_memes')
-            .then(res => res.json())
-            .then(
-                (res) => {
-                    setIsLoaded(true);
-                    setItems(res.data.memes);
-                },
-                (error) => {
-                    setIsLoaded(true);
-                    setError(error);
-                }
-            )
-    }, [])
+    // useEffect(() => {
+    //     fetch(' /api/users/memes')
+    //         .then(res => res.json())
+    //         .then(
+    //             (res) => {
+    //                 setIsLoaded(true);
+    //                 setItems(res.memes);
+    //             },
+    //             (error) => {
+    //                 setIsLoaded(true);
+    //                 setError(error);
+    //             }
+    //         )
+    // }, [])
 
     if (error) {
         return <div>Error: {error.message}</div>;

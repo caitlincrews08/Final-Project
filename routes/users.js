@@ -11,16 +11,20 @@ router.get('/me', (req, res) => {
   return res.json({ _id, name, email, date });
 });
 
+// get memes
 router.get("/memes", (req, res) => {
-  User.find({ memes })
-    .then(dbMemes => {
-      res.json(dbMemes);
-    })
-    .catch(err => {
-      res.json(err);
-    });
-})
+  console.log(req.user)
+  
+ Meme.find().where('_id').in(req.user.memes).exec((error, dbMemes) => {
+    if (error)
+      return res.status(400).json(error)
 
+    res.json(dbMemes);
+  })
+
+  });
+
+// save memes
 router.put("/memes", async (req, res) => {
   const memes = req.body;
   await memes.forEach (async meme => {
