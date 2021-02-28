@@ -20,9 +20,9 @@ const userController = {
   saveMeme: function (memeData) {
     return axios.put("/api/users/memes", memeData);
   },
-  queueMemes: function () {
-    return axios.get('https://reddit-meme-api.herokuapp.com/200');
-  }
+//   queueMemes: function () {
+//     return axios.get('https://reddit-meme-api.herokuapp.com/200');
+//   }
 }
 
 export default userController;

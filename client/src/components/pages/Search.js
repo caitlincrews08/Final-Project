@@ -21,9 +21,10 @@ function Search(props) {
         //     return !selected.some(e => e.id === meme.id);
         // }
 
-        console.log(meme.id);
+        console.log(meme.title);
         console.log('deselected');
-        let filteredMemes = [...selected.filter(e => e.id !== meme.id)];
+        let filteredMemes = [...selected.filter(e => e.id !== meme.title)];
+        // console.log(e.id)
         setSelected(filteredMemes);
         console.log(selected);
     };
@@ -33,7 +34,7 @@ function Search(props) {
         if (!selected.some(e => e.id === meme.id)) {
             setSelected([...selected, { id: meme.title, tag: meme.title, image: meme.url }]);
             console.log(selected);
-            console.log(meme.name + ' ' + 'added to selected')
+            console.log(meme.title + ' ' + 'added to selected')
         };
     };
 
@@ -44,10 +45,10 @@ function Search(props) {
             addSelection(meme);
             element.classList.toggle('selected');
             element.classList.toggle('deselected');
-            console.log(meme.name + ' ' + 'selected')
+            console.log(meme.title + ' ' + 'selected')
         } else {
             removeSelection(meme);
-            console.log(meme.name + ' ' + 'deselected')
+            console.log(meme.title + ' ' + 'deselected')
             element.classList.toggle('deselected');
             element.classList.toggle('selected');
         }
@@ -58,7 +59,7 @@ function Search(props) {
 
 
     useEffect(() => {
-        fetch('https://reddit-meme-api.herokuapp.com/2')
+        fetch('https://reddit-meme-api.herokuapp.com/20')
             .then(res => res.json())
             .then(
                 (res) => {
@@ -87,10 +88,10 @@ function Search(props) {
                         <Tooltip />
 
                         <div className='memeScroller'>
-                            {items.map(item => (
-                                <Link  key={item.author}>
+                            {items.map((item, index) => (
+                                <Link to="" key={index}>
                                     <div className='frame' >
-                                        <img className='memeDisplay deselected' alt={item.name} id={item.title} src={item.url} onClick={(e) => selectionToggle(e, item)} value={item.title} />
+                                        <img className='memeDisplay deselected' loading="lazy" alt={item.name} id={item.title} src={item.url} onClick={(e) => selectionToggle(e, item)} value={item.title} />
                                         <p className='memeTitle'><b>{item.title}</b></p>
                                     </div>
                                 </Link>

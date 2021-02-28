@@ -7,22 +7,28 @@ import API from '../../utils/apiHelper';
 
 function SearchFooter(props) {
     const history = useHistory()
-   const  saveMeme= (e) => {
-       e.preventDefault()
-       console.log(props.selected);
-       console.log(props.test);
+    const saveMeme = (e) => {
+        e.preventDefault()
+        console.log(props.selected);
+        console.log(props.test);
         API.saveMeme(props.selected)
             .then(res =>
-               history.push('/Saved')
+                history.push('/Saved')
             )
             .catch(err => console.log(err));
     }
+    // const refresh = () => {
+
+    //     window.location.reload(true);
+    //     Redirect('/Search')
+
+    // }
 
     return (
         <div className='searchfooter'>
             <div className='footborder'></div>
-            <Container fluid >
-                <Row>
+            <Container fluid className='vertical-center'>
+                {/* <Row>
                     <InputGroup className='mb-3'>
                         <FormControl className='searchbox'
                             placeholder='Search'
@@ -33,13 +39,19 @@ function SearchFooter(props) {
                             <Button variant='light' type='submit'>GO</Button>
                         </InputGroup.Append>
                     </InputGroup>
-                </Row>
-                <Row>
-                    <Col >
+
+                </Row> */}
+                <Row >
+                    <Col>
                         <Link to='/home' ><h5 className=''> ◄ Back </h5></Link>
                     </Col>
+                    <Col>
+                        <Link to='/Search'>
+                            <Button variant='secondary' className=' refresh' >Refresh</Button>
+                        </Link>
+                    </Col>
                     <Col >
-                        <Button variant='success' className='save' onClick={saveMeme}>Save</Button>
+                        <Button variant='success' className=' save' onClick={saveMeme}>Save</Button>
                     </Col>
                 </Row>
             </Container>
