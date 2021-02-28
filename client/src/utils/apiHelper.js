@@ -20,14 +20,9 @@ const userController = {
   saveMeme: function (memeData) {
     return axios.put("/api/users/memes", memeData);
   },
-  queueMemes: function () {
-    return axios.get('http://memebuild.com/api/1.0/getRecentMemes?limit=100api-key=', {
-      credentials: "include",
-      headers: {
-        'API-KEY': '1ab967b253352c7063b5669a0d4b1f',
-        'Content-Type': 'application/json'
-      },
-  });
+//   queueMemes: function () {
+//     return axios.get('https://reddit-meme-api.herokuapp.com/200');
+//   }
 }
 
 export default userController;

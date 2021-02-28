@@ -6,6 +6,10 @@ import { Link } from 'react-router-dom';
 
 function Saved() {
     const [memes, setMemes] = useState([])
+    const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [items, setItems] = useState([]);
+
 
     useEffect(() => {
         loadMemes()
@@ -14,30 +18,18 @@ function Saved() {
     // loads all memes and sets them to memes
     function loadMemes() {
         API.getMemes()
-            .then(res =>
-                setMemes(res.data)
+            .then(
+                (res) => {
+                    setIsLoaded(true);
+                    setItems(res.data);
+                    console.log(res.data);
+                },
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
             )
-            .catch(err => console.log(err));
     }
-
-    const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [items, setItems] = useState([]);
-
-    // useEffect(() => {
-    //     fetch(' /api/users/memes')
-    //         .then(res => res.json())
-    //         .then(
-    //             (res) => {
-    //                 setIsLoaded(true);
-    //                 setItems(res.memes);
-    //             },
-    //             (error) => {
-    //                 setIsLoaded(true);
-    //                 setError(error);
-    //             }
-    //         )
-    // }, [])
 
     if (error) {
         return <div>Error: {error.message}</div>;
@@ -53,8 +45,8 @@ function Saved() {
                         {items.map(item => (
                             <Link key={item.id}>
                                 <div className='frame' >
-                                    <img className='memeDisplay' alt={item.name} id={item.name} src={item.url} />
-                                    <p className='memeTitle'><b>{item.name}</b></p>
+                                    <img className='memeDisplay' alt={item.tag} id={item.id} src={item.image} />
+                                    <p className='memeTitle'><b>{item.tag}</b></p>
                                 </div>
                             </Link>
                         ))}
