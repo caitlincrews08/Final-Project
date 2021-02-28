@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, FormControl, InputGroup, Row, } from 'react-bootstrap';
 import { Link, Redirect, withRouter, useHistory } from 'react-router-dom';
 import API from '../../utils/apiHelper';
-import LoadScroller from '../partials/LoadScroller'
+
 
 
 

@@ -4,7 +4,7 @@ import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import X from '../../assets/X.png'
 import SearchFooter from '../partials/SearchFooter'
-import LoadScroller from '../partials/LoadScroller';
+import API from '../../utils/apiHelper'
 
 
 function Search(props) {
@@ -14,10 +14,7 @@ function Search(props) {
     const [selected, setSelected] = useState([]);
 
     function removeSelection(meme) {
-        // function notMe() {
-        //     return !selected.some(e => e.id === meme.id);
-        // }
-
+     
         console.log(meme.title);
         console.log('deselected');
         let filteredMemes = [...selected.filter(e => e.id !== meme.title)];
@@ -37,6 +34,7 @@ function Search(props) {
 
     function selectionToggle(e, meme) {
         var element = document.getElementById(e.target.id);
+        console.log(e.target.id);
         e.preventDefault();
         if (element.classList.contains('deselected')) {
             addSelection(meme);
@@ -49,15 +47,11 @@ function Search(props) {
             element.classList.toggle('deselected');
             element.classList.toggle('selected');
         }
-
-
     }
-
-
     // LoadScroller(props);
     
     useEffect(() => {
-        fetch('https://reddit-meme-api.herokuapp.com/20')
+        API.queueMemes()
             .then(res => res.json())
             .then(
                 (res) => {
@@ -81,12 +75,10 @@ function Search(props) {
             <>
                 <div className='main'>
                     <Col className='mid-section'>
-
                         <Tooltip />
-
                         <div className='memeScroller'>
                             {items.map((item, index) => (
-                                <Link to="" key={index}>
+                                <Link key={index}>
                                     <div className='frame' >
                                         <img className='memeDisplay deselected' loading="lazy" alt={item.name} id={item.title} src={item.url} onClick={(e) => selectionToggle(e, item)} value={item.title} />
                                         <p className='memeTitle'><b>{item.title}</b></p>
