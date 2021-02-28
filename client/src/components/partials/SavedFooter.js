@@ -28,6 +28,11 @@ function SavedFooter(props) {
                     </Col>
                     <Col>
                         <Link to='/Search'>
+                            <Button variant='success' className='download'>Download</Button>
+                        </Link>
+                    </Col>
+                    <Col>
+                        <Link to='/Search'>
                             <Button variant='secondary' className='refresh' onClick={deleteMeme}>Delete</Button>
                         </Link>
                     </Col>

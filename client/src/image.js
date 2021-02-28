@@ -16,6 +16,6 @@ export const PixoImage = ({ src, onChange }) => {
       collapsed: true
     },
   });
-  return <img src={src} alt="another dank meme" onClick={() => pixo.edit(src)} />;
+  return <img src={src} alt="potentially dank meme" onClick={() => pixo.edit(src)} className='editPreview'/>;
 }
 
