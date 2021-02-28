@@ -8,7 +8,7 @@ function MyFooter() {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetch(' https://api.imgflip.com/get_memes')
+        fetch('https://api.imgflip.com/get_memes')
             .then(res => res.json())
             .then(
                 (res) => {
