@@ -77,6 +77,11 @@ body, html {
   filter: grayscale()
 }
 
+.downloadBtn {
+
+  object-fit: contain;
+}
+
 .editfooter {
   height: 100px;
   position: fixed;
@@ -89,6 +94,12 @@ body, html {
   color: white;
   text-align: center;
   z-index: 5;
+}
+
+.editPreview {
+  height: 40vh;
+  width: auto;
+  object-fit: scale-down;
 }
 
 .editStart {
