@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, FormControl, InputGroup, Row, } from 'react-bootstrap';
 import { Link, Redirect, withRouter, useHistory } from 'react-router-dom';
 import API from '../../utils/apiHelper';
+import LoadScroller from '../partials/LoadScroller'
 
 
 
 function SearchFooter(props) {
+
     const history = useHistory()
     const saveMeme = (e) => {
         e.preventDefault()
@@ -17,12 +19,9 @@ function SearchFooter(props) {
             )
             .catch(err => console.log(err));
     }
-    // const refresh = () => {
-
-    //     window.location.reload(true);
-    //     Redirect('/Search')
-
-    // }
+    const refresh = () => {
+        // LoadScroller(props);
+    }
 
     return (
         <div className='searchfooter'>
@@ -47,7 +46,7 @@ function SearchFooter(props) {
                     </Col>
                     <Col>
                         <Link to='/Search'>
-                            <Button variant='secondary' className=' refresh' >Refresh</Button>
+                            <Button variant='secondary' className='refresh' onClick={refresh}>Refresh</Button>
                         </Link>
                     </Col>
                     <Col >

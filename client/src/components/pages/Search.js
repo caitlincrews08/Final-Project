@@ -4,10 +4,7 @@ import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import X from '../../assets/X.png'
 import SearchFooter from '../partials/SearchFooter'
-import axios from 'axios';
-import API from '../../utils/apiHelper'
-import redditImageFetcher from 'reddit-image-fetcher'
-
+import LoadScroller from '../partials/LoadScroller';
 
 
 function Search(props) {
@@ -57,7 +54,8 @@ function Search(props) {
     }
 
 
-
+    // LoadScroller(props);
+    
     useEffect(() => {
         fetch('https://reddit-meme-api.herokuapp.com/20')
             .then(res => res.json())
@@ -73,7 +71,6 @@ function Search(props) {
                 }
             )
     }, [])
-
     if (error) {
         return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -109,4 +106,6 @@ function Search(props) {
     };
 }
 
-export default Search;
+
+export default Search; 
+
