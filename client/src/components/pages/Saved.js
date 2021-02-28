@@ -18,15 +18,18 @@ function Saved() {
     // loads all memes and sets them to memes
     function loadMemes() {
         API.getMemes()
-            .then(res =>
-                setMemes(res)
+            .then(
+                (res) => {
+                    setIsLoaded(true);
+                    setItems(res.data);
+                    console.log(res.data);
+                },
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
             )
-            .catch(err => console.log(err));
-            console.log()
     }
-
-    
- 
 
     if (error) {
         return <div>Error: {error.message}</div>;
@@ -39,11 +42,11 @@ function Saved() {
                 <Col className='mid-section'>
                     <Tooltip />
                     <div className='memeScroller'>
-                        {memes.map(meme => (
-                            <Link key={meme.id}>
+                        {items.map(item => (
+                            <Link key={item.id}>
                                 <div className='frame' >
-                                    <img className='memeDisplay' alt={meme.name} id={meme.name} src={meme.url} />
-                                    <p className='memeTitle'><b>{meme.name}</b></p>
+                                    <img className='memeDisplay' alt={item.tag} id={item.id} src={item.image} />
+                                    <p className='memeTitle'><b>{item.tag}</b></p>
                                 </div>
                             </Link>
                         ))}
