@@ -52,7 +52,7 @@ function Saved(props) {
         loadMemes()
     }, [])
 
-    // loads all memes and sets them to memes
+  
     function loadMemes() {
         API.getMemes()
             .then(
