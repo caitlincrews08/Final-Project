@@ -205,6 +205,20 @@ body, html {
   box-shadow: 0px 6px 8px 6px rgb(0 0 0 / 20%)
 }
 
+
+.joke {
+  text-align: center;
+  font-size: 10px;
+  position: absolute;
+  margin: auto;
+  width: 75%;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+
 .loggedin {
   color: rgb(255, 217, 0) !important;
 }
@@ -302,17 +316,6 @@ body, html {
   color: white;
 }
 
-p {
-  text-align: center;
-  font-size: 10px;
-  position: absolute;
-  margin: auto;
-  width: 75%;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-}
 
 /* 
 .ripple:after {

@@ -40,7 +40,7 @@ function Tips() {
     return (
       <Col id='autoScroll' className='tips'>
 
-        <p>{jokes}</p>
+        <p className='joke'>{jokes}</p>
 
       </Col>
     );
