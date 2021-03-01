@@ -78,7 +78,6 @@ body, html {
 }
 
 .downloadBtn {
-
   object-fit: contain;
 }
 
@@ -168,7 +167,13 @@ body, html {
   background-color: #00000000;
   color: rgb(58, 57, 57);
   font-size: calc(50px + 2vmin);
-  margin-top: 18vh;
+  position: absolute;
+  margin-top: 28vh;
+  /* or absolute */
+  top: 50%;
+  left: 50%;
+  left: 0px;
+  right: 0px;
   z-index: 5;
   overflow: hidden;
   position: relative;
@@ -199,6 +204,20 @@ body, html {
   z-index: 21;
   box-shadow: 0px 6px 8px 6px rgb(0 0 0 / 20%)
 }
+
+
+.joke {
+  text-align: center;
+  font-size: 10px;
+  position: absolute;
+  margin: auto;
+  width: 75%;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
 
 .loggedin {
   color: rgb(255, 217, 0) !important;
@@ -245,7 +264,7 @@ body, html {
 
 .memeScroller {
   width: 100vw;
-  height: 55vh;
+  height: 58vh;
   white-space: nowrap;
   position: relative;
   overflow-x: scroll;
@@ -290,12 +309,13 @@ body, html {
 }
 
 .navbar-collapse {
-  background-color: #0a0321;
+  background-color: #1a1430e7;
 }
 
 .navbar-toggler-icon {
   color: white;
 }
+
 
 /* 
 .ripple:after {
@@ -340,6 +360,7 @@ body, html {
 /* .searchbox {
   
 } */
+
 .savedfooter {
   height: 100px;
   position: fixed;
@@ -373,6 +394,14 @@ body, html {
   border-style: double solid;
   border-color: rgb(63, 246, 105);
   background-color: rgb(63, 246, 105, .5);
+  filter: grayscale(20%) drop-shadow(5px 5px 10px black);
+}
+
+.selected-d {
+  border-radius: 13px;
+  border-style: double solid;
+  border-color: rgb(246, 63, 63);
+  background-color: rgba(246, 63, 63, 0.5);
   filter: grayscale(20%) drop-shadow(5px 5px 10px black);
 }
 
@@ -445,13 +474,13 @@ div.myfooter a:hover {
 
 .tips {
   top: 10vh;
-  margin-left: 5px;
+  margin-left: 10px;
   margin-top: 0px;
-  margin-right: 5px;
+  margin-right: 10px;
   margin-bottom: 0px;
-  width: 100vw;
-  height: 7vh;
-  display: block;
+  width: 90vw;
+  height: 8vh;
+  display: inline-flex;
   position: relative;
   z-index: 3;
   overflow-y: scroll;
@@ -460,6 +489,7 @@ div.myfooter a:hover {
   word-wrap: break-word;
   color: azure;
   text-shadow: black;
+  text-align: center;
 }
 
 .vertical-center {

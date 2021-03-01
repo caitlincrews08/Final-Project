@@ -1,35 +1,50 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col } from 'react-bootstrap';
+// import { scroller } from 'react-scroll';
 
-import { scroller } from 'react-scroll';
+
 
 function Tips() {
 
-  const scrollToSection = () => {
-    scroller.scrollTo('scrollAnchor', {
-      duration: 800,
-      delay: 100,
-      smooth: 'easeInOutQuart',
-    });
-  };
+  const [jokes, setJokes] = useState([]);
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
+  // const scrollToSection = () => {
+  //   scroller.scrollTo('scrollAnchor', {
+  //     duration: 800,
+  //     delay: 100,
+  //     smooth: 'easeInOutQuart',
+  //   });
+  // };
   useEffect(() => {
-    scrollToSection();
+    fetch('https://geek-jokes.sameerkumar.website/api?format=json')
+      .then(res => res.json())
+      .then(
+        (body) => {
+          setIsLoaded(true);
+          setJokes(body.joke);
+        },
+        (error) => {
+          setIsLoaded(true);
+          setError(error);
+        }
+      )
+  }, [])
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  } else if (!isLoaded) {
+    return <div>Loading...</div>;
+  } else {
 
-  });
-
-  return (
+    return (
       <Col id='autoScroll' className='tips'>
-        <br />
-        <p> Scroll up</p>
-        <br />
-        <br />
-        <p>Hints and descriptions will populate(fade animation/auto-scroll) here onhover of select clickable elements (and possibly an easter egg that displays inspirational and/or funny quotes and sayings) </p>
-        <br />
-        <br />
-        <p className='scrollAnchor'></p>
+
+        <p className='joke'>{jokes}</p>
+
       </Col>
-  );
+    );
+  };
 };
 
 export default Tips;

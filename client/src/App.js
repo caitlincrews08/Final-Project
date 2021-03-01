@@ -20,8 +20,7 @@ import EditFooter from './components/partials/EditFooter'
 import HomeFooter from './components/partials/HomeFooter'
 import HomeNavbar from './components/partials/HomeNavbar'
 import PrivateRoute from './components/auth/PrivateRoute';
-import SavedFooter from './components/partials/SavedFooter'
-import SearchFooter from './components/partials/SearchFooter'
+
 
 
 

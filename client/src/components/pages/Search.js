@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Tooltip from '../partials/Tips';
 import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import X from '../../assets/X.png'
+import Refresh from '../../assets/Refresh.png'
 import SearchFooter from '../partials/SearchFooter'
 import API from '../../utils/apiHelper'
 
@@ -14,7 +14,7 @@ function Search(props) {
     const [selected, setSelected] = useState([]);
 
     function removeSelection(meme) {
-     
+
         console.log(meme.title);
         console.log('deselected');
         let filteredMemes = [...selected.filter(e => e.id !== meme.title)];
@@ -28,7 +28,7 @@ function Search(props) {
         if (!selected.some(e => e.id === meme.id)) {
             setSelected([...selected, { id: meme.title, tag: meme.title, image: meme.url }]);
             console.log(selected);
-            console.log(meme.title + ' ' + 'added to selected')
+            console.log(meme.title + 'added to selected')
         };
     };
 
@@ -40,16 +40,16 @@ function Search(props) {
             addSelection(meme);
             element.classList.toggle('selected');
             element.classList.toggle('deselected');
-            console.log(meme.title + ' ' + 'selected')
+            console.log(meme.title + 'selected')
         } else {
             removeSelection(meme);
-            console.log(meme.title + ' ' + 'deselected')
+            console.log(meme.title + 'deselected')
             element.classList.toggle('deselected');
             element.classList.toggle('selected');
         }
     }
-    // LoadScroller(props);
-    
+
+
     useEffect(() => {
         API.queueMemes()
             .then(res => res.json())
@@ -57,7 +57,6 @@ function Search(props) {
                 (res) => {
                     setIsLoaded(true);
                     setItems(res.memes);
-                    console.log(res.memes);
                 },
                 (error) => {
                     setIsLoaded(true);
@@ -81,14 +80,16 @@ function Search(props) {
                                 <Link key={index}>
                                     <div className='frame' >
                                         <img className='memeDisplay deselected' loading="lazy" alt={item.name} id={item.title} src={item.url} onClick={(e) => selectionToggle(e, item)} value={item.title} />
-                                        <p className='memeTitle'><b>{item.title}</b></p>
+                                        <p className='memeTitle'>{item.title}</p>
                                     </div>
                                 </Link>
                             ))}
-                            <div key='last' className='frame'>
-                                <img className='memeDisplay' alt='red X' src={X} />
-                                <p className='memeTitle'><b>No more images to load</b></p>
-                            </div>
+                            <Link to='/Search' key='last'>
+                                <div className='frame'>
+                                    <img className='memeDisplay' alt='Refresh Button' src={Refresh} />
+                                    <p className='memeTitle'><b>Press to Refresh Images</b></p>
+                                </div>
+                            </Link>
                         </div>
                     </Col>
                 </div>
@@ -99,5 +100,5 @@ function Search(props) {
 }
 
 
-export default Search; 
+export default Search;
 
