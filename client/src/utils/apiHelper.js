@@ -21,7 +21,7 @@ const userController = {
     return axios.put("/api/users/memes", memeData);
   },
   queueMemes: function (res) {
-    return fetch('https://reddit-meme-api.herokuapp.com/20', res);
+    return fetch('https://corsproxy1984.herokuapp.com/https://reddit-meme-api.herokuapp.com/20', res);
   }
 }
 

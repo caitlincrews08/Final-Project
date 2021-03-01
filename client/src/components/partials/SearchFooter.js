@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { Button, Col, Container, FormControl, InputGroup, Row, } from 'react-bootstrap';
-import { Link, Redirect, withRouter, useHistory } from 'react-router-dom';
+import React from 'react';
+import { Button, Col, Container, Row, } from 'react-bootstrap';
+import { Link, useHistory } from 'react-router-dom';
 import API from '../../utils/apiHelper';
-import download from '../../assets/Download.png'
+
 
 
 

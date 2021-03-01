@@ -14,7 +14,7 @@ const MyNavbar = props => {
       props.history.push('/home');
 
     API.getUser()
-    .then(res => console.log({ res }))
+    // .then(res => console.log({ res }))
     .catch(err => console.log({ err }));
   }, [ state, props ]);
 
@@ -31,7 +31,7 @@ const MyNavbar = props => {
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
           <Nav className='mr-auto'>
-          <p>You are logged in. Tap below to...</p>
+          <h6>You are logged in. Tap below to...</h6>
           </Nav>
           <Nav>
             <Button variant='danger' onClick={onLogoutClick}>

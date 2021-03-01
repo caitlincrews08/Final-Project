@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 
 import { Col, Form, Row } from 'react-bootstrap';
-import testimg from '../../assets/X.png'
-
 
 import { PixoImage } from '../../image';
 import { Link } from 'react-router-dom';
@@ -32,7 +30,7 @@ const Edit = () => {
   var reader = new FileReader();
   reader.onclose = function (e) {
     // The file's text will be printed here
-    var file = document.getElementsByTagName('input').files[0];
+    var file = document.getElementsByTagName('input');
     console.log(file);
     console.log(e.target.result)
 

@@ -78,7 +78,6 @@ body, html {
 }
 
 .downloadBtn {
-
   object-fit: contain;
 }
 
@@ -168,8 +167,9 @@ body, html {
   background-color: #00000000;
   color: rgb(58, 57, 57);
   font-size: calc(50px + 2vmin);
-  position: absolute; 
-  margin-top: 28vh;/* or absolute */
+  position: absolute;
+  margin-top: 28vh;
+  /* or absolute */
   top: 50%;
   left: 50%;
   left: 0px;
@@ -250,7 +250,7 @@ body, html {
 
 .memeScroller {
   width: 100vw;
-  height: 60vh;
+  height: 58vh;
   white-space: nowrap;
   position: relative;
   overflow-x: scroll;
@@ -302,6 +302,18 @@ body, html {
   color: white;
 }
 
+p {
+  text-align: center;
+  font-size: 10px;
+  position: absolute;
+  margin: auto;
+  width: 75%;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
 /* 
 .ripple:after {
   height: 10px;
@@ -345,6 +357,7 @@ body, html {
 /* .searchbox {
   
 } */
+
 .savedfooter {
   height: 100px;
   position: fixed;
@@ -380,6 +393,7 @@ body, html {
   background-color: rgb(63, 246, 105, .5);
   filter: grayscale(20%) drop-shadow(5px 5px 10px black);
 }
+
 .selected-d {
   border-radius: 13px;
   border-style: double solid;
@@ -457,13 +471,13 @@ div.myfooter a:hover {
 
 .tips {
   top: 10vh;
-  margin-left: 5px;
+  margin-left: 10px;
   margin-top: 0px;
-  margin-right: 5px;
+  margin-right: 10px;
   margin-bottom: 0px;
-  width: 100vw;
-  height: 7vh;
-  display: block;
+  width: 90vw;
+  height: 8vh;
+  display: inline-flex;
   position: relative;
   z-index: 3;
   overflow-y: scroll;
@@ -472,6 +486,7 @@ div.myfooter a:hover {
   word-wrap: break-word;
   color: azure;
   text-shadow: black;
+  text-align: center;
 }
 
 .vertical-center {

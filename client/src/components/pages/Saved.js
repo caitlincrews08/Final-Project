@@ -11,7 +11,7 @@ function Saved(props) {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
-    const [selected, setSelected] = useState([]);
+
 
     function removeSelection(meme) {
 
@@ -29,7 +29,7 @@ function Saved(props) {
         if (!memes.some(e => e.id === meme.id)) {
             setMemes([...memes, { id: meme._id, tag: meme.tag, image: meme.image }]);
             console.log(memes);
-            console.log(meme.tag + ' ' + 'added to selected')
+            console.log(meme.tag + 'added to selected')
         };
     };
 
@@ -41,10 +41,10 @@ function Saved(props) {
             addSelection(meme);
             element.classList.toggle('selected-d');
             element.classList.toggle('deselected-d');
-            console.log(meme.tag + ' ' + 'selected')
+            console.log(meme.tag + 'selected')
         } else {
             removeSelection(meme);
-            console.log(meme.tag + ' ' + 'deselected')
+            console.log(meme.tag + 'deselected')
             element.classList.toggle('deselected-d');
             element.classList.toggle('selected-d');
         }
@@ -85,7 +85,7 @@ function Saved(props) {
                             {items.map(item => (
                                 <Link key={item._id}>
                                     <div className='frame' >
-                                        <img className='memeDisplay deselected-d' loading='lazy' alt={item.tag} id={item._id} src={item.image}  value={item.tag} onClick={(e) => selectionToggle(e, item)}/>
+                                        <img className='memeDisplay deselected-d' loading='lazy' alt={item.tag} id={item._id} src={item.image} value={item.tag} onClick={(e) => selectionToggle(e, item)} />
                                         <p className='memeTitle'><b>{item.tag}</b></p>
                                     </div>
                                 </Link>

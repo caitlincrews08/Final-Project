@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-// Router is needed for secondary switch to function, despite not being called after import
+// Router is needed for secondary/nested switch to function, despite not being called after import
 import { Col, Row } from 'react-bootstrap';
 import Register from './../pages/Register';
 import Login from './../pages/Login';
