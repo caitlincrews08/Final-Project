@@ -38,18 +38,35 @@ router.put("/memes", async (req, res) => {
 });
 
 // delete memes
-// router.put("/memes", async (req, res) => {
-//   const memes = req.body;
-//   await memes.forEach(async meme => {
-//     await User.findByIdAndUpdate(req.user._id, { $pull: { memes: _id } })
-//       .catch(err => {
-//         res.json(err);
-//       });
-//   });
-//   res.json({ success: true })
-// });
+router.delete("/memes/id", async (req, res) => {
+  const meme = req.body;
+  // await User.findByIdAndUpdate( req.user._id, { $pull: { memes: req.body }})
+  //   .catch(err => {
+  //     res.json(err);
+  //   });
+  // res.json({ success: true })
+
+  // User.findOne({_id:req.params.id}).exec(function(err, meme){
+  //   if(meme) {
+  //      meme.remove();
+  //   }
+
+  // Meme.find().where('_id').in(req.user.memes).exec((error, dbMemes) => {
+  //   if (error)
+  //     return res.status(400).json(error)
+
+  //   res.json(dbMemes);
+
+    Meme.find().where('_id').remove(req.user.memes).exec((error, dbMemes) => {
+      if (error)
+        return res.status(400).json(error)
+
+      res.json(dbMemes)
+    })
+
+  });
 
 
-module.exports = router;
+  module.exports = router;
 
 // this is where I will be adding user favorites info/memes
