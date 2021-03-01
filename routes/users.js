@@ -38,8 +38,16 @@ router.put("/memes", async (req, res) => {
 });
 
 // delete memes
-router.put("/memes/id", async (req, res) => {
-  const meme = req.body;
+router.put("/memes/:id", async ({id}, res) => {
+  User.findByIdAndUpdate(req.user._id, { $unset: { memes: id }})
+
+  // User.findByIdAndUpdate({ "meme": req.body.id })
+  //   .catch(err => {
+  //     res.json(err);
+  //   });
+  // res.json({ success: true })
+
+
   // await User.findByIdAndUpdate( req.user._id, { $pull: { memes: req.body }})
   //   .catch(err => {
   //     res.json(err);
@@ -57,16 +65,16 @@ router.put("/memes/id", async (req, res) => {
 
   //   res.json(dbMemes);
 
-    Meme.find().where('_id').remove(req.user.memes).exec((error, dbMemes) => {
-      if (error)
-        return res.status(400).json(error)
+  //   Meme.find().where(id).remove(req.user.memes).exec((error, dbMemes) => {
+  //     if (error)
+  //       return res.status(400).json(error)
 
-      res.json(dbMemes)
-    })
+  //     res.json(dbMemes)
+  //   })
 
-  });
+});
 
 
-  module.exports = router;
+module.exports = router;
 
 // this is where I will be adding user favorites info/memes
