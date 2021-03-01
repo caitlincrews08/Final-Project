@@ -38,7 +38,7 @@ router.put("/memes", async (req, res) => {
 });
 
 // delete memes
-router.delete("/memes/id", async (req, res) => {
+router.put("/memes/id", async (req, res) => {
   const meme = req.body;
   // await User.findByIdAndUpdate( req.user._id, { $pull: { memes: req.body }})
   //   .catch(err => {
