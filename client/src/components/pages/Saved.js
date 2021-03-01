@@ -25,7 +25,7 @@ function Saved(props) {
     function addSelection(meme) {
 
         if (!memes.some(e => e.id === meme.id)) {
-            setMemes([...memes, { id: meme.id, tag: meme.tag, image: meme.image }]);
+            setMemes([...memes, { id: meme._id, tag: meme.tag, image: meme.image }]);
             console.log(memes);
             console.log(meme.tag + ' ' + 'added to selected')
         };

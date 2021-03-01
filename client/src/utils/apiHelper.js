@@ -14,7 +14,7 @@ const userController = {
   },
   // Deletes the meme with the given id
   deleteMeme: function (id) {
-    return axios.delete("/api/users/memes/" + id);
+    return axios.delete("/api/users/memes/:" + id);
   },
   // Saves a meme to the database
   saveMeme: function (memeData) {
