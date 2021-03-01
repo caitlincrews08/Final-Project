@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, FormControl, InputGroup, Row, } from 'react-bootstrap';
 import { Link, Redirect, withRouter, useHistory } from 'react-router-dom';
 import API from '../../utils/apiHelper';
+import download from '../../assets/Download.png'
 
 
 
@@ -41,17 +42,27 @@ function SearchFooter(props) {
 
                 </Row> */}
                 <Row >
+
                     <Col>
-                        <Link to='/home' ><h5 className=''> ◄ Back </h5></Link>
+                        <Link to='/home' >
+                            <Button variant='light' className='Home'><i className='fa fa-home' aria-hidden='true'></i></Button>
+                        </Link>
                     </Col>
                     <Col>
                         <Link to='/Search'>
-                            <Button variant='secondary' className='refresh' onClick={refresh}>Refresh</Button>
+                            <Button variant='light' className='download'><i className='fa fa-download' aria-hidden='true'></i></Button>
+                        </Link>
+                    </Col>
+
+                    <Col>
+                        <Link to='/Search'>
+                            <Button variant='light' className='refresh' onClick={refresh}><i className='fa fa-refresh' aria-hidden='true'></i></Button>
                         </Link>
                     </Col>
                     <Col >
-                        <Button variant='success' className=' save' onClick={saveMeme}>Save</Button>
+                        <Button variant='light' className=' save' onClick={saveMeme}><i className='fa fa-save' aria-hidden='true'></i></Button>
                     </Col>
+
                 </Row>
             </Container>
         </div>
