@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Tooltip from '../partials/Tips';
 import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import X from '../../assets/X.png'
+import Refresh from '../../assets/Refresh.png'
 import SearchFooter from '../partials/SearchFooter'
 import API from '../../utils/apiHelper'
 
@@ -14,7 +14,7 @@ function Search(props) {
     const [selected, setSelected] = useState([]);
 
     function removeSelection(meme) {
-     
+
         console.log(meme.title);
         console.log('deselected');
         let filteredMemes = [...selected.filter(e => e.id !== meme.title)];
@@ -48,8 +48,8 @@ function Search(props) {
             element.classList.toggle('selected');
         }
     }
-    // LoadScroller(props);
-    
+ 
+
     useEffect(() => {
         API.queueMemes()
             .then(res => res.json())
@@ -85,10 +85,12 @@ function Search(props) {
                                     </div>
                                 </Link>
                             ))}
-                            <div key='last' className='frame'>
-                                <img className='memeDisplay' alt='red X' src={X} />
-                                <p className='memeTitle'><b>No more images to load</b></p>
-                            </div>
+                            <Link to='/Search' key='last'>
+                                <div className='frame'>
+                                    <img className='memeDisplay' alt='Refresh Button' src={Refresh} />
+                                    <p className='memeTitle'><b>Press to Refresh Images</b></p>
+                                </div>
+                            </Link>
                         </div>
                     </Col>
                 </div>
@@ -99,5 +101,5 @@ function Search(props) {
 }
 
 
-export default Search; 
+export default Search;
 
