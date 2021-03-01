@@ -5,6 +5,7 @@ import API from '../../utils/apiHelper'
 import { Link } from 'react-router-dom';
 import SavedFooter from '../partials/SavedFooter'
 
+
 function Saved(props) {
     const [memes, setMemes] = useState([])
     const [error, setError] = useState(null);
@@ -20,6 +21,7 @@ function Saved(props) {
         // console.log(e.id)
         setMemes(filteredMemes);
         console.log(memes);
+        loadMemes()
     };
 
     function addSelection(meme) {

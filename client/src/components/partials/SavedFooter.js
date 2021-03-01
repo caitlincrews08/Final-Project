@@ -1,3 +1,4 @@
+import { remove } from 'lodash';
 import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, FormControl, InputGroup, Row, } from 'react-bootstrap';
 import { Link, Redirect, withRouter, useHistory } from 'react-router-dom';
@@ -8,13 +9,16 @@ function SavedFooter(props) {
 
     const history = useHistory()
 
-    const removeMemes = () => {
-        let selectedMemes = document.getElementsByClassName("selected-d");
-        selectedMemes.parentNode.parentNode.removeChild(selectedMemes.parentNode.parentNode);
-    }
+  
+    
 
     const deleteMeme = (e) => {
         e.preventDefault();
+        // const removeMemes = (e) => {
+        //     let selectedMemes = document.getElementById(e.target.id).parentElement.parentElement.nodeName;
+        //     console.log(selectedMemes);
+        //     remove(selectedMemes);
+        // }
         console.log(props.memes);
         console.log(props.test);
         API.deleteMeme(props.memes)
@@ -22,7 +26,7 @@ function SavedFooter(props) {
                 history.push('/Saved')
             )
             .catch(err => console.log(err));
-        removeMemes();
+        // removeMemes();
     }
 
 
