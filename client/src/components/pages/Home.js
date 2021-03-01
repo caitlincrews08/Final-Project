@@ -7,26 +7,26 @@ function Home() {
 
     return (
 
-        <div className='main'>
-            <Col className='mid-section'>
+        <div className="main">
+            <Col className="mid-section">
                 <Row>
                     <Tooltip />
                 </Row>
                 <Row className='home'>
-                    <Link to='/edit' className='forge col-sm-12 ripple'>
-                        Forge
-                </Link>
+                    <Col>
+                        <Link to='/edit' className='forge col-sm-12 ripple'>Forge</Link>
+                    </Col>
                     <br />
-                    <Link to='/saved' className='vault col-sm-12 ripple'>
-                        Vault
-                </Link>
+                    <Col>
+                        <Link to='/saved' className='vault col-sm-12 ripple'>Vault</Link>
+                    </Col>
                     <br />
-                    <Link to='/search' className='archives col-sm-12 ripple'>
-                        Archives
-                </Link>
+                    <Col>
+                        <Link to='/search' className='archives col-sm-12 ripple'>Archives</Link>
+                    </Col>
                 </Row>
             </Col>
-        </div>
+        </div >
 
 
 
