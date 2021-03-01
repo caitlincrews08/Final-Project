@@ -38,7 +38,7 @@ function Tips() {
   } else {
 
     return (
-      <Col lg={10} id='autoScroll' className='tips'>
+      <Col id='autoScroll' className='tips'>
 
         <p>{jokes}</p>
 
