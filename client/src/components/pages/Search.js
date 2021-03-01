@@ -28,7 +28,7 @@ function Search(props) {
         if (!selected.some(e => e.id === meme.id)) {
             setSelected([...selected, { id: meme.title, tag: meme.title, image: meme.url }]);
             console.log(selected);
-            console.log(meme.title + ' ' + 'added to selected')
+            console.log(meme.title + 'added to selected')
         };
     };
 
@@ -40,15 +40,15 @@ function Search(props) {
             addSelection(meme);
             element.classList.toggle('selected');
             element.classList.toggle('deselected');
-            console.log(meme.title + ' ' + 'selected')
+            console.log(meme.title + 'selected')
         } else {
             removeSelection(meme);
-            console.log(meme.title + ' ' + 'deselected')
+            console.log(meme.title + 'deselected')
             element.classList.toggle('deselected');
             element.classList.toggle('selected');
         }
     }
- 
+
 
     useEffect(() => {
         API.queueMemes()
@@ -57,7 +57,6 @@ function Search(props) {
                 (res) => {
                     setIsLoaded(true);
                     setItems(res.memes);
-                    console.log(res.memes);
                 },
                 (error) => {
                     setIsLoaded(true);

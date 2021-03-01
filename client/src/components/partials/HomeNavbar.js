@@ -14,7 +14,7 @@ const MyNavbar = props => {
       props.history.push('/home');
 
     API.getUser()
-    .then(res => console.log({ res }))
+    // .then(res => console.log({ res }))
     .catch(err => console.log({ err }));
   }, [ state, props ]);
 
