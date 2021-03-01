@@ -9,9 +9,20 @@ function SavedFooter(props) {
     const history = useHistory()
     const deleteMeme = (e) => {
         e.preventDefault()
-        console.log(props.memes);
-        console.log(props.test);
-        API.deleteMeme(props.memes)
+        //console.log(props.memes);
+        //console.log(props.test);
+
+        let allMemes = props.memes;
+        let memes = allMemes.map(meme => {
+            return meme["id"];
+        })
+
+        console.log(memes);
+        // for(let i = 0; i < allMemes.length; i++) {
+        //     console.log(allMemes[i].id);
+
+        // }
+        API.deleteMeme(memes)
             .then(res =>
                 history.push('/Saved')
             )
