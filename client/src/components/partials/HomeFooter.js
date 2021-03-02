@@ -1,13 +1,15 @@
-import { forEach } from 'lodash';
-import React, { useEffect, useState } from 'react';
+
+import React, { useEffect, useState, useContext } from 'react';
 import { Container } from 'react-bootstrap';
 import API from '../../utils/apiHelper'
+import { Store } from '../../store';
+import { useHistory } from 'react-router-dom';
 
 function MyFooter() {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
-    const [urls, setUrls] = useState([]);
+    const { dispatch } = useContext(Store);
 
     useEffect(() => {
         API.queueTemps()
@@ -16,8 +18,6 @@ function MyFooter() {
                 (res) => {
                     setIsLoaded(true);
                     setItems(res.data.memes);
-
-                    // setUrls(res.data.memes.url);
                 },
                 (error) => {
                     setIsLoaded(true);
@@ -25,8 +25,12 @@ function MyFooter() {
                 }
             )
     }, [])
-
-  
+    const history = useHistory()
+    function sendToEdit(e) {
+        let url = e.target.src
+        dispatch({ type: 'SET_LOAD_FOR_EDIT', payload: url });
+        history.push('/Edit');
+    }
 
     if (error) {
         return <div>Error: {error.message}</div>;
@@ -34,15 +38,13 @@ function MyFooter() {
         return <div>Loading...</div>;
     } else {
         return (
-
             <div className='homefooter'>
                 <div className='footborder'></div>
                 <Container fluid >
-
                     <div className='thumbnailScroller'>
                         {items.map(item => (
                             <div key={item.id} >
-                                <img className='thumbnailDisplay' alt='meme-thumbs' src={item.url} />
+                                <img className='thumbnailDisplay' alt='meme-thumbs' src={item.url} onClick={sendToEdit} />
                             </div>
                         ))}
                     </div>

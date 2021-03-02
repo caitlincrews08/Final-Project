@@ -64,7 +64,7 @@ function Search(props) {
         console.log(selected);
 
         API.saveMeme(selected)
-            .then(res =>
+            .then(
                 history.push('/Saved')
             )
             .catch(err => console.log(err));

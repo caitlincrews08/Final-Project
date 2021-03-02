@@ -9,7 +9,7 @@ export const PixoImage = ({ src, onChange }) => {
     onSave: img => {
       console.log(img.toImage());
     },
-    // onClose: () => window.location.href = './home',
+    onClose: () => window.location.href = './home',
     theme: 'light',
     propertypanel: {
       collapsible: true,

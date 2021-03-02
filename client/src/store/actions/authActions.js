@@ -1,7 +1,7 @@
 import axios from 'axios';
 import setAuthToken from '../../utils/setAuthToken';
 import jwt_decode from 'jwt-decode';
-import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from './types';
+import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING, SET_LOAD_FOR_EDIT } from './types';
 
 export const setCurrentUser = decoded => {
   return {
@@ -20,6 +20,12 @@ export const setErrors = err => {
   return {
     type: GET_ERRORS,
     payload: err.response.data,
+  };
+};
+export const setUrl = (url) => {
+  return {
+    type: SET_LOAD_FOR_EDIT,
+    payload: url,
   };
 };
 
