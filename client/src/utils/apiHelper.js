@@ -22,6 +22,9 @@ const userController = {
   },
   queueMemes: function (res) {
     return fetch('https://corsproxy1984.herokuapp.com/https://reddit-meme-api.herokuapp.com/20', res);
+  },
+  queueTemps: function (res) {
+    return fetch('https://api.imgflip.com/get_memes', res);
   }
 }
 

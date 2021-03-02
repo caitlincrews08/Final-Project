@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Tooltip from '../partials/Tips';
 import { Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Refresh from '../../assets/Refresh.png'
 import SearchFooter from '../partials/SearchFooter'
 import API from '../../utils/apiHelper'
@@ -12,43 +12,6 @@ function Search(props) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
     const [selected, setSelected] = useState([]);
-
-    function removeSelection(meme) {
-
-        console.log(meme.title);
-        console.log('deselected');
-        let filteredMemes = [...selected.filter(e => e.id !== meme.title)];
-        // console.log(e.id)
-        setSelected(filteredMemes);
-        console.log(selected);
-    };
-
-    function addSelection(meme) {
-
-        if (!selected.some(e => e.id === meme.id)) {
-            setSelected([...selected, { id: meme.title, tag: meme.title, image: meme.url }]);
-            console.log(selected);
-            console.log(meme.title + 'added to selected')
-        };
-    };
-
-    function selectionToggle(e, meme) {
-        var element = document.getElementById(e.target.id);
-        console.log(e.target.id);
-        e.preventDefault();
-        if (element.classList.contains('deselected')) {
-            addSelection(meme);
-            element.classList.toggle('selected');
-            element.classList.toggle('deselected');
-            console.log(meme.title + 'selected')
-        } else {
-            removeSelection(meme);
-            console.log(meme.title + 'deselected')
-            element.classList.toggle('deselected');
-            element.classList.toggle('selected');
-        }
-    }
-
 
     useEffect(() => {
         API.queueMemes()
@@ -64,6 +27,66 @@ function Search(props) {
                 }
             )
     }, [])
+
+    function removeSelection(meme) {
+        let filteredMemes = [...selected.filter(target => target.id !== meme.title)];
+        setSelected(filteredMemes);
+        // console.log(selected);
+    };
+
+    function addSelection(meme) {
+        if (!selected.some(target => target.id === meme.title)) {
+            setSelected([...selected, { id: meme.title, tag: meme.title, image: meme.url }]);
+            // console.log(selected);
+            console.log(meme.title + ' added to selected')
+        };
+    };
+
+    function selectionToggle(e, meme) {
+        var element = document.getElementById(e.target.id);
+        e.preventDefault();
+        if (element.classList.contains('deselected')) {
+            addSelection(meme);
+            element.classList.toggle('selected');
+            element.classList.toggle('deselected');
+            console.log(meme.title + ' selected')
+        } else {
+            removeSelection(meme);
+            console.log(meme.title + ' deselected')
+            element.classList.toggle('deselected');
+            element.classList.toggle('selected');
+        }
+    }
+
+    const history = useHistory()
+    const saveMeme = (e) => {
+        e.preventDefault()
+        console.log(selected);
+
+        API.saveMeme(selected)
+            .then(res =>
+                history.push('/Saved')
+            )
+            .catch(err => console.log(err));
+    }
+
+    // function DLHandler(props) {
+    //     const urls = selected.map((selection => selection.image));
+    //     console.log('click')
+
+
+    //     urls.forEach(function (value, idx) {
+    //         const response = {
+    //             file: value,
+    //         };
+    //         setTimeout(() => {
+    //             window.location.href = response.file;
+    //         }, idx * 100)
+            
+    //     })
+    // };
+    // downlaod all from array
+
     if (error) {
         return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -93,7 +116,7 @@ function Search(props) {
                         </div>
                     </Col>
                 </div>
-                <SearchFooter selected={selected} test="test" />
+                <SearchFooter selected={selected} test="test" saveMeme={saveMeme} />
             </>
         );
     };

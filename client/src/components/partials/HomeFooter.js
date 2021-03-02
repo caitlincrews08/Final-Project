@@ -1,19 +1,23 @@
+import { forEach } from 'lodash';
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
-
+import API from '../../utils/apiHelper'
 
 function MyFooter() {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
+    const [urls, setUrls] = useState([]);
 
     useEffect(() => {
-        fetch('https://api.imgflip.com/get_memes')
+        API.queueTemps()
             .then(res => res.json())
             .then(
                 (res) => {
                     setIsLoaded(true);
                     setItems(res.data.memes);
+
+                    // setUrls(res.data.memes.url);
                 },
                 (error) => {
                     setIsLoaded(true);
@@ -21,6 +25,8 @@ function MyFooter() {
                 }
             )
     }, [])
+
+  
 
     if (error) {
         return <div>Error: {error.message}</div>;

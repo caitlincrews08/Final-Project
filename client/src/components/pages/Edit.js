@@ -4,52 +4,27 @@ import { Col, Form, Row } from 'react-bootstrap';
 
 import { PixoImage } from '../../image';
 import { Link } from 'react-router-dom';
+import placeholder from '../../assets/placeholder.png'
 
 const Edit = () => {
 
-  // document.querySelector('input').onchange = function(e) {
+  const [ready, setReady] = useState([]);
+function rdyEdit () {
 
-  //   var file = e.target.files[0],                  // reference first file BLOB
-  //       url = URL.createObjectURL(file),           // create an Object URL
-  //       img = new Image(); // create a temp. image object
-  //       console.log(img)  ;                      
+}
 
-  //     img.onload = function() {                    // handle async image loading
-  //       URL.revokeObjectURL(this.src);             // free memory held by Object URL
-  //       // selected.getContext('2d').drawImage(this, 0, 0);  // draw image onto canvas (lazy method™)
-  //     };
+  let editRdy = ready
 
-  //     img.src = url;                               // start convertion file to image
-  // };
-
-  var fileupload = document.getElementsByTagName('input');
-  console.log(fileupload);
-
-
-
-  var reader = new FileReader();
-  reader.onclose = function (e) {
-    // The file's text will be printed here
-    var file = document.getElementsByTagName('input');
-    console.log(file);
-    console.log(e.target.result)
-
-    let imagepreview = reader.readAsDataURL(file);
-    console.log(imagepreview);
-    return imagepreview;
-  }
-
-
-  const [src, onChange] = useState('https://via.placeholder.com/300');
+  const [src, onChange] = useState( placeholder);
 
   return (
     <div className='main'>
       <Col className='editStart mid-section'>
-        
-          <Form className='form'>
-              <Form.File id='upload' label='Choose an Image:' />
-          </Form>
-        
+
+        <Form className='form'>
+          <Form.File id='upload' label='Choose an Image:' />
+        </Form>
+
         <Row><Col className='form'><p className='form'>-or-</p></Col></Row>
         <Row><Col className='form'>Click image to edit your Meme</Col></Row>
         <Row>
