@@ -8,13 +8,8 @@ import Home from './components/pages/Home';
 import Edit from './components/pages/Edit';
 import Saved from './components/pages/Saved';
 import Search from './components/pages/Search';
-
-
 import Footer from './components/partials/Footer'
-
-
 import './App.css';
-
 import Banner from './components/partials/Banner'
 import EditFooter from './components/partials/EditFooter'
 import HomeFooter from './components/partials/HomeFooter'
@@ -75,8 +70,6 @@ const App = (props) => {
         <Switch>
           <PrivateRoute exact path='/home' component={HomeFooter} />
           <PrivateRoute exact path='/edit' component={EditFooter} />
-          {/* <PrivateRoute exact path='/saved' component={SavedFooter} /> */}
-          {/* <PrivateRoute exact path='/search' component={SearchFooter} /> */}
           <Route exact path={['/', '/register', '/login']} component={Footer} />
         </Switch>
 
@@ -84,21 +77,5 @@ const App = (props) => {
     </div>
   );
 };
-
-// $(".module, h1").addClass("old-school");
-
-// $("#add-sidebar-module").on("click", function() {
-//   $("<div />", {
-//     class: "module",
-//     text: "I'm new here."
-//   }).prependTo("#sidebar");
-// });
-
-// $("#add-article").on("click", function() {
-//   $("<div />", {
-//     class: "module",
-//     html: "<h1>Title</h1><p>text text text.</p>"
-//   }).prependTo("#main");
-// });
 
 export default App;

@@ -104,8 +104,7 @@ const Register = props => {
         </Row>
       </form>
       <br />
-      <br />
-      <br />
+      
       <Col>
         <p className=''>&copy; {year} Memeheim</p>
       </Col>

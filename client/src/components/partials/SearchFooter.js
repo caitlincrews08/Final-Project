@@ -1,27 +1,13 @@
 import React from 'react';
 import { Button, Col, Container, Row, } from 'react-bootstrap';
-import { Link, useHistory } from 'react-router-dom';
-import API from '../../utils/apiHelper';
+import { Link } from 'react-router-dom';
+
 
 
 
 
 
 function SearchFooter(props) {
-
-    const history = useHistory()
-    const saveMeme = (e) => {
-        e.preventDefault()
-        console.log(props.selected);
-        console.log(props.test);
-        API.saveMeme(props.selected)
-            .then(res =>
-                history.push('/Saved')
-            )
-            .catch(err => console.log(err));
-    }
-    // const refresh = () => {
-    // }
 
     return (
         <div className='searchfooter'>
@@ -33,13 +19,13 @@ function SearchFooter(props) {
                             <Button variant='warning' className='Home'><i className='fa fa-home' aria-hidden='true'></i></Button>
                         </Link>
                     </Col>
-                    <Col>
+                    {/* <Col>
                         <Link to='/Search'>
-                            <Button variant='warning' className='download'><i className='fa fa-download' aria-hidden='true'></i></Button>
+                            <Button variant='warning' className='download' onclick={props.DLHandler}><i className='fa fa-download' aria-hidden='true'></i></Button>
                         </Link>
-                    </Col>
+                    </Col> */}
                     <Col >
-                        <Button variant='warning' className=' save' onClick={saveMeme}><i className='fa fa-save' aria-hidden='true'></i></Button>
+                        <Button variant='warning' className=' save' onClick={props.saveMeme}><i className='fa fa-save' aria-hidden='true'></i></Button>
                     </Col>
                 </Row>
             </Container>

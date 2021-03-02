@@ -7,49 +7,15 @@ import SavedFooter from '../partials/SavedFooter'
 
 
 function Saved(props) {
-  
+
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
     const [memes, setMemes] = useState([])
 
-
-    function removeSelection(meme) {
-
-        console.log(meme.tag);
-        console.log('deselected');
-        let filteredMemes = [...memes.filter(e => e.id !== meme.id)];
-        // console.log(e.id)
-        setMemes(filteredMemes);
-        console.log(memes);
-    };
-
-    function addSelection(meme) {
-
-        if (!memes.some(e => e.id === meme.id)) {
-            setMemes([...memes, { id: meme._id, tag: meme.tag, image: meme.image }]);
-            console.log(memes);
-            console.log(meme.tag + 'added to selected')
-        };
-    };
-
-    function selectionToggle(e, meme) {
-        var element = document.getElementById(e.target.id);
-        console.log(e.target.id);
-        e.preventDefault();
-        if (element.classList.contains('deselected-d')) {
-            addSelection(meme);
-            element.classList.toggle('selected-d');
-            element.classList.toggle('deselected-d');
-            console.log(meme.tag + 'selected')
-        } else {
-            removeSelection(meme);
-            console.log(meme.tag + 'deselected')
-            element.classList.toggle('deselected-d');
-            element.classList.toggle('selected-d');
-        }
-    }
-
+    useEffect(() => {
+        loadMemes()
+    }, [])
 
     function loadMemes() {
         API.getMemes()
@@ -57,7 +23,6 @@ function Saved(props) {
                 (res) => {
                     setIsLoaded(true);
                     setItems(res.data);
-                    // console.log(res.data);
                 },
                 (error) => {
                     setIsLoaded(true);
@@ -65,10 +30,52 @@ function Saved(props) {
                 }
             )
     }
-   
-    useEffect(() => {
-        loadMemes()
-    }, [])
+
+    const deleteMeme = (e) => {
+        e.preventDefault();
+       
+        let pendingDeletion = memes.map(meme => {
+            return meme["id"];
+        })
+
+        API.deleteMeme(pendingDeletion)
+            .then(setMemes([]))
+            .then(loadMemes())
+            .catch(err => console.log(err))
+    };
+
+    function removeSelection(meme) {
+        let filteredMemes = [...memes.filter(target => target.id !== meme._id)];
+        setMemes(filteredMemes);
+        // console.log(memes);
+    };
+
+    function addSelection(meme) {
+        if (!memes.some(target => target.id === meme.id)) {
+            setMemes([...memes, { id: meme._id, tag: meme.tag, image: meme.image }]);
+            // console.log(memes);
+            console.log(meme.tag + ' added to selected')
+        };
+    };
+
+    function selectionToggle(e, meme) {
+        var element = document.getElementById(e.target.id);
+        e.preventDefault();
+        if (element.classList.contains('deselected-d')) {
+            addSelection(meme);
+            element.classList.toggle('selected-d');
+            element.classList.toggle('deselected-d');
+            console.log(meme.tag + ' selected')
+        } else {
+            removeSelection(meme);
+            console.log(meme.tag + ' deselected')
+            element.classList.toggle('deselected-d');
+            element.classList.toggle('selected-d');
+        }
+    }
+
+
+
 
     if (error) {
         return <div>Error: {error.message}</div>;
@@ -93,7 +100,7 @@ function Saved(props) {
                         </div>
                     </Col>
                 </div>
-                <SavedFooter memes={memes} items={items} test='test' loadMemes={loadMemes} />
+                <SavedFooter memes={memes} items={items} test='test' loadMemes={loadMemes} deleteMeme={deleteMeme}/>
             </>
         );
     };
