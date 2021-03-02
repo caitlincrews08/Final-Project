@@ -7,10 +7,11 @@ import SavedFooter from '../partials/SavedFooter'
 
 
 function Saved(props) {
-    const [memes, setMemes] = useState([])
+  
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
+    const [memes, setMemes] = useState([])
 
 
     function removeSelection(meme) {
@@ -21,7 +22,6 @@ function Saved(props) {
         // console.log(e.id)
         setMemes(filteredMemes);
         console.log(memes);
-        loadMemes()
     };
 
     function addSelection(meme) {
@@ -57,7 +57,7 @@ function Saved(props) {
                 (res) => {
                     setIsLoaded(true);
                     setItems(res.data);
-                    console.log(res.data);
+                    // console.log(res.data);
                 },
                 (error) => {
                     setIsLoaded(true);
@@ -65,7 +65,7 @@ function Saved(props) {
                 }
             )
     }
-
+   
     useEffect(() => {
         loadMemes()
     }, [])
@@ -93,7 +93,7 @@ function Saved(props) {
                         </div>
                     </Col>
                 </div>
-                <SavedFooter memes={memes} test='test' />
+                <SavedFooter memes={memes} items={items} test='test' loadMemes={loadMemes} />
             </>
         );
     };

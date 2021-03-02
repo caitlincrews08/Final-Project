@@ -9,8 +9,8 @@ function SavedFooter(props) {
 
     const history = useHistory()
 
-  
-    
+
+
 
     const deleteMeme = (e) => {
         e.preventDefault()
@@ -18,6 +18,7 @@ function SavedFooter(props) {
         //console.log(props.test);
 
         let allMemes = props.memes;
+
         let memes = allMemes.map(meme => {
             return meme["id"];
         })
@@ -28,11 +29,11 @@ function SavedFooter(props) {
 
         // }
         API.deleteMeme(memes)
-            .then(res =>
-                history.push('/Saved')
-            )
-            .catch(err => console.log(err));
-    }
+            .then(
+                props.loadMemes())
+            .catch(err => console.log(err))
+
+    };
 
 
     return (
@@ -62,5 +63,7 @@ function SavedFooter(props) {
         </div>
     );
 };
+
+
 
 export default SavedFooter;
