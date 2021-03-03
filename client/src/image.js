@@ -1,21 +1,26 @@
-import React from 'react';
+
+import API from './utils/apiHelper';
+
 
 const { Pixo } = window;
+// const history = useHistory();
 
-export const PixoImage = ({ src, onChange }) => {
-  const pixo = new Pixo.Bridge({
+// export const PixoImage = ({ src, onChange, input }) => {
+  export const pixo = new Pixo.Bridge({
     type: 'modal',
     apikey: '36eibah088i0', // put your API key here!
     onSave: img => {
-      console.log(img.toImage());
+      API.saveMeme([{image: img.toDataURL()}]).then(() => window.location.href = './Saved').catch(err => console.log(err))
+      // console.log(img.toDataURL());
     },
-    onClose: () => window.location.href = './home',
+    // onClose: () => window.location.href = './home',
     theme: 'light',
     propertypanel: {
       collapsible: true,
       collapsed: true
     },
   });
-  return <img src={src} alt="potentially dank meme" onClick={() => pixo.edit(src)} className='editPreview'/>;
-}
+  // pixo.attachToFileInput(input);
+//   return <img src={src} alt="potentially dank meme" onClick={() => pixo.edit(src)} className='editPreview'/>;
+// }
 
