@@ -28,6 +28,7 @@ function MyFooter() {
     const history = useHistory()
     function sendToEdit(e) {
         let url = e.target.src
+        console.log(url)
         dispatch({ type: 'SET_LOAD_FOR_EDIT', payload: url });
         history.push('/Edit');
     }
