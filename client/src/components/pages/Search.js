@@ -70,6 +70,21 @@ function Search(props) {
             .catch(err => console.log(err));
     }
 
+    function getNew() {
+        setItems([]);
+        API.queueMemes()
+            .then(res => res.json())
+            .then(
+                (res) => {
+                    setIsLoaded(true);
+                    setItems(res.memes);
+                },
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            )
+    }
     // function DLHandler(props) {
     //     const urls = selected.map((selection => selection.image));
     //     console.log('click')
@@ -82,7 +97,7 @@ function Search(props) {
     //         setTimeout(() => {
     //             window.location.href = response.file;
     //         }, idx * 100)
-            
+
     //     })
     // };
     // downlaod all from array
@@ -109,7 +124,7 @@ function Search(props) {
                             ))}
                             <Link to='/Search' key='last'>
                                 <div className='frame'>
-                                    <img className='memeDisplay' alt='Refresh Button' src={Refresh} />
+                                    <img className='memeDisplay' alt='Refresh Button' src={Refresh} onClick={getNew} />
                                     <p className='memeTitle'><b>Press to Refresh Images</b></p>
                                 </div>
                             </Link>
