@@ -13,11 +13,13 @@ function Saved(props) {
     const [items, setItems] = useState([]);
     const [memes, setMemes] = useState([])
 
+
     useEffect(() => {
         loadMemes()
     }, [])
 
     function loadMemes() {
+        console.log('loadmemes')
         API.getMemes()
             .then(
                 (res) => {
@@ -33,15 +35,16 @@ function Saved(props) {
 
     const deleteMeme = (e) => {
         e.preventDefault();
-       
+
         let pendingDeletion = memes.map(meme => {
             return meme["id"];
         })
-
-        API.deleteMeme(pendingDeletion)
-            .then(setMemes([]))
-            .then(loadMemes())
-            .catch(err => console.log(err))
+        if (isLoaded) {
+            setIsLoaded(false);
+            API.deleteMeme(pendingDeletion)
+                .then(() => loadMemes())
+                .catch(err => console.log(err))
+        }
     };
 
     function removeSelection(meme) {
@@ -100,7 +103,7 @@ function Saved(props) {
                         </div>
                     </Col>
                 </div>
-                <SavedFooter memes={memes} items={items} test='test' loadMemes={loadMemes} deleteMeme={deleteMeme}/>
+                <SavedFooter memes={memes} items={items} test='test' loadMemes={loadMemes} deleteMeme={deleteMeme} />
             </>
         );
     };
