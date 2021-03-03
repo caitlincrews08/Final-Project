@@ -49,7 +49,7 @@ router.put("/removememes", async (req, res) => {
   await memes.forEach(async meme => {
     User.findOneAndUpdate(req.body.userId, { $pull: { memes: meme } }).then(data => console.log(data)).catch(err => console.log(err))
   });
-
+  res.json({ success: true });
 });
 
 
