@@ -9,14 +9,14 @@ import brand from './../../assets/MEMEHEIM-BRAND.png'
 const MyNavbar = props => {
   const { state, dispatch } = useContext(Store);
 
-  useEffect(() => {
-    if (!state.auth.isAuthenticated)
-      props.history.push('/home');
+  // useEffect(() => {
+  //   if (!state.auth.isAuthenticated)
+  //     props.history.push('/home');
 
-    API.getUser()
-    // .then(res => console.log({ res }))
-    .catch(err => console.log({ err }));
-  }, [ state, props ]);
+  //   API.getUser()
+  //   // .then(res => console.log({ res }))
+  //   .catch(err => console.log({ err }));
+  // }, [ state, props ]);
 
   const onLogoutClick = e => {
     e.preventDefault();
