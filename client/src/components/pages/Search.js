@@ -100,12 +100,12 @@ function Search(props) {
                         <Tooltip />
                         <div className='memeScroller'>
                             {items.map((item, index) => (
-                                <Link key={index}>
+                                <div key={index}>
                                     <div className='frame' >
                                         <img className='memeDisplay deselected' loading="lazy" alt={item.name} id={item.title} src={item.url} onClick={(e) => selectionToggle(e, item)} value={item.title} />
                                         <p className='memeTitle'>{item.title}</p>
                                     </div>
-                                </Link>
+                                </div>
                             ))}
                             <Link to='/Search' key='last'>
                                 <div className='frame'>
