@@ -27,13 +27,13 @@ const App = (props) => {
 
 
   const { dispatch } = useContext(Store);
-  document.addEventListener('keydown', function (event) {
-    if (event.key === "Escape") {
-      dispatch(logoutUser());
-      window.location.href = './login';
-      console.log("esc");
-    }
-  });
+  // document.addEventListener('keydown', function (event) {
+  // if (event.key === "Escape") {
+  //   dispatch(logoutUser());
+  //   window.location.href = './login';
+  //   console.log("esc");
+  // }
+  // });
 
   useEffect(() => {
     if (localStorage.jwtToken) {
@@ -46,6 +46,7 @@ const App = (props) => {
       dispatch(setCurrentUser(decoded));
 
       if (decoded.exp < currentTime) {
+        console.log('expired')
         dispatch(logoutUser());
         window.location.href = './login';
       }
@@ -55,9 +56,11 @@ const App = (props) => {
   return (
     <div className="App container-fluid text-center">
       <Router>
+        <Route exact path={['/', '/register', '/login']} component={Banner} />
         <Switch>
-          <PrivateRoute exact path={['/home', '/edit', '/saved', '/search']} component={HomeNavbar} />
-          <Route exact path={['/', '/register', '/login']} component={Banner} />
+          <PrivateRoute exact path={['/home', '/edit', '/saved', '/search']} >
+            <HomeNavbar />
+          </PrivateRoute>
         </Switch>
 
         <Switch>
@@ -67,10 +70,10 @@ const App = (props) => {
           <PrivateRoute exact path='/search' component={Search} />
         </Switch>
 
+        <Route exact path={['/', '/register', '/login']} component={Footer} />
         <Switch>
           <PrivateRoute exact path='/home' component={HomeFooter} />
           <PrivateRoute exact path='/edit' component={EditFooter} />
-          <Route exact path={['/', '/register', '/login']} component={Footer} />
         </Switch>
 
       </Router>
