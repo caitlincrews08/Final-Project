@@ -101,22 +101,15 @@ body, html {
 .editStart {
   background: linear-gradient(rgba(30, 2, 30, 0.651), rgba(255, 176, 31, 0.445));
   color: whitesmoke;
-  position: Absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   z-index: 9;
-  padding-bottom: 10px;
+  padding-bottom: 3vh;
   position: relative;
-  padding-right: 0px !important;
-  padding-top: 0px !important;
-  padding-left: 0px !important;
+  padding-top: 3vh ;
   overflow-x: hidden;
   overflow-y: scroll;
-  align-items: center;
   margin-bottom: 0px !important;
   margin-top: 0px !important;
-  height: 62.5%;
+  
 }
 
 .fa {
@@ -261,7 +254,7 @@ body, html {
 
 .memeScroller {
   width: 100vw;
-  height: 57vh;
+  height: 56vh;
   white-space: nowrap;
   position: relative;
   overflow-x: scroll;
@@ -297,13 +290,13 @@ body, html {
 }
 
 .mid-section {
-  height: 67vh;
+  height: 68vh;
   position: relative;
   padding-right: 0px !important;
   padding-left: 0px !important;
   overflow: hidden;
   align-items: center;
-  top: 12vh;
+  top: 11vh;
 }
 
 .navbar-collapse {
@@ -482,7 +475,7 @@ div.myfooter a:hover {
 .tips {
 
   margin-left: 10px;
-  margin-top: 0px;
+  margin-top: 2vh;
   margin-right: 10px;
   margin-bottom: 0px;
 
