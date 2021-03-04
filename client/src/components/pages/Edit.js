@@ -7,24 +7,15 @@ import { Store } from '../../store';
 const Edit = () => {
 
   const { state } = useContext(Store)
-  const [src] = useState(state.auth.pre_edit);
-  // const { dispatch } = useContext(Store);
+
+  const [src ] = useState(state.auth.pre_edit);
+
   const fileInput = useRef();
 
 
   useEffect(() => {
     pixo.attachToFileInput(fileInput.current);
   }, [])
-
-
-  // function sendToEdit(e, props) {
-  //   let url = e.currentTarget.files[0];
-  //   fileInput.current.focus();
-  //   console.log(url)
-  //   // dispatch({ type: 'SET_LOAD_FOR_EDIT', payload: url });
-  // }
-
-
 
 
   return (

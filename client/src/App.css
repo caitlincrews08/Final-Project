@@ -3,7 +3,7 @@
 }
 
 a {
-  text-shadow: rgb(6, 1, 20);
+  text-shadow: 0px 0px 20px rgba(19, 1, 19, 0.946);
 }
 
 .App {
@@ -19,9 +19,6 @@ a {
   z-index: 0;
 }
 
-.autoScroll {
-  /* /  */
-}
 
 .banner {
   background-color: rgb(255, 255, 255);
@@ -46,8 +43,15 @@ body, html {
 }
 
 .brand {
+
   height: 6vh;
-  object-fit: contain;
+  vertical-align: top;
+
+}
+.btn-danger {
+  background-color: transparent !important;
+  background-image: linear-gradient(rgba(255, 192, 203, 0.186),rgba(0, 0, 0, 0)) !important;
+  border-color: transparent !important;
 }
 
 .btn-success {
@@ -59,13 +63,6 @@ body, html {
   margin: 0px;
 }
 
-.crown {
-  width: 7px;
-  height: 7px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  object-fit: scale-down;
-}
 
 .distortion {
   color: rgba(51, 51, 51, 0.295);
@@ -82,7 +79,7 @@ body, html {
 }
 
 .editfooter {
-  height: 100px;
+  height: 20vh;
   position: fixed;
   display: flex;
   flex-direction: row;
@@ -104,25 +101,22 @@ body, html {
 .editStart {
   background: linear-gradient(rgba(30, 2, 30, 0.651), rgba(255, 176, 31, 0.445));
   color: whitesmoke;
-  position: Absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   z-index: 9;
-  padding-bottom: 10px;
+  padding-bottom: 3vh;
   position: relative;
-  padding-right: 0px !important;
-  padding-top: 0px !important;
-  padding-left: 0px !important;
+  padding-top: 3vh ;
   overflow-x: hidden;
   overflow-y: scroll;
-  align-items: center;
   margin-bottom: 0px !important;
   margin-top: 0px !important;
-  height: 62.5%;
+  
 }
 
-.favorites {}
+.fa {
+  height: 8vh !important;
+  width: 8vh !important;
+  font-size: 8vh !important;
+}
 
 .footborder {
   background: linear-gradient(rgb(165, 92, 9), rgb(30, 2, 30, 1));
@@ -130,7 +124,7 @@ body, html {
   height: 1.5vh;
   width: 100vw;
   z-index: 21;
-  bottom: 99.5px;
+  bottom: 20vh;
   border: 0px !important;
 }
 
@@ -167,22 +161,17 @@ body, html {
   background-color: #00000000;
   color: rgb(58, 57, 57);
   font-size: calc(50px + 2vmin);
-  position: absolute;
-  margin-top: 28vh;
-  /* or absolute */
-  top: 50%;
-  left: 50%;
+  top: 10vh;
   left: 0px;
   right: 0px;
   z-index: 5;
-  overflow: hidden;
   position: relative;
 }
 
 .homefooter {
-  height: 100px;
+  height: 20vh;
   position: fixed;
-  display: flex;
+  display: inline-block;
   flex-direction: row;
   left: 0;
   bottom: 0;
@@ -195,13 +184,13 @@ body, html {
 
 .homenavbar {
   background: linear-gradient( rgb(6, 1, 20), rgba(16, 4, 48, 0.795));
-  height: 10vh;
-  display: flex;
+  height: 12vh;
+ 
   flex-direction: row;
   font-size: calc(10px + 2vmin);
   color: rgb(255, 255, 255);
   width: 100%;
-  z-index: 21;
+  
   box-shadow: 0px 6px 8px 6px rgb(0 0 0 / 20%)
 }
 
@@ -251,8 +240,8 @@ body, html {
 
 .memeDisplay {
   position: relative;
-  height: 75%;
-  width: 300px;
+  height: 42vh;
+  width: 42vh;
   zoom: 1;
   object-fit: scale-down;
   background: linear-gradient(rgba(30, 2, 30, 0.651), rgba(255, 176, 31, 0.445));
@@ -260,16 +249,16 @@ body, html {
   border-style: groove;
   border-color: rgb(255, 255, 255);
   z-index: 5;
+  display: inline-block;
 }
 
 .memeScroller {
   width: 100vw;
-  height: 58vh;
+  height: 56vh;
   white-space: nowrap;
   position: relative;
   overflow-x: scroll;
   overflow-y: hidden;
-  margin-top: 13vh;
   margin-right: 0px;
   margin-left: 0px;
   margin-bottom: 0px;
@@ -277,10 +266,10 @@ body, html {
 }
 
 .memeScroller div {
-  width: 100%;
+  width: auto;
   background-color: rgba(255, 255, 255, 0);
   float: none;
-  height: 60vh;
+  height: 57vh;
   display: inline-block;
   zoom: 1;
   z-index: 3;
@@ -294,26 +283,37 @@ body, html {
   background-image: radial-gradient( rgba(102, 0, 68, 0.329), rgba(255, 255, 255, 0));
   white-space: normal;
   max-width: 300px;
-  width: 300px;
+  width: 42vh;
   height: auto;
   text-align: center;
   z-index: 20;
 }
 
 .mid-section {
+  height: 68vh;
   position: relative;
   padding-right: 0px !important;
   padding-left: 0px !important;
   overflow: hidden;
   align-items: center;
+  top: 11vh;
 }
 
 .navbar-collapse {
   background-color: #1a1430e7;
 }
 
+.navbar-toggler {
+  font-size: 0px;
+  border-color: transparent !important;
+}
+
 .navbar-toggler-icon {
-  color: white;
+
+  width: 6vh !important;
+  height: 6vh !important;
+  vertical-align: top !important;
+
 }
 
 
@@ -362,7 +362,7 @@ body, html {
 } */
 
 .savedfooter {
-  height: 100px;
+  height: 20vh;
   position: fixed;
   display: flex;
   flex-direction: row;
@@ -376,7 +376,7 @@ body, html {
 }
 
 .searchfooter {
-  height: 100px;
+  height: 20vh;
   position: fixed;
   display: flex;
   flex-direction: row;
@@ -436,8 +436,8 @@ div.myfooter a:hover {
 } */
 
 .thumbnailDisplay {
-  height: 100px;
-  width: 100px;
+  height: 18vh;
+  width: 18vh;
   zoom: 0;
   object-fit: cover;
   /* object-position: 50% 50%; */
@@ -449,7 +449,7 @@ div.myfooter a:hover {
 
 .thumbnailScroller {
   width: 100%;
-  height: 100px;
+  height: 20vh;
   white-space: nowrap;
   position: relative;
   overflow-x: scroll;
@@ -462,7 +462,7 @@ div.myfooter a:hover {
 }
 
 .thumbnailScroller div {
-  width: 100px;
+  width: 20vh;
   background-color: rgba(255, 255, 255, 0);
   float: none;
   height: 100%;
@@ -473,24 +473,25 @@ div.myfooter a:hover {
 }
 
 .tips {
-  top: 10vh;
+
   margin-left: 10px;
-  margin-top: 0px;
+  margin-top: 2vh;
   margin-right: 10px;
   margin-bottom: 0px;
-  width: 90vw;
+
   height: 8vh;
   display: inline-flex;
-  position: relative;
+
   z-index: 3;
   overflow-y: scroll;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  word-wrap: break-word;
+
   color: azure;
-  text-shadow: black;
+  text-shadow: 0px 0px 20px rgba(19, 1, 19, 0.946);
   text-align: center;
 }
+
 
 .vertical-center {
   margin: 0;
