@@ -10,10 +10,10 @@ const { Pixo } = window;
     type: 'modal',
     apikey: '36eibah088i0', // put your API key here!
     onSave: img => {
-      API.saveMeme([{image: img.toDataURL()}]).then(() => window.location.href = './Saved').catch(err => console.log(err))
+      API.saveMeme([{image: img.toDataURL()}]).then(() => window.location.href = './saved').catch(err => console.log(err))
       // console.log(img.toDataURL());
     },
-    // onClose: () => window.location.href = './home',
+    onClose: () => window.location.href = './edit',
     theme: 'light',
     propertypanel: {
       collapsible: true,
