@@ -42,7 +42,9 @@ When the user follows the link or runs the application locally, they will start 
 
 The `Forge` functions as the meme generator/creater. A user can select a meme to edit from the template banner on the home screen or import a picture they have available from their local device. When the user is finished editing their meme, they can press the `Save` button and view it in the `Vault`.
 
-The `Vault` serves as the user's personal library of created and saved memes.
+The `Vault` serves as the user's personal library of created and saved memes. The user can select one or many memes and delete them by hitting the Trash icon.
+
+The `Archives` tab generates recent and popular memes found on Reddit. The user can save one or many of these memes to their `Vault` by selecting them and pressing the Save icon.
 
 See example demo here:
 (replace with our demo)
