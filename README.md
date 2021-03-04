@@ -40,7 +40,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the website in the b
 ## Usage
 When the user follows the link or runs the application locally, they will start by either registering an account or logging in. Once logged in the user is presented with `Forge`, `Vault` and `Archives`. At the bottom of the screen there is a banner with commonly used meme templates the user can select to edit them in the `Forge`.
 
-The `Forge` functions as the meme generator/creater. A user can select a meme to edit from the template banner on the home screen or import a picture they have available from their local device. When the user is finished editing their meme, they can press the `Save` button and view it in the `Vault`.
+The `Forge` functions as the meme generator/creater. A user can select a meme to edit from the template banner on the home screen or import a picture they have available from their local device. When the user is finished editing their meme, they can press the Save button and view it in the `Vault`.
 
 The `Vault` serves as the user's personal library of created and saved memes. The user can select one or many memes and delete them by hitting the Trash icon.
 
