@@ -7,13 +7,16 @@ import { Store } from '../../store';
 const Edit = () => {
 
   const { state } = useContext(Store)
+
   const [src ] = useState(state.auth.pre_edit);
+
   const fileInput = useRef();
 
 
   useEffect(() => {
     pixo.attachToFileInput(fileInput.current);
   }, [])
+
 
   return (
     <div className='main'>
