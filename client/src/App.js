@@ -58,9 +58,7 @@ const App = (props) => {
       <Router>
         <Route exact path={['/', '/register', '/login']} component={Banner} />
         <Switch>
-          <PrivateRoute exact path={['/home', '/edit', '/saved', '/search']} >
-            <HomeNavbar />
-          </PrivateRoute>
+          <PrivateRoute exact path={['/home', '/edit', '/saved', '/search']} component={HomeNavbar} />
         </Switch>
 
         <Switch>
