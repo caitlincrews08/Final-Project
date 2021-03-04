@@ -37,12 +37,11 @@ const Register = props => {
   return (
 
     <Col className='vertical-center'>
-    <br />
+      <br />
       <br />
       <br />
       <br />
       <Row className='hidden justify-content-center'>ALLYOURBASEAREBELONGTOUS</Row>
-      <br />
       <br />
       <br />
       <br />
@@ -104,7 +103,7 @@ const Register = props => {
         </Row>
       </form>
       <br />
-      
+
       <Col>
         <p className=''>&copy; {year} Memeheim</p>
       </Col>

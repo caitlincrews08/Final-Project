@@ -43,14 +43,14 @@ body, html {
 }
 
 .brand {
-
   height: 6vh;
   vertical-align: top;
-
+  max-width: 60vw;
 }
+
 .btn-danger {
   background-color: transparent !important;
-  background-image: linear-gradient(rgba(255, 192, 203, 0.186),rgba(0, 0, 0, 0)) !important;
+  background-image: linear-gradient(#060114,#19122f) !important;
   border-color: transparent !important;
 }
 
@@ -66,12 +66,18 @@ body, html {
 
 .distortion {
   color: rgba(51, 51, 51, 0.295);
-  background-image: url('./assets/trippy.gif');
+background-color: black;
   background-size: cover;
   background-position-x: right;
   background-position-y: top;
   width: 100%;
-  filter: grayscale()
+  filter: grayscale();
+  animation:pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+  from {   color: rgba(51, 51, 51, 0.295)}
+  to {   color: rgba(221, 221, 221, 0.898) }
 }
 
 .downloadBtn {

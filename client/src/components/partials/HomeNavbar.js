@@ -3,7 +3,7 @@ import React, { useEffect, useContext } from 'react';
 import { Nav, Navbar, Button } from 'react-bootstrap';
 import { Store } from '../../store';
 import { logoutUser } from '../../store/actions/authActions';
-import API from '../../utils/apiHelper';
+// import API from '../../utils/apiHelper';
 import brand from './../../assets/MEMEHEIM-BRAND.png'
 
 const MyNavbar = props => {
@@ -30,9 +30,9 @@ const MyNavbar = props => {
         <Navbar.Brand href='/home'><img src={brand} alt='logo' className='brand'/></Navbar.Brand>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
-          <Nav className='mr-auto'>
+          {/* <Nav className='mr-auto'>
           <h6>You are logged in. Tap below to...</h6>
-          </Nav>
+          </Nav> */}
           <Nav>
             <Button variant='danger' onClick={onLogoutClick}>
               Logout
