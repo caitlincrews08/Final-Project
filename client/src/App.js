@@ -57,22 +57,21 @@ const App = (props) => {
     <div className="App container-fluid text-center">
       <Router>
         <Route exact path={['/', '/register', '/login']} component={Banner} />
-        {/* <Switch> */}
+     
           <PrivateRoute exact path={['/home', '/edit', '/saved', '/search']} component={HomeNavbar} />
-        {/* </Switch> */}
+   
 
-        {/* <Switch> */}
           <PrivateRoute exact path='/home' component={Home} />
           <PrivateRoute exact path='/edit' component={Edit} />
           <PrivateRoute exact path='/saved' component={Saved} />
           <PrivateRoute exact path='/search' component={Search} />
-        {/* </Switch> */}
+       
 
         <Route exact path={['/', '/register', '/login']} component={Footer} />
-        {/* <Switch> */}
+      
           <PrivateRoute exact path='/home' component={HomeFooter} />
           <PrivateRoute exact path='/edit' component={EditFooter} />
-        {/* </Switch> */}
+      
 
       </Router>
     </div>
