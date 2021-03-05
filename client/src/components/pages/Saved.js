@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Tooltip from '../partials/Tips';
 import { Col } from 'react-bootstrap';
 import API from '../../utils/apiHelper'
-import { Link } from 'react-router-dom';
+
 import SavedFooter from '../partials/SavedFooter'
 
 
@@ -35,7 +35,7 @@ function Saved(props) {
 
     const deleteMeme = (e) => {
         e.preventDefault();
-console.log("deleting")
+
         let pendingDeletion = memes.map(meme => {
             return meme["id"];
         })
