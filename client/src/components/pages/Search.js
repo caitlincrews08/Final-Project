@@ -85,22 +85,6 @@ function Search(props) {
                 }
             )
     }
-    // function DLHandler(props) {
-    //     const urls = selected.map((selection => selection.image));
-    //     console.log('click')
-
-
-    //     urls.forEach(function (value, idx) {
-    //         const response = {
-    //             file: value,
-    //         };
-    //         setTimeout(() => {
-    //             window.location.href = response.file;
-    //         }, idx * 100)
-
-    //     })
-    // };
-    // downlaod all from array
 
     if (error) {
         return <div>Error: {error.message}</div>;

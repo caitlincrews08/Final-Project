@@ -35,7 +35,7 @@ function Saved(props) {
 
     const deleteMeme = (e) => {
         e.preventDefault();
-
+console.log("deleting")
         let pendingDeletion = memes.map(meme => {
             return meme["id"];
         })
@@ -93,12 +93,12 @@ function Saved(props) {
                         <Tooltip />
                         <div className='memeScroller'>
                             {items.map(item => (
-                                <Link key={item._id}>
+                                <div key={item._id}>
                                     <div className='frame' >
                                         <img className='memeDisplay deselected-d' loading='lazy' alt={item.tag} id={item._id} src={item.image} value={item.tag} onClick={(e) => selectionToggle(e, item)} />
                                         <p className='memeTitle'><b>{item.tag}</b></p>
                                     </div>
-                                </Link>
+                                </div>
                             ))}
                         </div>
                     </Col>
