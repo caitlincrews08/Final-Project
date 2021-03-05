@@ -50,7 +50,7 @@ function Saved(props) {
     function removeSelection(meme) {
         let filteredMemes = [...memes.filter(target => target.id !== meme._id)];
         setMemes(filteredMemes);
-        // console.log(memes);
+        // console.log(filteredMemes);
     };
 
     function addSelection(meme) {
