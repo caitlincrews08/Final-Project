@@ -6,7 +6,7 @@ const Meme = require("../models/Meme");
 const User = require("../models/User");
 
 router.get('/me', (req, res) => {
-  console.log(req.user);
+  // console.log(req.user);
   const { _id, name, email, date } = req.user;
 
   return res.json({ _id, name, email, date });
@@ -18,7 +18,7 @@ router.get("/allusers", (req, res) => {
 
 // get memes
 router.get("/memes", (req, res) => {
-  console.log(req.user)
+  // console.log(req.user)
 
   Meme.find().where('_id').in(req.user.memes).exec((error, dbMemes) => {
     if (error)
@@ -43,13 +43,13 @@ router.put("/memes", async (req, res) => {
 });
 
 // delete memes
-router.put("/removememes", async (req, res) => {
+router.put("/removememes", (req, res) => {
   let memes = req.body;
-  console.log("backend memes", memes);
-  await memes.forEach(async meme => {
-    User.findOneAndUpdate(req.body.userId, { $pull: { memes: meme } }).then(data => console.log(data)).catch(err => console.log(err))
-  });
-  res.json({ success: true });
+  // console.log("backend memes", memes);
+  // await memes.forEach(async meme => {
+   User.findOneAndUpdate(req.body.userId, { $pullAll: { memes: memes } }).then(data => res.json({ success: true })).catch(err => console.log(err))
+  // });
+  ;
 });
 
 
