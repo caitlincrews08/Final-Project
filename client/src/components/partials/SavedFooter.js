@@ -25,7 +25,7 @@ function SavedFooter(props) {
                         </Link>
                     </Col> */}
                     <Col >
-                        <Button variant='warning' className='delete' onClick={props.deleteMeme}><i className='fa fa-trash' aria-hidden='true'></i></Button>
+                        <Button variant='warning' className='delete' onClick={props.removeMeme}><i className='fa fa-trash' aria-hidden='true'></i></Button>
                     </Col>
                   
                 </Row>

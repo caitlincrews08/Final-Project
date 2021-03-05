@@ -33,7 +33,7 @@ function Saved(props) {
             )
     }
 
-    const deleteMeme = (e) => {
+    const removeMeme = (e) => {
         e.preventDefault();
 
         let pendingDeletion = memes.map(meme => {
@@ -103,7 +103,7 @@ function Saved(props) {
                         </div>
                     </Col>
                 </div>
-                <SavedFooter memes={memes} items={items} test='test' loadMemes={loadMemes} deleteMeme={deleteMeme} />
+                <SavedFooter memes={memes} items={items} test='test' loadMemes={loadMemes} removeMeme={removeMeme} />
             </>
         );
     };
