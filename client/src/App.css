@@ -161,7 +161,7 @@ body, html {
 }
 
 .editPreview {
-  height: 40vh;
+  height: 35vh;
   width: auto;
   object-fit: scale-down;
 }
