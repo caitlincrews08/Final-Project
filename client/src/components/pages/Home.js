@@ -2,7 +2,6 @@ import React from 'react';
 import Tooltip from '../partials/Tips';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import Forge from '../../assets/Forge.png'
 
 function Home() {
 

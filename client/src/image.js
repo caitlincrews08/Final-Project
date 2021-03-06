@@ -13,8 +13,11 @@ const { Pixo } = window;
       API.saveMeme([{image: img.toDataURL()}]).then(() => window.location.href = './saved').catch(err => console.log(err))
       // console.log(img.toDataURL());
     },
-    onClose: () => window.location.href = './edit',
+    onClose: () => window.location.href = './home',
     theme: 'light',
+    features: {
+      excluded: ['filters', 'stickers','frame', 'shape','blur'],
+   },
     propertypanel: {
       collapsible: true,
       collapsed: true

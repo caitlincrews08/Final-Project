@@ -3,8 +3,8 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximim-scale=1, user-scalable=no" />
+  <link rel="shortcut icon" href="../src/assets/ICON.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <meta name="theme-color" content="#000000" />
   <!-- <script crossorigin src="..."></script> -->
 
@@ -22,6 +22,8 @@
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0"
     nonce="jZHjWkie"></script>
   <div id="root"></div>
+  
+  <div class="loader--hide"></div>
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -45,13 +47,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
 
 
-  <script>
+  <!-- <script>
     $('.pagetransition').click(function (e) {
       e.preventDefault();
       var linkUrl = $(this).attr('href');
       setTimeout(function (url) { window.location = url; }, 3000, linkUrl);
     });
-  </script>
+  </script> -->
   <!-- <script>
     	$(window).load(function() {
 		$(".se-pre-con").fadeOut("slow");;

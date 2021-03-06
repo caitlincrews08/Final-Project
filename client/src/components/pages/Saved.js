@@ -83,7 +83,7 @@ function Saved(props) {
     if (error) {
         return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
-        return <div>Loading...</div>;
+        return <div className='lds-facebook'></div>;
     } else {
 
         return (

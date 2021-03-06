@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
@@ -15,7 +15,7 @@ import EditFooter from './components/partials/EditFooter'
 import HomeFooter from './components/partials/HomeFooter'
 import HomeNavbar from './components/partials/HomeNavbar'
 import PrivateRoute from './components/auth/PrivateRoute';
-
+// import LoadingScreen from './components/pages/Loading'
 
 
 
@@ -25,15 +25,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = (props) => {
 
+  // const [loading, setLoading] = useState(false)
+  // useEffect(() => {
+  //    setLoading(false)
+  // }, [])
 
   const { dispatch } = useContext(Store);
-  // document.addEventListener('keydown', function (event) {
-  // if (event.key === "Escape") {
-  //   dispatch(logoutUser());
-  //   window.location.href = './login';
-  //   console.log("esc");
-  // }
-  // });
 
   useEffect(() => {
     if (localStorage.jwtToken) {
@@ -53,28 +50,37 @@ const App = (props) => {
     }
   }, [dispatch]);
 
+ 
+
   return (
-    <div className="App container-fluid text-center">
-      <Router>
-        <Route exact path={['/', '/register', '/login']} component={Banner} />
-     
-          <PrivateRoute exact path={['/home', '/edit', '/saved', '/search']} component={HomeNavbar} />
-   
+    <>
+      {/* {loading === false ? ( */}
+        <div className="App container-fluid text-center">
+          <Router>
+            <Route exact path={['/', '/register', '/login']} component={Banner} />
 
-          <PrivateRoute exact path='/home' component={Home} />
-          <PrivateRoute exact path='/edit' component={Edit} />
-          <PrivateRoute exact path='/saved' component={Saved} />
-          <PrivateRoute exact path='/search' component={Search} />
-       
+            <PrivateRoute exact path={['/home', '/edit', '/saved', '/search']} component={HomeNavbar} />
 
-        <Route exact path={['/', '/register', '/login']} component={Footer} />
-      
-          <PrivateRoute exact path='/home' component={HomeFooter} />
-          <PrivateRoute exact path='/edit' component={EditFooter} />
-      
 
-      </Router>
-    </div>
+            <PrivateRoute exact path='/home' component={Home} />
+            <PrivateRoute exact path='/edit' component={Edit} />
+            <PrivateRoute exact path='/saved' component={Saved} />
+            <PrivateRoute exact path='/search' component={Search} />
+
+
+            <Route exact path={['/', '/register', '/login']} component={Footer} />
+
+            <PrivateRoute exact path='/home' component={HomeFooter} />
+            <PrivateRoute exact path='/edit' component={EditFooter} />
+
+
+          </Router>
+        </div>
+      {/* ) : ( */}
+          {/* <LoadingScreen /> */}
+        {/* )} */}
+
+    </>
   );
 };
 

@@ -31,8 +31,7 @@ const Login = props => {
   };
 
   return (
-    <Col className='vertical-center'>
-      <br />
+    <Col className='vertical-center pre-log'>
       <br />
       <br />
       <br />
@@ -53,16 +52,17 @@ const Login = props => {
         </p>
       </Col>
       <br />
-      <br />
+      {/* <br /> */}
       <form noValidate onSubmit={onSubmit}>
         <Col className='input-field'>
-          <input ref={emailRef} error={errors.incorrect} name='email' type='email' className={classnames('', { invalid: errors.incorrect })} />
-          <label htmlFor='email'>Email</label>
+          <input ref={emailRef} error={errors.incorrect} name='email' type='email' placeholder='Email' className={classnames('', { invalid: errors.incorrect })} />
+          {/* <label htmlFor='email'>Email</label> */}
           <span className='red-text'>{errors.incorrect}</span>
         </Col>
+        <br />
         <Col className='input-field'>
-          <input ref={passwordRef} error={errors.incorrect} name='password' type='password' className={classnames('', { invalid: errors.incorrect })} />
-          <label htmlFor='password'>Password</label>
+          <input ref={passwordRef} error={errors.incorrect} name='password' type='password' placeholder='Password' className={classnames('', { invalid: errors.incorrect })} />
+          {/* <label htmlFor='password'>Password</label> */}
         </Col>
         <Col>
           <span className='red-text'>{errors.message}</span>
@@ -75,7 +75,7 @@ const Login = props => {
         </Col>
       </form>
       <br />
-      <br />
+      {/* <br /> */}
       <Col>
         <p className=''>&copy; {year} Memeheim</p>
       </Col>

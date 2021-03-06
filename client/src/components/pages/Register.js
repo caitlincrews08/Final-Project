@@ -39,8 +39,6 @@ const Register = props => {
     <Col className='vertical-center'>
       <br />
       <br />
-      <br />
-      <br />
       <Row className='hidden justify-content-center'>ALLYOURBASEAREBELONGTOUS</Row>
       <br />
       <br />
@@ -63,33 +61,36 @@ const Register = props => {
       <form noValidate onSubmit={onSubmit}>
         <Row>
           <Col className='input-field'>
-            <input ref={nameRef} error={errors.name} name='name' type='text'
+            <input ref={nameRef} error={errors.name} name='name' type='text' placeholder='Name'
               className={classnames('', { invalid: errors.name })} />
-            <label htmlFor='name'>Name</label>
+            {/* <label htmlFor='name'>Name</label> */}
             <span className='red-text'>{errors.name}</span>
           </Col>
         </Row>
+        <br />
         <Row>
           <Col className='input-field'>
-            <input ref={emailRef} error={errors.email} name='email' type='email'
+            <input ref={emailRef} error={errors.email} name='email' type='email' placeholder='Email'
               className={classnames('', { invalid: errors.email })} />
-            <label htmlFor='email'>Email</label>
+            {/* <label htmlFor='email'>Email</label> */}
             <span className='red-text'>{errors.email}</span>
           </Col>
         </Row>
+        <br />
         <Row>
           <Col className='input-field'>
-            <input ref={passwordRef} error={errors.password} name='password' type='password'
+            <input ref={passwordRef} error={errors.password} name='password' type='password' placeholder='Password'
               className={classnames('', { invalid: errors.password })} />
-            <label htmlFor='password'>Password</label>
+            {/* <label htmlFor='password'>Password</label> */}
             <span className='red-text'>{errors.password}</span>
           </Col>
         </Row>
+        <br />
         <Row>
           <Col className='input-field '>
-            <input ref={password2Ref} error={errors.password2} name='password2' type='password'
+            <input ref={password2Ref} error={errors.password2} name='password2' type='password' placeholder='Confirm Password'
               className={classnames('', { invalid: errors.password2 })} />
-            <label htmlFor='password2'>Confirm Password</label>
+            {/* <label htmlFor='password2'>Confirm Password</label> */}
             <span className='red-text'>{errors.password2}</span>
           </Col>
         </Row>
