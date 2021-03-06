@@ -94,6 +94,7 @@ function Search(props) {
 
         return (
             <>
+            
                 <div className='main'>
                     <Col className='mid-section'>
                         <Tooltip />

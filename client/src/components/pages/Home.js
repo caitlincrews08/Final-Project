@@ -2,6 +2,7 @@ import React from 'react';
 import Tooltip from '../partials/Tips';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Forge from '../../assets/Forge.png'
 
 function Home() {
 
@@ -14,15 +15,18 @@ function Home() {
                 </Row>
                 <Row className='home'>
                     <Col>
-                        <Link to='/edit' className='forge col-sm-12 ripple'>Forge</Link>
+                        <p className='theF'>the</p>
+                        <Link to='/edit' className='forge col-sm-12 clipped'>Forge</Link>
                     </Col>
                     <br />
                     <Col>
-                        <Link to='/saved' className='vault col-sm-12 ripple'>Vault</Link>
+                    <p className='theV'>the</p>
+                        <Link to='/saved' className='vault col-sm-12 clipped'>Vault</Link>
                     </Col>
                     <br />
                     <Col>
-                        <Link to='/search' className='archives col-sm-12 ripple'>Archives</Link>
+                    <p className='theA'>the</p>
+                        <Link to='/search' className='archives col-sm-12 clipped'>Archives</Link>
                     </Col>
                 </Row>
             </Col>

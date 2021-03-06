@@ -1,10 +1,69 @@
-@supports(-webkit-mask-image: url(#mask)) or (mask-image: url(#mask)) {
-  /* code that requires mask-image here. */
+@supports(-webkit-mask-image: url(#mask)) or (mask-image: url(#mask)) {}
+
+/* code that requires mask-image here. */
+
+.forge {
+  background-image: url(../src/assets/Metal.png);
+  background-size: cover;
+  background-position: center;
+  object-fit: scale-down;
+  padding-left: 0vh !important;
+
+
 }
 
-/* a {
-  text-shadow: 0px 0px 20px rgba(19, 1, 19, 0.946);
-} */
+.vault {
+  /* background-color: brown; */
+  background-image: url(../src/assets/Marble.png);
+  background-color: white;
+  background-size: cover;
+  background-position: center;
+  object-fit: scale-down;
+  padding-left: 0vh !important;
+ 
+  
+}
+
+.archives {
+  /* width: 25vh;
+  height: 25vh; */
+  background-image: url(../src/assets/Paper.png);
+  background-size: cover;
+  background-position: bottom;
+  object-fit: scale-down;
+  padding-left: 0vh !important;
+ 
+}
+
+.clipped {
+  font-weight: bolder;
+  -webkit-background-clip: text;
+  
+}
+
+.theF {
+  font-size: 5vh;
+  display: inline;
+  color: rgb(51, 51, 48);
+  /* text-decoration: underline; */
+}
+.theV {
+  font-size: 5vh;
+  display: inline;
+  color: rgb(182, 181, 182);
+  /* text-decoration: underline; */
+}
+.theA {
+  font-size: 5vh;
+  display: inline;
+  color: rgb(217, 197, 154);
+  /* text-decoration: underline; */
+}
+
+a {
+  color: rgb(0 0 0 / 8%) !important;
+  text-decoration: none;
+}
 
 .App {
   height: 100vh;
@@ -18,7 +77,6 @@
   position: fixed;
   z-index: 0;
 }
-
 
 .banner {
   background-color: rgb(255, 255, 255);
@@ -50,7 +108,7 @@ body, html {
 
 .btn-danger {
   background-color: transparent !important;
-  background-image: linear-gradient(#060114,#19122f) !important;
+  background-image: linear-gradient(#060114, #19122f) !important;
   border-color: transparent !important;
 }
 
@@ -63,21 +121,24 @@ body, html {
   margin: 0px;
 }
 
-
 .distortion {
   color: rgba(51, 51, 51, 0.295);
-background-color: black;
+  background-color: black;
   background-size: cover;
   background-position-x: right;
   background-position-y: top;
   width: 100%;
   filter: grayscale();
-  animation:pulse 2s infinite alternate;
+  animation: pulse 2s infinite alternate;
 }
 
 @keyframes pulse {
-  from {   color: rgba(51, 51, 51, 0.295)}
-  to {   color: rgba(221, 221, 221, 0.898) }
+  from {
+    color: rgba(51, 51, 51, 0.295)
+  }
+  to {
+    color: rgba(221, 221, 221, 0.898)
+  }
 }
 
 .downloadBtn {
@@ -110,12 +171,11 @@ background-color: black;
   z-index: 9;
   padding-bottom: 3vh;
   position: relative;
-  padding-top: 3vh ;
+  padding-top: 3vh;
   overflow-x: hidden;
   overflow-y: scroll;
   margin-bottom: 0px !important;
   margin-top: 0px !important;
-  
 }
 
 .fa {
@@ -164,7 +224,7 @@ background-color: black;
 }
 
 .home {
-  background-color: #00000000;
+  background-image: linear-gradient(white, black);
   color: rgb(58, 57, 57);
   font-size: calc(50px + 2vmin);
   top: 10vh;
@@ -172,6 +232,7 @@ background-color: black;
   right: 0px;
   z-index: 5;
   position: relative;
+
 }
 
 .homefooter {
@@ -191,15 +252,12 @@ background-color: black;
 .homenavbar {
   background: linear-gradient( rgb(6, 1, 20), rgba(16, 4, 48, 0.795));
   height: 12vh;
- 
   flex-direction: row;
   font-size: calc(10px + 2vmin);
   color: rgb(255, 255, 255);
   width: 100%;
-  
   box-shadow: 0px 6px 8px 6px rgb(0 0 0 / 20%)
 }
-
 
 .joke {
   text-align: center;
@@ -212,7 +270,6 @@ background-color: black;
   left: 0px;
   right: 0px;
 }
-
 
 .loggedin {
   color: rgb(255, 217, 0) !important;
@@ -315,13 +372,10 @@ background-color: black;
 }
 
 .navbar-toggler-icon {
-
   width: 6vh !important;
   height: 6vh !important;
   vertical-align: top !important;
-
 }
-
 
 /* 
 .ripple:after {
@@ -441,6 +495,8 @@ div.myfooter a:hover {
    }
 } */
 
+
+
 .thumbnailDisplay {
   height: 18vh;
   width: 18vh;
@@ -479,25 +535,20 @@ div.myfooter a:hover {
 }
 
 .tips {
-
   margin-left: 10px;
   margin-top: 2vh;
   margin-right: 10px;
   margin-bottom: 0px;
-
   height: 8vh;
   display: inline-flex;
-
   z-index: 3;
   overflow-y: scroll;
   scroll-behavior: smooth;
   overflow-x: hidden;
-
   color: azure;
   text-shadow: 0px 0px 20px rgba(19, 1, 19, 0.946);
   text-align: center;
 }
-
 
 .vertical-center {
   margin: 0;
@@ -523,21 +574,6 @@ div.myfooter a:hover {
 
 /* 
  */
-
-.forge {
-  /* background-color: darkorange; */
-  background-color: rgba(210, 180, 140, 0);
-}
-
-.vault {
-  /* background-color: brown; */
-  background-color: rgba(210, 180, 140, 0);
-}
-
-.archives {
-  /* background-color: tan; */
-  background-color: rgba(210, 180, 140, 0);
-}
 
 /* Designing for scroll-bar */
 
@@ -565,3 +601,24 @@ div.myfooter a:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(255, 233, 107);
 }
+
+/* .no-js #loader {
+  display: none;
+}
+
+.js #loader {
+  display: block;
+  position: absolute;
+  left: 100px;
+  top: 0;
+}
+
+.se-pre-con {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 20vh;
+  height: 20vh;
+  z-index: 9999;
+  background: url(../src/assets/Loading.png) center no-repeat #fff;
+} */

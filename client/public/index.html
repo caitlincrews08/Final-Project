@@ -41,6 +41,10 @@
   <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js" crossorigin></script>
 
   <script src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js" crossorigin></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
+
   <script>
     $('.pagetransition').click(function (e) {
       e.preventDefault();
@@ -48,6 +52,11 @@
       setTimeout(function (url) { window.location = url; }, 3000, linkUrl);
     });
   </script>
+  <script>
+    	$(window).load(function() {
+		$(".se-pre-con").fadeOut("slow");;
+	});
+  </script> 
   <script src="https://pixoeditor.com/editor/scripts/bridge.m.js"></script>
 </body>
 
