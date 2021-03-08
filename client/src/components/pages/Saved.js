@@ -4,6 +4,7 @@ import { Col } from 'react-bootstrap';
 import API from '../../utils/apiHelper'
 
 import SavedFooter from '../partials/SavedFooter'
+import { set } from 'lodash';
 
 
 function Saved(props) {
@@ -19,7 +20,6 @@ function Saved(props) {
     }, [])
 
     function loadMemes() {
-        console.log('loadmemes')
         API.getMemes()
             .then(
                 (res) => {
@@ -44,16 +44,18 @@ function Saved(props) {
             console.log(pendingDeletion);
             API.deleteMeme(pendingDeletion)
                 .then(() => loadMemes())
-                .catch(err => console.log(err))
+                .catch(err => console.log(err));
                 pendingDeletion = [];
                 console.log(pendingDeletion);
+                setMemes([]);
+               
         }
     };
 
     function removeSelection(meme) {
         let filteredMemes = [...memes.filter(target => target.id !== meme._id)];
         setMemes(filteredMemes);
-        // console.log(filteredMemes);
+        console.log(filteredMemes);
     };
 
     function addSelection(meme) {
