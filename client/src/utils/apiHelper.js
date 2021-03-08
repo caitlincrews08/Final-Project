@@ -13,8 +13,8 @@ const userController = {
     return axios.get("/api/users/memes/" + id);
   },
   // Deletes the meme with the given id
-  deleteMeme: function (memeData) {
-    return axios.put("/api/users/removememes", memeData);
+  deleteMeme: function (memes) {
+    return axios.put("/api/users/removememes", memes);
   },
   // Saves a meme to the database
   saveMeme: function (memeData) {
