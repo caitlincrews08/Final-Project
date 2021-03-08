@@ -1,8 +1,8 @@
 
 import React from 'react';
 import { Button, Col, Container, Row, } from 'react-bootstrap';
-import { Link, useHistory } from 'react-router-dom';
-import API from '../../utils/apiHelper';
+import { Link } from 'react-router-dom';
+
 
 
 function SavedFooter(props) {

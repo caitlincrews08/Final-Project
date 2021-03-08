@@ -59,7 +59,7 @@ function Search(props) {
     }
 
     const history = useHistory()
-    const saveMeme = (e) => {
+    const addMeme = (e) => {
         e.preventDefault()
         console.log(selected);
 
@@ -116,7 +116,7 @@ function Search(props) {
                         </div>
                     </Col>
                 </div>
-                <SearchFooter selected={selected} test="test" saveMeme={saveMeme} />
+                <SearchFooter selected={selected} test="test" addMeme={addMeme} />
             </>
         );
     };

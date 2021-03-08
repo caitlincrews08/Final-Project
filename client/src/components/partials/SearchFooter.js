@@ -25,7 +25,7 @@ function SearchFooter(props) {
                         </Link>
                     </Col> */}
                     <Col >
-                        <Button variant='warning' className=' save' onClick={props.saveMeme}><i className='fa fa-save' aria-hidden='true'></i></Button>
+                        <Button variant='warning' className=' save' onClick={props.addMeme}><i className='fa fa-save' aria-hidden='true'></i></Button>
                     </Col>
                 </Row>
             </Container>

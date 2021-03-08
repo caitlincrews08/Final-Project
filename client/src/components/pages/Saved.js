@@ -41,9 +41,12 @@ function Saved(props) {
         })
         if (isLoaded) {
             setIsLoaded(false);
+            console.log(pendingDeletion);
             API.deleteMeme(pendingDeletion)
                 .then(() => loadMemes())
                 .catch(err => console.log(err))
+                pendingDeletion = [];
+                console.log(pendingDeletion);
         }
     };
 
