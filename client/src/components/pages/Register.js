@@ -16,7 +16,7 @@ const Register = props => {
 
   useEffect(() => {
     if (state.auth.isAuthenticated)
-      props.history.push('/dashboard');
+      props.history.push('/home');
   }, [state, props]);
 
   const onSubmit = e => {
