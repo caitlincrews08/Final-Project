@@ -4,7 +4,7 @@ import { Col } from 'react-bootstrap';
 import API from '../../utils/apiHelper'
 
 import SavedFooter from '../partials/SavedFooter'
-import { set } from 'lodash';
+
 
 
 function Saved(props) {
