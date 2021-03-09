@@ -35,7 +35,7 @@ function Saved(props) {
 
     const removeMeme = (e) => {
         e.preventDefault();
-
+        console.log('trash clicked')
         let pendingDeletion = memes.map(meme => {
             return meme["id"];
         })
@@ -45,10 +45,10 @@ function Saved(props) {
             API.deleteMeme(pendingDeletion)
                 .then(() => loadMemes())
                 .catch(err => console.log(err));
-                pendingDeletion = [];
-                console.log(pendingDeletion);
-                setMemes([]);
-               
+            pendingDeletion = [];
+            console.log(pendingDeletion);
+            setMemes([]);
+
         }
     };
 
